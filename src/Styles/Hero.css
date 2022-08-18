@@ -1,0 +1,26 @@
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+.Hero-Box{
+    min-height: 70vh;
+    background-color: #FFBCD1;
+}
+h1{
+    font-family: 'Times New Roman', Times, serif;
+    padding: 1rem;
+    color: #A267AC;
+}
+p{
+    font-family: 'Times New Roman', Times, serif;
+}
+button{
+    height: 2.5rem;
+    width: 5rem;
+    background-color: #6867AC;
+    color: white;
+    border: 1px solid #6867AC;
+    border-radius: 10pt;
+    margin: 1rem;
+}
