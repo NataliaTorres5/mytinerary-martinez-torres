@@ -1,10 +1,10 @@
 import React from 'react'
-import Hero from '../Components/Hero';
+import Header from '../Components/Header.js'
 
-export default function () {
+export default function Home () {
   return (
     <div>
-        <Hero />
+        {<Header />}
     </div>
   )
 }
