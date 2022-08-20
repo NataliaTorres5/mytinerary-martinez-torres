@@ -1,10 +1,22 @@
 import React from 'react'
-import Header from '../Components/Header.js'
+import WelcomeVideo from "../Media/WelcomeVideo.mp4"
+import Hero from "../Components/Hero.js"
 
-export default function Home () {
+import '../Styles/WelcomePage.css';
+
+import WebsiteLayout from '../Layouts/WebsiteLayout.js'
+
+export default function Home() {
   return (
-    <div>
-        {<Header />}
-    </div>
+    <WebsiteLayout>
+
+<div className='WMain'>
+            <video src={WelcomeVideo} autoPlay loop muted/>
+            { <Hero /> }
+
+        
+  </div>
+
+    </WebsiteLayout>
   )
 }
