@@ -1,7 +1,11 @@
+@import url('https://fonts.googleapis.com/css2?family=Quicksand&display=swap');
+
+
 *{
     margin: 0;
     padding: 0;
     box-sizing: border-box;
+    font-family: 'Quicksand', sans-serif;
 }
 .Hero-Box{
     min-height: 90vh;
@@ -15,14 +19,16 @@
     align-items: center;
 }
 h1{
-    font-family: 'Times New Roman', Times, serif;
     padding: 1rem;
     color: #A267AC;
 }
-p{
-    font-family: 'Times New Roman', Times, serif;
+.Hero-Box p{
+    font-size: xx-large;
+    font-weight: 500;
+    display: inline;
+    color: white;
 }
-button{
+a{
     height: 2.5rem;
     width: 5rem;
     background-color: #6867AC;
@@ -30,4 +36,8 @@ button{
     border: 1px solid #6867AC;
     border-radius: 10pt;
     margin: 1rem;
+    text-decoration: none;
+    display: flex;
+    justify-content: center;
+    align-items: center;
 }
