@@ -6,10 +6,15 @@
 .Header-Box{
     min-height: 10vh;
     display: flex;
-    justify-content: center;
+    justify-content: space-between;
 }
 .Header-Logo{
-    width: 15rem;
+    width: 5rem;
 }
+.Header-Box nav {
+    display: flex;
+}
+.User{
+    display: flex;
 
-
+}
