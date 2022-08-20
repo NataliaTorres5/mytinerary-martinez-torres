@@ -1,7 +1,7 @@
 import React from 'react'
 import WelcomeVideo from "../Media/WelcomeVideo.mp4"
 import Hero from "../Components/Hero.js"
-import Footer from "../Components/Footer.js"
+
 import '../Styles/WelcomePage.css';
 
 
@@ -10,7 +10,8 @@ export default function WelcomePage () {
         <div className='WMain'>
             <video src={WelcomeVideo} autoPlay loop muted/>
             { <Hero /> }
-            { <Footer />}
+
+        
         </div>
     )
 }
