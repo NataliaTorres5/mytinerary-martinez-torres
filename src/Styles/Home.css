@@ -13,3 +13,6 @@ video {
     height: 90vh;
     object-fit: cover;
 }
+.Carousel-Container h2{
+    margin: 1rem;
+}

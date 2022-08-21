@@ -10,3 +10,16 @@
     justify-content: space-around;
     align-items: center;
 }
+.Team{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+.Team img{
+    width: 5rem;
+    flex-wrap: wrap;
+}
+.Team p{
+    color: white;
+    font-size: 1.2rem;
+}
