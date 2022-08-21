@@ -18,3 +18,12 @@
     display: flex;
 
 }
+.Header-CityNav{
+    padding: 0.5rem;
+}
+.Header-CityNav img{
+    width: 5rem;
+}
+.Header-CityNav a{
+    margin-top: 0%;
+}
