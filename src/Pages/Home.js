@@ -14,7 +14,8 @@ export default function Home() {
         <video src={WelcomeVideo} autoPlay loop muted />
         {<Hero />}
         </div>
-        <div>
+        <div className='Carousel-Container'>
+          <h2>Popular My Tinerary</h2>
           {<CityCarousel />}
         </div>
     </WebsiteLayout>
