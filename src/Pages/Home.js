@@ -9,7 +9,6 @@ import CityCarousel from '../Components/CityCarousel';
 export default function Home() {
   return (
     <WebsiteLayout>
-
       <div className='WMain'>
         <video src={WelcomeVideo} autoPlay loop muted />
         {<Hero />}
