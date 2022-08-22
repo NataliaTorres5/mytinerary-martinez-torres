@@ -15,9 +15,15 @@ export default function () {
         </div>
       </nav>
       <img className='Header-Logo' src="https://trello.com/1/cards/630039e10556b31d3ed9c200/attachments/630039eadcd1f17eb8449c4a/previews/630039ebdcd1f17eb8449c61/download/Icon.png" alt="Logo" />
+      <div className='User-box'>
       <div className='User'>
-        <p>Log in</p>
-        <p>Sing Up</p>
+        <img src='https://trello.com/1/cards/6302fbe2a1cacc1388c0b1dd/attachments/6302fc1bfb38b23769e34220/previews/6302fc1bfb38b23769e34228/download/NotLogin.png'/>
+        <a href="#">Log in</a>
+      </div>
+      <div className='User'>
+      <img src='https://trello.com/1/cards/6302fbe2a1cacc1388c0b1dd/attachments/6302fc1037fd5f6f769079c2/previews/6302fc1137fd5f6f769079d2/download/Booking.png' />
+      <a href="#">Sing Up</a>
+      </div>
       </div>
     </div>
   )
