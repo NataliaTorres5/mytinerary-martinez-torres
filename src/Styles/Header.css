@@ -5,18 +5,43 @@
 }
 .Header-Box{
     min-height: 10vh;
+    width: 100%;
     display: flex;
     justify-content: space-between;
 }
 .Header-Logo{
-    width: 5rem;
+    width: 10rem;
 }
 .Header-Box nav {
     display: flex;
 }
 .User{
     display: flex;
-
+}
+.User p{
+        height: 2.5rem;
+        width: 5rem;
+        background-color: #6867AC;
+        color: white;
+        border: 1px solid #6867AC;
+        border-radius: 10pt;
+        margin: 1rem;
+        text-decoration: none;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+}
+.User-box{
+    display: flex;
+}
+.User{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+.User img{
+    width: 3.5rem;
 }
 .Header-CityNav{
     padding: 0.5rem;

@@ -9,9 +9,10 @@ export default function () {
         <p className='Footer-Text'>Panda Xiao Mei - Cohort 31</p>
       </div>
         <div className='Footer-Icons'>
-            <img src="https://trello.com/1/cards/62fea6b3233d9a20086630de/attachments/62fea706630275877cec91a9/previews/62fea706630275877cec982a/download/icons8-instagram-viejo-50.png" alt="Instagram"/>
-            <img src="https://trello.com/1/cards/62fea6b3233d9a20086630de/attachments/62fea787e8cb7276d5071950/previews/62fea787e8cb7276d5071955/download/icons8-facebook-rodeado-de-c%C3%ADrculo-50.png" alt="Facebook"/>
-            <img src="https://trello.com/1/cards/62fea6b3233d9a20086630de/attachments/62fea7fdeba539055afcbfff/previews/62fea7feeba539055afcc005/download/icons8-whatsapp-50.png" alt="Whatsapp"/>
+            <img src="https://trello.com/1/cards/6302fbe2a1cacc1388c0b1dd/attachments/6302fbec5b307d371ef3ec2a/previews/6302fbed5b307d371ef3ec34/download/Instagram.png" alt="Instagram"/>
+            <img src="https://trello.com/1/cards/6302fbe2a1cacc1388c0b1dd/attachments/6302fbff84123508df544868/previews/6302fc0084123508df54487c/download/Facebook.png" alt="Facebook"/>
+            <img src="https://trello.com/1/cards/6302fbe2a1cacc1388c0b1dd/attachments/6302fbf204db806ff3356412/previews/6302fbf304db806ff3356418/download/Whatsapp.png" alt="Whatsapp"/>
+            <img src="https://trello.com/1/cards/6302fbe2a1cacc1388c0b1dd/attachments/6302fc09c4cc5a64db7d739e/previews/6302fc09c4cc5a64db7d73b1/download/mail-icon.png" alt="Mail"/>
         </div>
     </div>
   )
