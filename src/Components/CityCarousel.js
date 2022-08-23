@@ -16,7 +16,7 @@ function CityCarousel () {
     {url:"/images/sydney-big.png", city:"Sydney - Australia"},
   ]
   return (
-    <Carousel  data={items} range={3} />
+    <Carousel  data={items} range={4} slides={3} interval={5} />
   )
 }
 
