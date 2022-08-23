@@ -10,8 +10,8 @@ export default function () {
       </div>
         <div className='Footer-Icons'>
             <img src="https://trello.com/1/cards/6302fbe2a1cacc1388c0b1dd/attachments/6302fbec5b307d371ef3ec2a/previews/6302fbed5b307d371ef3ec34/download/Instagram.png" alt="Instagram"/>
-            <img src="https://trello.com/1/cards/6302fbe2a1cacc1388c0b1dd/attachments/6302fbff84123508df544868/previews/6302fc0084123508df54487c/download/Facebook.png" alt="Facebook"/>
-            <img src="https://trello.com/1/cards/6302fbe2a1cacc1388c0b1dd/attachments/6302fbf204db806ff3356412/previews/6302fbf304db806ff3356418/download/Whatsapp.png" alt="Whatsapp"/>
+            <img src="https://trello.com/1/cards/6302fbe2a1cacc1388c0b1dd/attachments/6303bfaff02219265670ea30/previews/6303bfb0f02219265670ea4b/download/Facebook.png" alt="Facebook"/>
+            <img src="https://trello.com/1/cards/6302fbe2a1cacc1388c0b1dd/attachments/6303bfc1d2e1772a4bd47034/previews/6303bfc2d2e1772a4bd4705a/download/Whatsapp.png" alt="Whatsapp"/>
             <img src="https://trello.com/1/cards/6302fbe2a1cacc1388c0b1dd/attachments/6302fc09c4cc5a64db7d739e/previews/6302fc09c4cc5a64db7d73b1/download/mail-icon.png" alt="Mail"/>
         </div>
     </div>
