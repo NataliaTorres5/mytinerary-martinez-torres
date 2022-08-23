@@ -8,7 +8,12 @@
     width: 100%;
     display: flex;
     justify-content: space-between;
+    align-content: center;
+    background: rgb(104,103,172);
+    background: linear-gradient(0deg, rgba(104,103,172,1) 0%, rgba(125,125,184,1) 17%, rgba(220,220,235,1) 57%, rgba(228,228,240,1) 63%, rgba(255,255,255,1) 88%);
 }
+
+
 .Header-Logo{
     width: 10rem;
 }
@@ -52,3 +57,4 @@
 .Header-CityNav a{
     margin-top: 0%;
 }
+
