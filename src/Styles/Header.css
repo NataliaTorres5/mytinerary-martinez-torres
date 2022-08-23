@@ -17,7 +17,7 @@
 .Header-Logo{
     width: 10rem;
 }
-.Header-Box nav {
+.Header-Box div {
     display: flex;
 }
 .User{
