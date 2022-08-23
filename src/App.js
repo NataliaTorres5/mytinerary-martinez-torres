@@ -1,17 +1,24 @@
 // import logo from './logo.svg';
 import './App.css';
 import Home from './Pages/Home';
-import Carousel from './Components/Carousel';
-import Footer from './Components/Footer';
-import CityCarousel from './Components/CityCarousel';
+import Cities from './Pages/Cities';
+import UnderConstruction from './Pages/UnderConstruction';
+import WebsiteLayout from './Layouts/WebsiteLayout.js'
+import {BrowserRouter, Routes, Route} from 'react-router-dom'
 
 function App() {
 
   return (
     <div className="App">
-
-      <Home />
-      
+      <BrowserRouter>
+      <WebsiteLayout>
+      <Routes>
+      <Route path='/' element={<Home />} />
+      <Route path='/cities' element={<Cities />} />
+      <Route path='/*' element={<UnderConstruction />} />
+      </Routes>
+      </WebsiteLayout>
+      </BrowserRouter>
     </div>
   );
 }
