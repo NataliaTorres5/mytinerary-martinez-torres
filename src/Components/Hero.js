@@ -1,12 +1,14 @@
 import React from 'react';
 import '../Styles/Hero.css';
+import CallToAction from './CallToAction';
 
 export default function Hero() {
   return (
     <div className='Hero-Box'>
-        <img src="https://trello.com/1/cards/62ffefc2da179a223371932f/attachments/62ffefcdf2240b4a1edf5030/previews/62ffefcef2240b4a1edf504e/download/WelcomeIntro.png" alt="" />
+        <img src="../icons/WelcomeIntro.png" alt="" />
         <p>Taking you wherever your heart wants</p>
-        <a href="#">Start</a>
+        <CallToAction linkTo='cities' buttonAction="Check it out" />
+        
     </div>
   )
 }
