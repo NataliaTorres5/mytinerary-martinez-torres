@@ -1,9 +1,23 @@
 import React from 'react'
 import '../Styles/Header.css';
+import {Link as LinkRouter} from 'react-router-dom'
 
-export default function () {
+function Header() {
+  return(
+    <div className='Header-container'>
+      <LinkRouter to='/'>Home</LinkRouter>
+      <LinkRouter to='cities'>Cities</LinkRouter>
+    </div>
+    
+  )
+}
+export default Header
+
+
+ /*export default function () {
+
   return (
-    <div className='Header-Box'>
+   <div className='Header-Box'>
       <nav className='Nav-Box'>
         <div className='Header-CityNav'>
           <img src="https://trello.com/1/cards/63026069b19dac14ccd35e15/attachments/63026731dd5b02125f4eb384/previews/63026732dd5b02125f4eb38b/download/Home_Icon.png" />
@@ -27,7 +41,6 @@ export default function () {
           <a href="#">Sing Up</a>
         </div>
       </div>
-      
-    </div>
+    </div> 
   )
-}
+}*/

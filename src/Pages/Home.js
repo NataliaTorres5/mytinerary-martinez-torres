@@ -8,7 +8,7 @@ import CityCarousel from '../Components/CityCarousel';
 
 export default function Home() {
   return (
-    <WebsiteLayout>
+    <>
       <div className='WMain'>
         <video src={WelcomeVideo} autoPlay loop muted />
         {<Hero />}
@@ -17,6 +17,6 @@ export default function Home() {
           <h2>Popular My Tinerary</h2>
           {<CityCarousel />}
         </div>
-    </WebsiteLayout>
+        </>
   )
 }
