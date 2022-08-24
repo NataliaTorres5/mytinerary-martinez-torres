@@ -1,25 +1,31 @@
 // import logo from './logo.svg';
 import './App.css';
-import Home from './Pages/Home';
-import Cities from './Pages/Cities';
-import UnderConstruction from './Pages/UnderConstruction';
-import WebsiteLayout from './Layouts/WebsiteLayout.js'
+
+import Home from './Pages/Home.js';
+import WebsiteLayout from './Layouts/WebsiteLayout.js';
+import UnderConstruction from './Pages/UnderConstruction.js';
+import Cities from './Pages/Cities.js';
 import {BrowserRouter, Routes, Route} from 'react-router-dom'
+import ScrollToTop from './Components/ScrollToTop';
+
+
 
 function App() {
-
   return (
-    <div className="App">
+
+
+
       <BrowserRouter>
+      <ScrollToTop />
       <WebsiteLayout>
-      <Routes>
-      <Route path='/' element={<Home />} />
-      <Route path='/cities' element={<Cities />} />
-      <Route path='/*' element={<UnderConstruction />} />
-      </Routes>
-      </WebsiteLayout>
+        <Routes>
+          <Route path='/' element={<Home />} />
+          <Route path='/cities' element={<Cities />} />
+          <Route path='*' element={<UnderConstruction />} />
+        </Routes>
+      </WebsiteLayout> 
       </BrowserRouter>
-    </div>
+
   );
 }
 
