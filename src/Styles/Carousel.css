@@ -1,18 +1,12 @@
-*{
-    margin: 0;
-    padding: 0;
-    box-sizing: border-box;
-}
-.item img {
-    width: 25rem;
-    margin: 1rem 1rem 0 1rem;
-}
+
+
 .Slice{
     width: 100%;
     min-height: 50rem;
     display: flex;
     flex-wrap: wrap;
     justify-content: center;
+    text-align: center;
 }
 .CCards{
     display: flex;
@@ -20,12 +14,35 @@
     width: 60%;
     justify-content: center;
     align-content: center;
+    margin-bottom: 2rem;
+    
     
 }
 
-.item img{
-    border-radius: 10% 2% 10% 2%;
+.item {
+    
+    justify-content: space-around;
+    align-items: center;
+    text-align: center;
+    padding: 2rem;
+    
+}
 
+.item img {
+    width: 25rem;
+    margin: 1rem 1rem 0 1rem;
+    border-radius: 10% 2% 10% 2%;
+    box-shadow: 5px 2px 2px #6867acb6;
+
+}
+
+.item  p{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-size: 15pt;
+    border-top: 5px solid #6867AC;
+    width: 22rem;
 }
 
 .Arrow {
