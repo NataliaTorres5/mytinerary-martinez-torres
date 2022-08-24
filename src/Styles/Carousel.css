@@ -4,7 +4,7 @@
     box-sizing: border-box;
 }
 .item img {
-    width: 40rem;
+    width: 25rem;
     margin: 1rem 1rem 0 1rem;
 }
 .Slice{
@@ -13,4 +13,37 @@
     display: flex;
     flex-wrap: wrap;
     justify-content: center;
+}
+.CCards{
+    display: flex;
+    flex-wrap: wrap;
+    width: 60%;
+    justify-content: center;
+    align-content: center;
+    
+}
+
+.item img{
+    border-radius: 10% 2% 10% 2%;
+
+}
+
+.Arrow {
+
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 3rem;
+    font-weight: 700;
+    font-size: 30pt;
+    color:white;
+    
+}
+
+.Arrow button{
+    background-color: #6867AC;
+    border-color: #6867AC;
+    color: white; 
+    box-shadow: 3px 3px 1px 1px #9594b8;
+    border-radius: 25%;
 }

@@ -1,5 +1,6 @@
 import { useEffect, useState } from 'react';
 import '../Styles/Carousel.css';
+import { Link as LinkRouter} from 'react-router-dom';
 import Arrow from './Carousel/Arrow';
 
 
@@ -22,46 +23,56 @@ function Carousel(props) {
 
 
 
-    useEffect(() => {
-      let id = setInterval(function () {
-          next()
-      }, interval)
+  useEffect(() => {
+    let id = setInterval(function () {
+      next()
+    }, interval)
 
-      setIntervalId(id)
+    setIntervalId(id)
 
-      return () => clearInterval(id)
+    return () => clearInterval(id)
   }, [start])
 
   function previous() {
     if (start >= range) {
-        setStart(start-range)
-        setEnd(end-range)
+      setStart(start - range)
+      setEnd(end - range)
     } else {
-        setStart(limitSlides-range)
-        setEnd(limitSlides)
+      setStart(limitSlides - range)
+      setEnd(limitSlides)
     }
     clearInterval(intervalId)
-}
+  }
 
-function next() {
-    if (start < limitSlides-range) {
-        setStart(start+range)
-        setEnd(end+range)
+  function next() {
+    if (start < limitSlides - range) {
+      setStart(start + range)
+      setEnd(end + range)
     } else {
-        setStart(0)
-        setEnd(range)
+      setStart(0)
+      setEnd(range)
     }
     clearInterval(intervalId)
-}
+  }
 
 
   return (
     <div className="Slice">
-      <Arrow icon="<" click={previous} />
-      {items.slice(start, end).map(itemView)}
-      <Arrow icon=">" click={next} />
+      <div className='Arrow'>
+        <Arrow icon="<" click={previous} />
+      </div>
+      <div className='CCards' >
+       
+            {items.slice(start, end).map(itemView)}
+  
+      </div>
+      <div className='Arrow'>
+        <Arrow icon=">" click={next} />
+      </div>
     </div>
   )
 }
 
 export default Carousel
+
+

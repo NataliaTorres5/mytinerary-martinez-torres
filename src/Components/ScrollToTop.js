@@ -11,6 +11,6 @@ useEffect(() =>{
 }, [pathname])
 
   return (
-    <div>ScrollToTop</div>
+    <div></div>
   )
 }

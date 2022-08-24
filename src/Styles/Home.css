@@ -13,6 +13,9 @@ video {
     height: 90vh;
     object-fit: cover;
 }
-.Carousel-Container h2{
-    margin: 1rem;
+.Popular {
+    display: flex;
+    justify-content: center;
+    align-content: center;
+    margin-top: 1.5rem;
 }

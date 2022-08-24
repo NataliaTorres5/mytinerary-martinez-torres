@@ -28,15 +28,16 @@ h1{
     display: inline;
     color: white;
 }
-a{
-    height: 2.5rem;
+.Hero-Box a{
+    height: 2.6rem;
     width: 5rem;
-    background-color: #6867AC;
+    background-color: #6867AC; 
     color: white;
     border: 1px solid #6867AC;
     border-radius: 10pt;
     margin: 1rem;
     text-decoration: none;
+    text-align: center;
     display: flex;
     justify-content: center;
     align-items: center;

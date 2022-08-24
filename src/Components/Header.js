@@ -1,35 +1,38 @@
 import React from 'react'
-import {Link as LinkRouter} from 'react-router-dom'
+import {Link as LinkRouter} from 'react-router-dom';
+
 import '../Styles/Header.css';
-import {Link as LinkRouter} from 'react-router-dom'
+
 
 
 
 const hPages = [
-  { url:'/icons/Home_Icon.png', name:'Home', to:'/', id:'nav1'},
-  { url:'/icons/Travel Icon.png', name:'Cities', to:'/cities', id:'nav2'},
-   //{name:'Sing Up', to:'/singup', id:'nav3'},
-  // {name:'Log In', to:'/login', id:'nav4'}
+  { url: '/icons/homewhitel.png', name: 'Home', to: '/', id: 'nav1' },
+  { url: '/icons/planewl.png', name: 'Cities', to: '/cities', id: 'nav2' },
+  { url: '/icons/passport.png', name: 'New City', to: '/newcity', id: 'nav3' }
+
 ]
 
-const link = (page) => 
-<LinkRouter key={page.id} to={page.to}>{page.name}</LinkRouter>
-
-
+const link = (page) =>
+  <LinkRouter className='hRouter' key={page.id} to={page.to}>{page.name} <img className='hImg' width={45} src={page.url} alt={page.id} /></LinkRouter>
 export default function Header() {
   return (
     <div className='Header-Box'>
       <div>
         {hPages.map(link)}
-      </div>
-
-
-      <img className='Header-Logo' src="../icons/Icon.png" alt="Logo" />
-
-      <div className='User-box'>
     
       </div>
-    </div> 
+
+      <div className='Header-Logo'>
+      <img  src="../icons/Icon.png" alt="Logo" />
+      </div>
+
+      <div className='User-box'>
+      <img  src="../icons/user2.png" alt="Logo" />
+      <img  src="../icons/login.png" alt="Logo" />
+
+      </div>
+    </div>
   )
 
 }
