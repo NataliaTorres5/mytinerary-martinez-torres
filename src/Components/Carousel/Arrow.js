@@ -1,17 +1,17 @@
 import React from 'react'
 import '../../Styles/Arrow.css'
 
-function Arrow (props) {
+function Arrow(props) {
 
     if (!props.icon) {
         throw new Error('A function for the property icon needed')
-        
+
     }
 
-if (!props.click) {
-    throw new Error('A function for the property click needed')
-    
-}
+    if (!props.click) {
+        throw new Error('A function for the property click needed')
+
+    }
 
 
     return (
@@ -19,8 +19,8 @@ if (!props.click) {
             {props.icon}
 
         </button>
-        
+
     )
-    
+
 }
 export default Arrow

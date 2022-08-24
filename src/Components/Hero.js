@@ -7,7 +7,7 @@ export default function Hero() {
                 <div className='Hero-Box'>
                         <img src="../icons/WelcomeIntro.png" alt="" />
                         <p>Taking you wherever your heart wants</p>
-                        <CallToAction linkTo='cities' buttonAction='Check it out!' />
+                        <CallToAction className='btn' linkTo='cities' buttonAction='Check it out!' />
 
                 </div>
         )

@@ -14,7 +14,9 @@ export default function Home() {
         {<Hero />}
         </div>
         <div className='Carousel-Container'>
-          <h2>Popular My Tinerary</h2>
+          <div className='Popular'>
+            <img src="../icons/Popular_my_Tinerary.png" alt="popular"/>
+          </div>
           {<CityCarousel />}
         </div>
     </>
