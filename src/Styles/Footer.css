@@ -8,18 +8,111 @@
     background-color: #6867AC;
     display: flex;
     justify-content: space-around;
+    align-items: stretch;
+    flex-direction: column;
+    flex-wrap: wrap;
+    width: 100%;
+}
+
+.Footer1 {
+    display: flex;
+    justify-content: space-around;
     align-items: center;
+    flex-wrap: wrap;
+}
+
+.footernav {
+    display: flex;
+    margin: 0 2rem 0 2rem;
+}
+
+.footernav a{
+    height: 2.6rem;
+    width: 6rem;
+    background-color: #ffff; 
+    color: #6867AC;
+    border: 1px solid #ffff;
+    border-radius: 10pt;
+    margin: 1rem;
+    text-decoration: none;
+    text-align: center;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+button{
+    display: flex;
+    justify-content: center;
+    align-self: center;
+    width: 5rem;
+    background-color: white;
+    color: #6867AC;
+    font-size: 15pt;
+    border-radius: 10pt;
+    margin-top: 1rem;
+    border: 1px solid #ffff;
+}
+
+.Contacts{
+    display: flex;
+    justify-content: space-around;
+    flex-wrap: wrap;
+}
+
+.Where {
+    color: #ffff;
+    margin-top: 2rem;
+}
+.flags img{
+    width: 5rem;
+}
+.fLinks{
+    display: flex;
+    flex-direction: column;
+    flex-wrap: wrap;
+}
+
+.address {
+    display: flex;
+    color: #ffff;
+    margin-top: 2rem;
+    align-items: center;
+    flex-wrap: wrap;
+    
+}
+
+.addressp {
+    display: flex;
+    flex-direction: column;
+    padding-right: 1rem;
+    text-align: justify;
+    flex-wrap: wrap;
+
+}
+.address a{
+    text-decoration: none;
+    color: #ffff;
+}
+
+.address img{
+    width: 10rem;
+    height: 8rem;
+    border-radius: 25%;
+
 }
 .Team{
     display: flex;
+    flex-direction: column;
     align-items: center;
     justify-content: center;
+    flex-wrap: wrap;
 }
 .Team img{
     width: 5rem;
     flex-wrap: wrap;
 }
-.Team p{
+.Team h2{
     color: white;
     font-size: 1.2rem;
 }

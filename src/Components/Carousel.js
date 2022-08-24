@@ -1,6 +1,5 @@
 import { useEffect, useState } from 'react';
 import '../Styles/Carousel.css';
-import { Link as LinkRouter} from 'react-router-dom';
 import Arrow from './Carousel/Arrow';
 
 
@@ -61,10 +60,8 @@ function Carousel(props) {
       <div className='Arrow'>
         <Arrow icon="<" click={previous} />
       </div>
-      <div className='CCards' >
-       
+      <div className='CCards' >  
             {items.slice(start, end).map(itemView)}
-  
       </div>
       <div className='Arrow'>
         <Arrow icon=">" click={next} />
