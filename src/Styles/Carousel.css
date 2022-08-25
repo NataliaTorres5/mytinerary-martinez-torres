@@ -68,16 +68,31 @@
         display: none;
     }
     .item{
+        width: 12rem;
+    }
+
+    .item img{
+        width: 2rem;
+    }
+    .item p{
+        width: 90%;
+        font-size: 12pt;
+    }
+}
+
+@media screen and (max-width:379px){
+    .Arrow{
+        display: none;
+    }
+    .item{
         width: 100%;
     }
+
     .item img{
         width: 100%;
     }
-    .Slice{
-        width: 100%;
-    }
     .item p{
-        width: 40%;
+        width: 90%;
         font-size: 12pt;
     }
 }

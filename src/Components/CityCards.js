@@ -18,9 +18,9 @@ const items = [
 ]
 
 const cityPic = (item) => (
-    <LinkRouter className='cityRouter' key={item.id} to='/details'>
+    <LinkRouter  className='cityRouter' key={item.id} to='/details'>
         <div className="cityCard">
-            <img src={item.url} />
+            <img className='imgCard' src={item.url} />
             <p>{item.city}</p>
         </div>
     </LinkRouter>
@@ -28,7 +28,7 @@ const cityPic = (item) => (
 
 export default function Cities() {
     return (
-        <div>
+        <div className='iteration'>
             {items.map(cityPic)}
         </div>
     )

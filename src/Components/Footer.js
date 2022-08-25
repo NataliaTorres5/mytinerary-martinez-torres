@@ -21,6 +21,8 @@ export default function Footer() {
     })
   }
 
+  const date = new Date ()
+
   return (
     <div className='Footer-Box'>
       <div className='Footer1'>
@@ -52,8 +54,11 @@ export default function Footer() {
           <img src="../countries/CAN.png" alt=""/>
           <img src="../countries/USA.png" alt=""/>
         </div>
+        <div className='date'>
+          {date.toLocaleDateString()}
         </div>
-        <br/>
+        </div>
+        
         <div className='address'>
           <div className='addressp'>
           <p>Adress: 153 Terrace Dr, San Francisco, CA 94127, EE. UU.</p>

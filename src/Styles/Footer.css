@@ -73,6 +73,13 @@ button{
     flex-wrap: wrap;
 }
 
+.date {
+    color: #ffff;
+    font-size: large;
+    display: flex;
+    justify-content: center;
+}
+
 .address {
     display: flex;
     color: #ffff;
@@ -89,6 +96,10 @@ button{
     text-align: justify;
     flex-wrap: wrap;
 
+}
+
+.addressp a {
+    width: 100%;
 }
 .address a{
     text-decoration: none;
@@ -140,6 +151,44 @@ button{
     }
 
 }
+
+@media screen and (max-width:379px){
+    .Where{
+        display: flex;
+        justify-content: center;
+        flex-wrap: wrap;
+        width: 100%;
+    }
+    .Footer1{
+        display: flex;
+        width: 100%;
+        flex-direction: column;
+    }
+    .fLinks{
+        width: 20%;
+        display: flex;
+        flex-direction: column;
+    }
+
+    .footernav{
+        width: 20%;
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+    }
+
+}
+
+@media screen and (max-width:375px) {
+    .footernav {
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+        margin-left: 2rem;
+    }
+}
+
 @media screen and (max-width:480px){
     .address{
         display: flex;

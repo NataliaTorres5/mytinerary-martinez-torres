@@ -19,3 +19,9 @@ video {
     align-content: center;
     margin-top: 1.5rem;
 }
+
+@media screen and (max-width:320px) {
+    .Popular img{
+        width: 100%;
+    } 
+}
