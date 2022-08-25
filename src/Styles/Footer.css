@@ -41,7 +41,7 @@
     align-items: center;
 }
 
-button{
+.Footer-Button{
     display: flex;
     justify-content: center;
     align-self: center;
