@@ -5,8 +5,8 @@ import '../Styles/Cities.css';
 
 export default function Cities() {
   return (
-    <div>
-      <CityCards/>
+    <div className='Cardcity'>
+      <CityCards />
     </div>
   )
 }

@@ -72,10 +72,18 @@
 button{
     background: none;
     border: none;
+    margin-bottom: 4rem;
 }
 .H-Button{
     background: none;
     border: none;
+}
+
+@media screen and (max-width:320px) {
+    .Header-Box a{
+        padding: 0%;
+        margin: 2.5%;
+    }
 }
 @media screen and (max-width:480px){
     .Header-Box{
