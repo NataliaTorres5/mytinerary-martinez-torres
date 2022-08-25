@@ -1,0 +1,72 @@
+@import url('https://fonts.googleapis.com/css2?family=Quicksand&display=swap');
+
+
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'Quicksand', sans-serif;
+}
+.Hero-Box{
+    min-height: 90vh;
+    position: absolute;
+    width: 100%;
+    top: 0;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    margin-top: 10rem;
+}
+h1{
+    padding: 1rem;
+    color: #A267AC;
+    
+}
+.Hero-Box p{
+    font-size: xx-large;
+    font-weight: 500;
+    display: inline;
+    color: white;
+    text-align: center;
+}
+.Hero-Box a{
+    height: 2.6rem;
+    width: 5rem;
+    background-color: #6867AC; 
+    color: white;
+    border: 1px solid #6867AC;
+    border-radius: 10pt;
+    margin: 1rem;
+    text-decoration: none;
+    text-align: center;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+video {
+    width:100%;
+    height: 90vh;
+    object-fit: cover;
+}
+
+@media screen and (max-width:320px) {
+    .Hero-Box p{
+        width: 100%;
+        margin-left: 1.6%;
+    }
+
+    .Hero-Box {
+        width: 100%;
+    }
+}
+@media screen and (max-width:480px){
+    .Hero-Box img{
+        width: 100%;
+    }
+    button{
+        background: none;
+        border: none;
+    }
+}

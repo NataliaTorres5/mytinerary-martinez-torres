@@ -1,0 +1,230 @@
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+.Footer-Box{
+    min-height: 10vh;
+    background-color: #6867AC;
+    display: flex;
+    justify-content: space-around;
+    align-items: stretch;
+    flex-direction: column;
+    flex-wrap: wrap;
+    width: 100%;
+}
+
+.Footer1 {
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+    flex-wrap: wrap;
+}
+
+.footernav {
+    display: flex;
+    margin: 0 2rem 0 2rem;
+}
+
+.footernav a{
+    height: 2.6rem;
+    width: 6rem;
+    background-color: #ffff; 
+    color: #6867AC;
+    border: 1px solid #ffff;
+    border-radius: 10pt;
+    margin: 1rem;
+    text-decoration: none;
+    text-align: center;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+button{
+    display: flex;
+    justify-content: center;
+    align-self: center;
+    width: 5rem;
+    background-color: white;
+    color: #6867AC;
+    font-size: 15pt;
+    border-radius: 10pt;
+    margin-top: 1rem;
+    border: 1px solid #ffff;
+}
+
+.Contacts{
+    display: flex;
+    justify-content: space-around;
+    flex-wrap: wrap;
+}
+
+.Where {
+    color: #ffff;
+    margin-top: 2rem;
+}
+.flags img{
+    width: 5rem;
+}
+.fLinks{
+    display: flex;
+    flex-direction: column;
+    flex-wrap: wrap;
+}
+
+.date {
+    color: #ffff;
+    font-size: large;
+    display: flex;
+    justify-content: center;
+}
+
+.address {
+    display: flex;
+    color: #ffff;
+    margin-top: 2rem;
+    align-items: center;
+    flex-wrap: wrap;
+
+}
+
+.addressp {
+    display: flex;
+    flex-direction: column;
+    padding-right: 1rem;
+    text-align: justify;
+    flex-wrap: wrap;
+
+}
+
+.addressp a {
+    width: 100%;
+}
+.address a{
+    text-decoration: none;
+    color: #ffff;
+}
+
+.address img{
+    width: 10rem;
+    height: 8rem;
+    border-radius: 25%;
+
+}
+.Team{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    flex-wrap: wrap;
+}
+.Team img{
+    width: 5rem;
+    flex-wrap: wrap;
+}
+.Team h2{
+    color: white;
+    font-size: 1.2rem;
+}
+.Footer-Icons{
+    display: flex;
+}
+.Footer-Icons img{
+    width: 2.5rem;
+    margin: 0.5rem;
+}
+@media screen and (max-width:320px){
+    .Where{
+        display: flex;
+        justify-content: center;
+        flex-wrap: wrap;
+        width: 100%;
+    }
+    .Footer1{
+        display: flex;
+        width: 100%;
+    }
+    .footernav{
+        display: flex;
+        flex-direction: column;
+    }
+
+}
+
+@media screen and (max-width:379px){
+    .Where{
+        display: flex;
+        justify-content: center;
+        flex-wrap: wrap;
+        width: 100%;
+    }
+    .Footer1{
+        display: flex;
+        width: 100%;
+        flex-direction: column;
+    }
+    .fLinks{
+        width: 20%;
+        display: flex;
+        flex-direction: column;
+    }
+
+    .footernav{
+        width: 20%;
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+    }
+
+}
+
+@media screen and (max-width:375px) {
+    .footernav {
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+        margin-left: 2rem;
+    }
+}
+
+@media screen and (max-width:480px){
+    .address{
+        display: flex;
+        justify-content: center;
+        margin-right: 0.5rem;
+        margin-left: 1.5rem;
+    }
+    .Where{
+        flex-wrap: wrap;
+    }
+    .Footer1{
+        padding: 0%;
+        margin: 0%;
+        width: 100%;
+    }
+    .Contacts{
+        width: 100%;
+    }
+    h3{
+        margin-right: 0.5rem;
+        margin-left: 1.5rem;
+    }
+}
+@media screen and (max-width:579px){
+    .address{
+        display: flex;
+        justify-content: center;
+        margin-right: 1rem;
+    }
+    .map{
+        margin: 1rem;
+    }
+    .Footer-Icons{
+        margin: 1rem;
+    }
+    .Footer1{
+        padding: 1rem;
+    }
+}

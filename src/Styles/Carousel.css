@@ -1,0 +1,108 @@
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+.Slice{
+    width: 100%;
+    min-height: 50rem;
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    text-align: center;
+}
+.CCards{
+    display: flex;
+    flex-wrap: wrap;
+    width: 60%;
+    justify-content: center;
+    align-content: center;
+    margin-bottom: 2rem;
+}
+
+.item {
+    justify-content: space-around;
+    align-items: center;
+    text-align: center;
+    padding: 2rem;  
+}
+
+.item img {
+    width: 25rem;
+    margin: 1rem 1rem 0 1rem;
+    border-radius: 10% 2% 10% 2%;
+    box-shadow: 5px 2px 2px #6867acb6;
+}
+
+.item  p{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-size: 15pt;
+    border-top: 5px solid #6867AC;
+    width: 22rem;
+}
+
+.Arrow {
+
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 3rem;
+    font-weight: 700;
+    font-size: 30pt;
+    color:white;
+    
+}
+
+.Arrow button{
+    background-color: #6867AC;
+    border-color: #6867AC;
+    color: white; 
+    box-shadow: 3px 3px 1px 1px #9594b8;
+    border-radius: 25%;
+}
+@media screen and (max-width:320px){
+    .Arrow{
+        display: none;
+    }
+    .item{
+        width: 12rem;
+    }
+
+    .item img{
+        width: 2rem;
+    }
+    .item p{
+        width: 90%;
+        font-size: 12pt;
+    }
+}
+
+@media screen and (max-width:379px){
+    .Arrow{
+        display: none;
+    }
+    .item{
+        width: 100%;
+    }
+
+    .item img{
+        width: 100%;
+    }
+    .item p{
+        width: 90%;
+        font-size: 12pt;
+    }
+}
+
+@media screen and (max-width:480px){
+    .Arrow{
+        display: none;
+    }
+    .item img{
+        width: 100%;
+    }
+}
+    
