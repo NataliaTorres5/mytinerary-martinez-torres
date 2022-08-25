@@ -48,3 +48,12 @@ video {
     height: 90vh;
     object-fit: cover;
 }
+@media screen and (max-width:480px){
+    .Hero-Box img{
+        width: 100%;
+    }
+    button{
+        background: none;
+        border: none;
+    }
+}
