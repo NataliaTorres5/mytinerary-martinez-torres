@@ -17,9 +17,6 @@ const items = [
     { url: "/images/sydney-big.png", city: "Sydney - Australia", id: 'cit12' },
 ]
 
-
-
-
 const cityPic = (item) => (
     <LinkRouter className='cityRouter' key={item.id} to='/details'>
         <div className="cityCard">

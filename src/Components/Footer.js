@@ -32,7 +32,7 @@ export default function Footer() {
           <div className='footernav'> 
           {fPages.map(link)}
           </div>
-          <button onClick={scrollUp} >Go UP!</button>
+          <button className='Footer-Button' onClick={scrollUp} >Go UP!</button>
         </div>
         <div className='Footer-Icons'>
           <img src="../icons/Instagram.png" alt="Instagram" />
