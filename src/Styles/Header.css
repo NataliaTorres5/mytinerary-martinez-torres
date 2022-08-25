@@ -73,3 +73,19 @@ button{
     background: none;
     border: none;
 }
+.H-Button{
+    background: none;
+    border: none;
+}
+@media screen and (max-width:480px){
+    .Header-Box{
+        padding: 3%;
+        justify-content: center;
+        align-items: center;
+    }
+   .H-Button{
+        background: none;
+        border: none;
+        margin-bottom: 3rem;
+    }
+}

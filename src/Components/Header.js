@@ -43,7 +43,7 @@ export default function Header() {
             : null
         }
       </div>
-        <button onClick={handleOpenMenu}><img src="../icons/user2.png" alt="Logo" /></button>
+        <button className='H-Button' onClick={handleOpenMenu}><img src="../icons/user2.png" alt="Logo" /></button>
       </div>
     </div>
   )
