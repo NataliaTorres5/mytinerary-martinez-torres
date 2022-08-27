@@ -5,16 +5,95 @@
 }
 .Header-Box{
     min-height: 10vh;
+    padding: 0rem 3rem 0rem 3rem;
+    width: 100%;
     display: flex;
+    flex-wrap: wrap ;
     justify-content: space-between;
+    align-content: center;
+    background: rgb(104,103,172);
+    background: linear-gradient(0deg, rgba(104,103,172,1) 0%, rgba(125,125,184,1) 17%, rgba(220,220,235,1) 57%, rgba(228,228,240,1) 63%, rgba(255,255,255,1) 88%);
 }
+
+.hRouter {
+    height: 2.6rem;
+    width: 6rem;
+    background-color: #6867AC; 
+    color: white;
+    border: 1px solid #6867AC;
+    border-radius: 10pt;
+    margin: 1rem;
+    text-decoration: none;
+    text-align: center;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.hRouter {
+    display: flex;
+    
+}
+
 .Header-Logo{
-    width: 5rem;
+    display: flex;
+    width: 10rem;
 }
-.Header-Box nav {
+.Header-Box div {
     display: flex;
 }
 .User{
     display: flex;
+}
+.User p{
+        height: 2.5rem;
+        width: 5rem;
+        background-color: #6867AC; 
+        color: white;
+        border: 1px solid #6867AC;
+        border-radius: 10pt;
+        margin: 1rem;
+        text-decoration: none;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+}
+.User-box{
+    display: flex;
+}
+.User-box img{
+    height: 4rem;
+    margin-top: 1rem;
+    padding-left: 2rem;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+button{
+    background: none;
+    border: none;
+    margin-bottom: 4rem;
+}
+.H-Button{
+    background: none;
+    border: none;
+}
 
+@media screen and (max-width:320px) {
+    .Header-Box a{
+        padding: 0%;
+        margin: 2.5%;
+    }
+}
+@media screen and (max-width:480px){
+    .Header-Box{
+        padding: 3%;
+        justify-content: center;
+        align-items: center;
+    }
+   .H-Button{
+        background: none;
+        border: none;
+        margin-bottom: 3rem;
+    }
 }

@@ -13,3 +13,15 @@ video {
     height: 90vh;
     object-fit: cover;
 }
+.Popular {
+    display: flex;
+    justify-content: center;
+    align-content: center;
+    margin-top: 1.5rem;
+}
+
+@media screen and (max-width:320px) {
+    .Popular img{
+        width: 100%;
+    } 
+}

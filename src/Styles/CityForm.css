@@ -1,0 +1,27 @@
+
+
+
+.cityForm {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin: 1rem;
+
+}
+
+@media screen and (max-width:320px) {
+    .Hero-Box p{
+        width: 100%;
+        margin-left: 1.6%;
+    }
+
+    .Hero-Box {
+        width: 100%;
+    }
+}
+@media screen and (max-width:770px){
+    .cityForm  img{
+        width: 100%;
+    }
+    
+}

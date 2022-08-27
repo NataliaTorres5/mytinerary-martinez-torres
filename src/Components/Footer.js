@@ -1,16 +1,98 @@
 import React from 'react'
+import { Link, useLocation } from 'react-router-dom'
+import { Link as LinkRouter } from 'react-router-dom';
 import '../Styles/Footer.css';
 
-export default function () {
+
+const fPages = [
+  { url: '/icons/homel.png', name: 'Home', to: '/', id: 'nav1' },
+  { url: '/icons/planel.png', name: 'Cities', to: '/cities', id: 'nav2' },
+  { url: '/icons/passportd.png', name: 'New City', to: '/newcity', id: 'nav3' }
+]
+
+const link = (page) =>
+  <LinkRouter className='fRouter' key={page.id} to={page.to}>{page.name} <img className='fImg' width={45} src={page.url} alt={page.id}></img> </LinkRouter>
+export default function Footer() {
+
+  const scrollUp = () => {
+    window.scrollTo({
+      top: 0,
+      behavior: 'smooth'
+    })
+  }
+
+  const date = new Date ()
+
   return (
     <div className='Footer-Box'>
-      <img src="https://trello.com/1/cards/63003864bc41715d16f68562/attachments/6300395dfd7e716f2ad72ee8/previews/6300395dfd7e716f2ad72ef3/download/xiaomei.png" alt="" />
-        <p className='Footer-Text'>Panda Xiao Mei - Cohort 31</p>
-        <div className='Footer-Icons'>
-            <img src="https://trello.com/1/cards/62fea6b3233d9a20086630de/attachments/62fea706630275877cec91a9/previews/62fea706630275877cec982a/download/icons8-instagram-viejo-50.png" alt="Instagram"/>
-            <img src="https://trello.com/1/cards/62fea6b3233d9a20086630de/attachments/62fea787e8cb7276d5071950/previews/62fea787e8cb7276d5071955/download/icons8-facebook-rodeado-de-c%C3%ADrculo-50.png" alt="Facebook"/>
-            <img src="https://trello.com/1/cards/62fea6b3233d9a20086630de/attachments/62fea7fdeba539055afcbfff/previews/62fea7feeba539055afcc005/download/icons8-whatsapp-50.png" alt="Whatsapp"/>
+      <div className='Footer1'>
+        <div className='Team'>
+          <img src="../icons/xiaomei.png" alt="panda" />
+          <h2 className='Footer-Text'>Panda Xiao Mei - Cohort 31</h2>
         </div>
+        <div className='fLinks'>
+          <div className='footernav'> 
+          {fPages.map(link)}
+          </div>
+          <button className='Footer-Button' onClick={scrollUp} >Go UP!</button>
+        </div>
+        <div className='Footer-Icons'>
+          <img src="../icons/Instagram.png" alt="Instagram" />
+          <img src="../icons/Facebook.png" alt="Facebook" />
+          <img src="../icons/Whatsapp.png" alt="Whatsapp" />
+          <img src="../icons/mail-icon.png" alt="Mail" />
+        </div>
+      </div>
+      <div className='Contacts' >
+        <div className='Where'>
+        <h3>You can find Us in</h3>
+        <div className='flags'>
+          <img src="../countries/COL.png" alt=""/>
+          <img src="../countries/ARG.png" alt=""/>
+          <img src="../countries/CHL.png" alt=""/>
+          <img src="../countries/UE.png" alt=""/>
+          <img src="../countries/CAN.png" alt=""/>
+          <img src="../countries/USA.png" alt=""/>
+        </div>
+        <div className='date'>
+          {date.toLocaleDateString()}
+        </div>
+        </div>
+        
+        <div className='address'>
+          <div className='addressp'>
+          <p>Adress: 153 Terrace Dr, San Francisco, CA 94127, EE. UU.</p>
+          <a href="tel:+34000000000">Call Us: +34000000000</a>
+          <a href = "mailto: client@tinerary.com">Send us an Email: client@tinerary.com</a>
+          </div>
+          <div className='map'>
+          <img src="../countries/map.png" alt="map"/>
+          </div>
+        </div>
+      </div>
     </div>
   )
 }
+
+
+
+
+
+
+
+/*{
+  return (
+    <div className='Footer-Box'>
+      <div className='Team'>
+      <img src="../icons/xiaomei.png" alt="" />
+        <p className='Footer-Text'>Panda Xiao Mei - Cohort 31</p>
+      </div>
+        <div className='Footer-Icons'>
+            <img src="../icons/Instagram.png" alt="Instagram"/>
+            <img src="../icons/Facebook.png" alt="Facebook"/>
+            <img src="../icons/Whatsapp.png" alt="Whatsapp"/>
+            <img src="../icons/mail-icon.png" alt="Mail"/>
+        </div>
+    </div>
+  )
+}*/
