@@ -15,7 +15,7 @@ function Carousel(props) {
 
   const itemView = (item) => (
     <div className="item">
-      <img src={item.url} />
+      <img src={item.photo} />
       <p>{item.city}</p>
     </div>
   )
