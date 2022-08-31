@@ -23,7 +23,12 @@ import { useEffect, useState } from 'react';
 
 
 
+
 export default function Cities() {
+
+    function FilterInput(search) {
+        <input type="text" name="" value="setCities"/>
+        }
     
     const [cities, setCities] = useState([]) 
     
@@ -31,14 +36,14 @@ export default function Cities() {
         axios.get('http://localhost:4000/cities/')
             .then(response =>{
                 setCities(response.data.response)
-                 console.log(response.data) 
+                console.log(response.data) 
             } 
             )  
             
     }, [])
 
     const cityPic = (item) => (
-        <LinkRouter className='cityRouter' key={item._id} to='/details'>
+        <LinkRouter className='cityRouter' key={item._id} to={`/details/${item._id}`}>
             <div className="cityCard">
                 <img className='imgCard' src={item.photo} alt='img' />
                 <h3>{item.city}</h3>
@@ -48,14 +53,13 @@ export default function Cities() {
         </LinkRouter>
     )
 
-    function FilterInput(search) {
-    <input type="text" name="" value="setCities"/>
-    }
+    
     
 
     return (
         <div className='iteration'>
             {cities.map(cityPic)}
+            {FilterInput}
         </div>
     )
 }
