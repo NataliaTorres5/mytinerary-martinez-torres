@@ -25,7 +25,7 @@ function App() {
           <Route path='/cities' element={<Cities />} />
           <Route path='/newcity' element={<NewCity />} />
           <Route path='/*' element={<UnderConstruction />} />
-          <Route path='/details' element={<Details />} />
+          <Route path='/details/:id' element={<Details />} />
         </Routes>
       </WebsiteLayout> 
       </BrowserRouter>
