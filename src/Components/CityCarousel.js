@@ -1,4 +1,5 @@
 import Carousel from "./Carousel.js";
+import { useEffect, useState } from 'react';
 
 function CityCarousel () {
     const items = [
@@ -15,6 +16,31 @@ function CityCarousel () {
     {url:"/images/cairo-big.png", city:"Cairo", country:"Egypt", id:'cit11'},
     {url:"/images/sydney-big.png", city:"Sydney", country:"Australia", id:'cit12'},
   ]
+
+
+  const [cities, setCities] = useState([]) 
+    
+  useEffect(() => {
+      axios.get('http://localhost:4000/cities/')
+          .then(response =>{
+              setCities(response.data.response)
+               console.log(response.data) 
+          } 
+          )  
+          
+  }, [])
+
+  const cityPic = (item) => (
+      <LinkRouter className='cityRouter' key={item._id} to='/details'>
+          <div className="cityCard">
+              <img className='imgCard' src={item.photo} alt='img' />
+              <h3>{item.city}</h3>
+              <p>{item.intro}</p>
+  
+          </div>
+      </LinkRouter>
+  )
+  
   return (
     <Carousel data={items} range={4} slides={3} interval={5} />
   )
