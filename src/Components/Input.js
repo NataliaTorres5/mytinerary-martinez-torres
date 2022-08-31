@@ -34,7 +34,7 @@ export default function Input() {
             data6: foundationRef.current.value
         }
 
-        cityInformation.map(dataCity)
+        cityInformation.push(dataCity)
         console.log(cityInformation)
         console.log(dataCity)
     }
