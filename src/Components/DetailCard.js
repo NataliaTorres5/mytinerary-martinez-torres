@@ -1,4 +1,5 @@
 import React from 'react'
+import '../Styles/Details.css';
 import { useEffect, useState, } from 'react'
 import { useParams } from 'react-router-dom'
 
@@ -26,7 +27,7 @@ console.log (detailCards)
     // let foundationYear = foundationCity.getFullYear()
 
     return (
-        <div>
+        <div className='Details-Container'>
              <h3> {detailCards.city} </h3> 
             <img src= {detailCards.photo} alt=""/>
             <p> {detailCards.details} </p>
