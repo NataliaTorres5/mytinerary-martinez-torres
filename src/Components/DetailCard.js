@@ -1,6 +1,7 @@
 import React from 'react'
 import '../Styles/Details.css';
 import { useEffect, useState, } from 'react'
+import CallToAction from './CallToAction';
 import { useParams } from 'react-router-dom'
 
 import axios from 'axios'
@@ -23,21 +24,21 @@ export default function DetailCard() {
     }, [id])
 console.log (detailCards)
 
-    // let foundationCity = new Date(detailCards.foundation)
-    // let foundationYear = foundationCity.getFullYear()
+    let foundationCity = new Date(detailCards.foundation)
+    let foundationYear = foundationCity.getFullYear()
 
     return (
         <div className='Details-Container'>
              <h3> {detailCards.city} </h3> 
+             <h2>{detailCards.country}</h2>
             <img src= {detailCards.photo} alt=""/>
             <p> {detailCards.details} </p>
-            <p>{detailCards.population}</p>
-            <p>{detailCards.foundation}</p>
-            details
-            
+            <p>Population: {detailCards.population}</p>
+            <p>Foundation: {foundationYear}</p>
+            <CallToAction className='returnbtn' linkTo='/cities' buttonAction='Return' />
         </div>
 
-       
+      
 
 
     )
