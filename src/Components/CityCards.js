@@ -64,7 +64,7 @@ export default function Cities() {
 
     return (
         <div className='iteration'>
-            <div>
+            <div className='filter'>
                 <form>
                 <label>Search</label>
                 <input type="text" name="" onKeyUp={handleSearch}/>
