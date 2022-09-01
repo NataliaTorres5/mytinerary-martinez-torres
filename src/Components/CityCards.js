@@ -64,11 +64,15 @@ export default function Cities() {
 
     return (
         <div className='iteration'>
-            <form>
+            <div>
+                <form>
                 <label>Search</label>
                 <input type="text" name="" onKeyUp={handleSearch}/>
             </form>
-            {cities.map(cityPic)}
+            </div>
+            <div>
+                {cities.map(cityPic)}
+            </div>
         </div>
     )
 }
