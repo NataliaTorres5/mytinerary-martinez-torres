@@ -31,6 +31,8 @@ console.log (detailCards)
              <h3> {detailCards.city} </h3> 
             <img src= {detailCards.photo} alt=""/>
             <p> {detailCards.details} </p>
+            <p>{detailCards.population}</p>
+            <p>{detailCards.foundation}</p>
             details
             
         </div>
