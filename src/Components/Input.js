@@ -1,4 +1,5 @@
 import React from 'react'
+import '../Styles/CityForm.css';
 import { useRef } from 'react';
 
 export default function Input() {
@@ -41,18 +42,18 @@ export default function Input() {
 
     return (
 
-        <form onSubmit={submitInfo}>
+        <form className='FORM' onSubmit={submitInfo}>
             {
                 array.map((e) => {
                     return (
-                        <div>
+                        <div className='Form-city'>
                             <label htmlFor={e.item}> {e.item}</label>
                             <input type={e.type} ref={e.value} />
                         </div>
                     )
                 })
             }
-            <div>
+            <div className='Form-city'>
                 <button> Submit</button>
 
             </div>

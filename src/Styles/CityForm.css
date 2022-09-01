@@ -1,12 +1,29 @@
-
-
-
 .cityForm {
     display: flex;
     justify-content: center;
     align-items: center;
     margin: 1rem;
-
+}
+.Form-city{
+    display: flex;
+    padding: 1rem;
+}
+.Form-city label{
+    background-color: #6867AC;
+    color: white;
+    font-size: 1.2rem;
+    text-align: center;
+    height: 2rem;
+    width: 6rem;
+}
+.Form-city input{
+    width: 20rem;
+    height: 2rem;
+}
+.Form-city button{
+    justify-content: center;
+    background-color: #6867AC;
+    color: white;
 }
 
 @media screen and (max-width:320px) {
