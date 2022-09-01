@@ -2,9 +2,8 @@
     display: flex;
     justify-content: center;
     flex-wrap: wrap;
-
+    flex-direction: column;
 }
-
 
 a {
     text-decoration: none;
@@ -14,8 +13,28 @@ a {
     display: flex;
 }
 
-
-
+.filter{
+    height: 4rem;
+    display: flex;
+    align-self: center;
+    margin-top: 2rem;
+}
+.filter label{
+     background-color: #6867AC;
+     color: white;
+     padding: 0.91rem;
+     border-radius: 5px 0 0 5px;
+     box-shadow: 6px 6px #a8a8cf;
+     height: 3rem;
+}
+.filter input{
+    height: 3rem;
+    width: 20rem;
+    border: #6867AC;
+    border-radius: 0 5px 5px 0;
+    box-shadow: 5px 5px #a8a8cf;
+    font-size: 1rem;
+}
 .cityCard img {
     width: 25rem;
     margin: 1rem 1rem 0 1rem;
