@@ -19,19 +19,17 @@ import { useEffect, useState } from 'react';
 //     { url: "/images/sydney-big.png", city: "Sydney", country: "Australia", text: "This beautiful city has so much to offer, you can visit its world-famous harbor, see the stunning natural scenery of the Blue Mountains, if what you seek is a thriving culture full of arts, and nightlife scenes, with iconic landmarks like the Sydney Opera House, the Harbor Bridge and Bondi Beach, this is the city for you. ", id: 'cit12' },
 // ]
 
-
-
-
-
-
 export default function Cities() {
 
-    function FilterInput(search) {
-        <input type="text" name="" value="setCities"/>
-        }
     
     const [cities, setCities] = useState([]) 
     
+    const [search, setSearch] = useState('') 
+
+    function handleSearch(e) {
+        setSearch(e.target.value)
+    } 
+
     useEffect(() => {
         axios.get('http://localhost:4000/cities/')
             .then(response =>{
@@ -40,7 +38,17 @@ export default function Cities() {
             } 
             )  
             
-    }, [])
+    },  [])
+
+    useEffect(() => {
+        axios.get('http://localhost:4000/cities/?city='+search)
+            .then(response =>{
+                setCities(response.data.response)
+                console.log(response.data) 
+            } 
+            )  
+            
+    },  [search])
 
     const cityPic = (item) => (
         <LinkRouter className='cityRouter' key={item._id} to={`/details/${item._id}`}>
@@ -53,13 +61,14 @@ export default function Cities() {
         </LinkRouter>
     )
 
-    
-    
 
     return (
         <div className='iteration'>
+            <form>
+                <label>Search</label>
+                <input type="text" name="" onKeyUp={handleSearch}/>
+            </form>
             {cities.map(cityPic)}
-            {FilterInput}
         </div>
     )
 }
