@@ -1,29 +1,40 @@
 .iteration {
     display: flex;
-    flex-wrap: wrap;
-    width: 5rem;
-
-}
-
-.Cardcity {
-    display: flex;
     justify-content: center;
-    align-items: center;
-    
+    flex-wrap: wrap;
+    flex-direction: column;
 }
 
-a{
-    width: 2rem;
+a {
     text-decoration: none;
 }
 
-.cityCard {
+.cardCity {
     display: flex;
-    justify-content: center;
-    align-items: center;
-    height: 100%;
 }
 
+.filter{
+    height: 4rem;
+    display: flex;
+    align-self: center;
+    margin-top: 2rem;
+}
+.filter label{
+     background-color: #6867AC;
+     color: white;
+     padding: 0.91rem;
+     border-radius: 5px 0 0 5px;
+     box-shadow: 6px 6px #a8a8cf;
+     height: 3rem;
+}
+.filter input{
+    height: 3rem;
+    width: 20rem;
+    border: #6867AC;
+    border-radius: 0 5px 5px 0;
+    box-shadow: 5px 5px #a8a8cf;
+    font-size: 1rem;
+}
 .cityCard img {
     width: 25rem;
     margin: 1rem 1rem 0 1rem;
@@ -32,43 +43,47 @@ a{
 
 }
 
-.cityRouter {
+.cityCard p {
+    width: 25rem;
+}
+
+.cityRouter{
     display: flex;
     justify-content: center;
-    align-items: center;
-    width: 100%;
 }
-@media screen and (max-width:320px){
-    .cityCard img{
+
+@media screen and (max-width:320px) {
+    .cityCard img {
         width: 100%;
     }
 
     .cityCard {
         width: 100%;
     }
-    .imgCard{
+
+    .imgCard {
         width: 100%;
     }
 
 }
 
-@media screen and (max-width:379px){
-    .item{
+@media screen and (max-width:379px) {
+    .item {
         width: 100%;
     }
 
     .cityCard {
         width: 100%;
     }
-    .imgCard{
+
+    .imgCard {
         width: 100%;
     }
 
 }
 
-@media screen and (max-width:480px){
-    .item img{
+@media screen and (max-width:480px) {
+    .item img {
         width: 100%;
     }
 }
-    
