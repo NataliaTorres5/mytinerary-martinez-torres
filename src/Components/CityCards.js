@@ -1,26 +1,22 @@
 import React from 'react'
-import axios from 'axios';
 import '../Styles/CityCards.css';
 import { Link as LinkRouter } from 'react-router-dom';
-import { useEffect, useState } from 'react';
+import { useGetAllCitiesQuery } from '../features/citiesAPI';
 
 
 
 
 
 export default function Cities() {
-    
-    const [cities, setCities] = useState([]) 
-    
-    useEffect(() => {
-        axios.get('http://localhost:4000/cities/')
-            .then(response =>{
-                setCities(response.data.response)
-                console.log(response.data) 
-            } 
-            )  
-            
-    }, [])                                                                                                       
+               const {
+                data : cities, 
+                error,
+                isLoading,
+                isSuccess,
+                isFailed,
+
+
+               }  = useGetAllCitiesQuery()                                                                     
 
     const cityPic = (item) => (
         <LinkRouter className='cityRouter' key={item._id} to={`/details/${item._id}`}>
@@ -33,13 +29,13 @@ export default function Cities() {
         </LinkRouter>
     )
 
-    
+    console.log(cities)
     
 
     return (
         <div className='iteration'>
-            {cities.map(cityPic)}
-            {FilterInput}
+            {cities.response?.map(cityPic)}
+            {/* {FilterInput} */}
         </div>
     )
 }
