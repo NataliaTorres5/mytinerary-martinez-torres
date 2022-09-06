@@ -8,15 +8,15 @@ import { useGetAllCitiesQuery } from '../features/citiesAPI';
 
 
 export default function Cities() {
-               const {
-                data : cities, 
-                error,
-                isLoading,
-                isSuccess,
-                isFailed,
+    const {
+        data: cities,
+        error,
+        isLoading,
+        isSuccess,
+        isFailed,
 
 
-               }  = useGetAllCitiesQuery()                                                                     
+    } = useGetAllCitiesQuery()
 
     const cityPic = (item) => (
         <LinkRouter className='cityRouter' key={item._id} to={`/details/${item._id}`}>
@@ -24,13 +24,13 @@ export default function Cities() {
                 <img className='imgCard' src={item.photo} alt='img' />
                 <h3>{item.city}</h3>
                 <p>{item.intro}</p>
-    
+
             </div>
         </LinkRouter>
     )
 
     console.log(cities)
-    
+
 
     return (
         <div className='iteration'>

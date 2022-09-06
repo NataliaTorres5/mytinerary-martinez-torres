@@ -3,6 +3,7 @@ import '../Styles/Details.css';
 import { useEffect, useState, } from 'react'
 import CallToAction from './CallToAction';
 import { useParams } from 'react-router-dom'
+import apiurl from '../api';
 
 import axios from 'axios'
 
@@ -15,7 +16,7 @@ export default function DetailCard() {
     const  [detailCards, setDetailCards]  = useState([])
 
     useEffect(() => {
-        axios.get('http://localhost:4000/cities/' + id)
+        axios.get(apiurl + '/cities/' + id)
             .then(response => {
                 setDetailCards(response.data.response)
             }
