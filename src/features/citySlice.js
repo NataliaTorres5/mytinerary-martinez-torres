@@ -3,16 +3,13 @@ import { createSlice } from '@reduxjs/toolkit'
 export const citySlice = createSlice({
 
     name: 'cities',
-
     initialState: {
-
-        events : []
+        cities : []
     },
 
     
 
     reducers : {
-
         fetchFromServer : (state) => { //acciones
             state.cities = [
 
@@ -25,6 +22,6 @@ export const citySlice = createSlice({
     },
 })
 
-export const {fetchFromServer} = citySlice
+export const {fetchFromServer} = citySlice.actions
 
 export default citySlice.reducer
