@@ -40,7 +40,7 @@ export default function Cities() {
     return (
         <div className='iteration'>
             {cities.map(cityPic)}
-            {FilterInput}
+            {/* {FilterInput} */}
         </div>
     )
 }
