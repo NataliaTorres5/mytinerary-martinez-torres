@@ -3,6 +3,7 @@ import axios from 'axios';
 import '../Styles/CityCards.css';
 import { Link as LinkRouter } from 'react-router-dom';
 import { useEffect, useState } from 'react';
+import apiurl from '../api';
 
 
 
@@ -13,7 +14,7 @@ export default function Cities() {
     const [cities, setCities] = useState([]) 
     
     useEffect(() => {
-        axios.get('http://localhost:4000/cities/')
+        axios.get(apiurl + '/cities/')
             .then(response =>{
                 setCities(response.data.response)
                 console.log(response.data) 

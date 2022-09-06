@@ -1,6 +1,7 @@
 import Carousel from "./Carousel.js";
 import { useEffect, useState } from 'react';
 import axios from 'axios';
+import apiurl from '../api';
 
 function CityCarousel() {
   //   const items = [
@@ -22,7 +23,7 @@ function CityCarousel() {
   const [cities, setCities] = useState([])
 
   useEffect(() => {
-    axios.get('http://localhost:4000/cities/') //cities/_id
+    axios.get(apiurl + '/cities/') //cities/_id
       .then(response => {
         setCities(response.data.response)
         console.log(response.data)
