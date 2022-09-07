@@ -1,7 +1,7 @@
 import { createApi, fetchBaseQuery } from '@reduxjs/toolkit/query/react'
 
-export const itineraryAPI = createApi({
-    reducerPath: "itineraryAPI",
+export const activityAPI = createApi({
+    reducerPath: "activityAPI",
 
     baseQuery: fetchBaseQuery({
         baseUrl: "http://localhost:4000"
@@ -10,9 +10,9 @@ export const itineraryAPI = createApi({
   
 
     endpoints: (builder) => ({
-        getAllItineraries: builder.query({
+        getAllActivities: builder.query({
             query: (id) =>({
-                url: `/itineraries?city=${id}`
+                url: `/activities?itineraries=${id}`
             }) 
             
         }),
@@ -20,6 +20,5 @@ export const itineraryAPI = createApi({
     })
 })
 
-
-export default itineraryAPI
-export const { useGetAllItinerariesQuery, } = itineraryAPI
+export default activityAPI
+export const { useGetAllActivitiesQuery, } = activityAPI

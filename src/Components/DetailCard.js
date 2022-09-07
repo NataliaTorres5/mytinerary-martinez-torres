@@ -4,7 +4,6 @@ import { useEffect, useState, } from 'react'
 import CallToAction from './CallToAction';
 import { useParams } from 'react-router-dom'
 import apiurl from '../api';
-
 import axios from 'axios'
 
 
@@ -23,7 +22,7 @@ export default function DetailCard() {
             )
 
     }, [id])
-console.log (detailCards)
+
 
     let foundationCity = new Date(detailCards.foundation)
     let foundationYear = foundationCity.getFullYear()
@@ -37,7 +36,10 @@ console.log (detailCards)
             <p>Population: {detailCards.population}</p>
             <p>Foundation: {foundationYear}</p>
             <CallToAction className='returnbtn' linkTo='/cities' buttonAction='Return' />
+            
         </div>
+       
+            
 
       
 
