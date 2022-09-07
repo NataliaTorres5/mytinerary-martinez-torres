@@ -7,7 +7,7 @@ export const itineraryAPI = createApi({
         baseUrl: "http://localhost:4000"
     }),
 
-    tagTypes: ['Post'],
+  
 
     endpoints: (builder) => ({
         getAllItineraries: builder.query({
@@ -16,11 +16,8 @@ export const itineraryAPI = createApi({
             }) 
             
         }),
-        invalidatesTags: ['Post'],
+        
     })
-
-
-
 })
 
 
