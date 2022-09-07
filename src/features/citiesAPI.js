@@ -11,7 +11,7 @@ export const cityAPI = createApi({
 
     endpoints: (builder) => ({
         getAllCities: builder.query({
-            query: () => "cities"
+            query: (city) => `/cities?city=${city}`
         }),
         newCityAdd: builder.mutation({
             query: (data) => ({
@@ -20,8 +20,20 @@ export const cityAPI = createApi({
                 body: data
             })
         }),
+
+        EditCity: builder.mutation({
+            query: (data) => ({
+                url: '/cities/id',
+                method: 'PUT',
+                body: data
+            })
+        }),
+
+
         invalidatesTags: ['Post'],
     })
+
+
 
 
 
@@ -29,4 +41,4 @@ export const cityAPI = createApi({
 
 
 
-export const { useGetAllCitiesQuery, useNewCityAddMutation } = cityAPI
+export const { useGetAllCitiesQuery, useNewCityAddMutation, useEditCityMutation } = cityAPI

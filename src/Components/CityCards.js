@@ -6,7 +6,6 @@ import { useGetAllCitiesQuery } from '../features/citiesAPI';
 
 
 
-
 export default function Cities() {
     const {
         data: cities,
@@ -16,7 +15,7 @@ export default function Cities() {
         isFailed,
 
 
-    } = useGetAllCitiesQuery()
+    } = useGetAllCitiesQuery("") //value que ingresa usuario input
 
     const cityPic = (item) => (
         <LinkRouter className='cityRouter' key={item._id} to={`/details/${item._id}`}>
@@ -34,7 +33,7 @@ export default function Cities() {
 
     return (
         <div className='iteration'>
-            {cities.response?.map(cityPic)}
+            {cities?.response.map(cityPic)}
             {/* {FilterInput} */}
         </div>
     )
