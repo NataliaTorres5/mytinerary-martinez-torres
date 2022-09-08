@@ -33,6 +33,9 @@ export default function EditForm() {
     function submitInfo(text) {
         text.preventDefault();
 
+        const id = idPhotoRef.current.value
+        
+
         const dataCity = {
             photo: cityPhotoRef.current.value,
             city: cityNameRef.current.value,
@@ -42,10 +45,11 @@ export default function EditForm() {
             population: populationRef.current.value,
             foundation: foundationRef.current.value
         }
-        EditCity(dataCity).unwrap().then(() => { }).then(err => console.log(err))
+        EditCity(dataCity, id).then((response) => console.log(response)).catch(err => console.log(err))
         console.log(EditCity)
     }
 
+    
 
     return (
         <form className='FORM' onSubmit={submitInfo}>
