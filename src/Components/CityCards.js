@@ -1,4 +1,4 @@
-import React  from 'react'
+import React, {useRef, useState }  from 'react'
 import '../Styles/CityCards.css';
 import { Link as LinkRouter } from 'react-router-dom';
 import { useGetAllCitiesQuery } from '../features/citiesAPI';
@@ -10,11 +10,19 @@ import SearchBar from './Searchbar';
 
 export default function Cities() {
 
- 
+    const [search, setSearch] = useState('')
 
+    
+
+    const input = useRef()
+
+    function handleSearch(e) {
+        setSearch(e.target.value)
+      }
+  
     const {
         data: cities,
-    } = useGetAllCitiesQuery("") //value que ingresa usuario input
+    } = useGetAllCitiesQuery(search) //value que ingresa usuario input
 
     const cityPic = (item) => (
         <LinkRouter className='cityRouter' key={item._id} to={`/details/${item._id}`}>
@@ -29,12 +37,11 @@ export default function Cities() {
 
     console.log(cities)
 
-
     return (
         <>
         <div>
             <div>
-                <SearchBar />
+                <SearchBar ref={input} handleSearch={handleSearch} />
             </div>
 
         </div>
