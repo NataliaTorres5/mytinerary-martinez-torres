@@ -10,16 +10,17 @@ export default function Itineraries() {
     const { id } = useParams()
     const {
         data: itineraries,
-        error,
-        isLoading,
-        isSuccess,
-        isFailed,
-
 
     } = useGetAllItinerariesQuery(id)
 
     const itineraryPic = (item) => (
 
+
+        <div className='Details-Container'>
+        <div>
+        <h3>{item.user.name}</h3>
+        <img src={item.photo} alt="user"/>
+        </div>
         <div className="cityCard">
 
             <h3>{item.name}</h3>
@@ -30,6 +31,9 @@ export default function Itineraries() {
             <p>Duration: {item.duration}</p>
             <ActivityCards id={item._id} />
         </div>
+        </div>
+
+
 
     )
 
