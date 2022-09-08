@@ -1,9 +1,8 @@
 import React from 'react'
 import { useParams } from 'react-router-dom';
-//css
+import '../Styles/ItineraryCard.css';
 import { useGetAllItinerariesQuery } from '../features/itineraryAPI';
 import ActivityCards from './ActivityCards';
-import CommentCard from './CommentCards';
 
 
 export default function Itineraries() {
@@ -17,20 +16,20 @@ export default function Itineraries() {
 
 
         <div className='Details-Container'>
-        <div>
-        <h3>{item.user.name}</h3>
-        <img src={item.photo} alt="user"/>
-        </div>
-        <div className="cityCard">
+            <div className='User-Container'>
+                <img className='user-Img' src='/icons/user1.png' alt="user" />
+                <h3>{item.user.name}</h3>
+            </div>
+            <div className="cityCard ItineraryCards">
+                <ActivityCards id={item._id} />
+                <h4>{item.name}</h4>
+                <p>{item.city.city}</p>
+                <p>Price: {item.price}</p>
+                <p>{item.likes}</p>
+                <p>{item.tags}</p>
+                <p>Duration: {item.duration}</p>
 
-            <h3>{item.name}</h3>
-            <p>{item.city.city}</p>
-            <p>Price: {item.price}</p>
-            <p>{item.likes}</p>
-            <p>{item.tags}</p>
-            <p>Duration: {item.duration}</p>
-            <ActivityCards id={item._id} />
-        </div>
+            </div>
         </div>
 
 
@@ -40,7 +39,6 @@ export default function Itineraries() {
     return (
         <div className='iteration'>
             {itineraries?.response?.map(itineraryPic)}
-            <CommentCard />
 
 
         </div>
