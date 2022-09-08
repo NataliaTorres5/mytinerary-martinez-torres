@@ -23,7 +23,7 @@ export default function Header() {
   }
   return (
     <div className='Header-Box'>
-      <div>
+      <div className='nav-header'>
         {hPages.map(link)}
         
       </div>
