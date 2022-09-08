@@ -1,44 +1,44 @@
 import React from 'react'
-import { useParams } from 'react-router-dom';
-//css
-import { useGetAllItinerariesQuery } from '../features/itineraryAPI';
-import ActivityCards from './ActivityCards';
-import CommentCard from './CommentCards';
+import '../Styles/CityCards.css';
+import { Link as LinkRouter } from 'react-router-dom';
+import { useGetAllCitiesQuery } from '../features/citiesAPI';
 
 
-export default function Itineraries() {
-    const { id } = useParams()
+
+
+
+
+export default function Cities() {
+
+
     const {
-        data: itineraries,
-        error,
-        isLoading,
-        isSuccess,
-        isFailed,
+        data: cities,
+    } = useGetAllCitiesQuery("") //value que ingresa usuario input
 
-
-    } = useGetAllItinerariesQuery(id)
-
-    const itineraryPic = (item) => (
-
-        <div className="cityCard">
-
-            <h3>{item.name}</h3>
-            <p>{item.city.city}</p>
-            <p>Price: {item.price}</p>
-            <p>{item.likes}</p>
-            <p>{item.tags}</p>
-            <p>Duration: {item.duration}</p>
-            <ActivityCards id={item._id} />
-        </div>
+    const cityPic = (item) => (
+        <LinkRouter className='cityRouter' key={item._id} to={`/details/${item._id}`}>
+            <div className="cityCard">
+                <img className='imgCard' src={item.photo} alt='img' />
+                <h3>{item.city}</h3>
+                <p>{item.intro}</p>
+            </div>
+        </LinkRouter>
 
     )
 
+    console.log(cities)
+
+
     return (
-        <div className='iteration'>
-            {itineraries?.response?.map(itineraryPic)}
-            <CommentCard />
-
-
-        </div>
+        <>
+            <div>
+                <h1>My Tineraries</h1>
+                <h2>Laura Martinez</h2>
+            </div>
+            <h4>Saved Itineraries</h4>
+            <div className='iteration'>
+                {cities?.response.map(cityPic)[4]}
+            </div>
+        </>
     )
 }
