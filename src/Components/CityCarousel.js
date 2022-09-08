@@ -7,13 +7,9 @@ function CityCarousel() {
   
   const {
     data : cities, 
-    error,
-    isLoading,
-    isSuccess,
-    isFailed,
+  
 
-
-   }  = useGetAllCitiesQuery()        
+   }  = useGetAllCitiesQuery("")        
 
   // const [cities, setCities] = useState([])
 

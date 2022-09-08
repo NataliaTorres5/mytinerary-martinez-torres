@@ -22,10 +22,12 @@ export const cityAPI = createApi({
         }),
 
         EditCity: builder.mutation({
-            query: (data) => ({
-                url: '/cities/id',
+            query: (body, id) => ({
+                url: `/cities/${id}`,
                 method: 'PUT',
-                body: data
+                body: body,
+                
+                
             })
         }),
 
