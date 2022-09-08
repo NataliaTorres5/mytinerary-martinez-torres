@@ -3,15 +3,10 @@ import React from 'react'
 import { useGetAllActivitiesQuery } from '../features/activityAPI';
 
 
-
 export default function ActivityCards(props){
     const {
         data: activities,
-        // error,
-        // isLoading,
-        // isSuccess,
-        // isFailed,
-
+  
     } = useGetAllActivitiesQuery(props.id)
 
     console.log(activities)
@@ -21,7 +16,7 @@ export default function ActivityCards(props){
             <div className="cityCard">
                 <h3>{item.name}</h3>
                 <img className='imgCard' src={item.photo} alt='img' />
-                <p>{item.itineraries}</p> 
+                <p>{item.itinerary?.user}</p> 
             </div>
         
     )
