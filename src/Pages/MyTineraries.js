@@ -1,11 +1,14 @@
 import React from 'react'
-//import MyTinerariesUser from '..Components/MyTinerariesUser.js'
+import CallToAction from '../Components/CallToAction'
+import MyTinerariesUser from '../Components/MyTinerariesUser.js'
 
 export default function MyTineraries() {
+
   return (
     <div>
-      hola
+      <MyTinerariesUser/>
+      <CallToAction className='returnbtn' linkTo='/cities' buttonAction='Return' />
     </div>
-    //<MyTinerariesUser/>
+    
   )
 }
