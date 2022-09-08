@@ -1,20 +1,19 @@
-import React from 'react'
+import React  from 'react'
 import '../Styles/CityCards.css';
 import { Link as LinkRouter } from 'react-router-dom';
 import { useGetAllCitiesQuery } from '../features/citiesAPI';
+import SearchBar from './Searchbar';
+
 
 
 
 
 export default function Cities() {
+
+ 
+
     const {
         data: cities,
-        error,
-        isLoading,
-        isSuccess,
-        isFailed,
-
-
     } = useGetAllCitiesQuery("") //value que ingresa usuario input
 
     const cityPic = (item) => (
@@ -23,18 +22,25 @@ export default function Cities() {
                 <img className='imgCard' src={item.photo} alt='img' />
                 <h3>{item.city}</h3>
                 <p>{item.intro}</p>
-
             </div>
         </LinkRouter>
+
     )
 
     console.log(cities)
 
 
     return (
+        <>
+        <div>
+            <div>
+                <SearchBar />
+            </div>
+
+        </div>
         <div className='iteration'>
             {cities?.response.map(cityPic)}
-            {/* {FilterInput} */}
         </div>
+        </>
     )
 }
