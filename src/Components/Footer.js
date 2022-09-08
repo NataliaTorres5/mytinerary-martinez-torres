@@ -1,5 +1,4 @@
 import React from 'react'
-import { Link, useLocation } from 'react-router-dom'
 import { Link as LinkRouter } from 'react-router-dom';
 import '../Styles/Footer.css';
 
