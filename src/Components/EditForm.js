@@ -1,14 +1,15 @@
-import React from 'react'
-import { useEditCityMutation } from '../features/citiesAPI';
-import { useRef } from 'react';
+import React, { useState, useEffect, useRef } from "react";
+import axios from "axios";
+import { Action } from "history";
 
 
+export default function EditCity() {
 
-export default function EditForm() {
+    const [editCity, setEditCity] = useState("")
+    const [id, setId] = useState()
+    const [cities, setCities] = useState([])
+    console.log(cities)
 
-    const [EditCity] = useEditCityMutation()
-
-    const idPhotoRef = useRef()
     const cityPhotoRef = useRef()
     const cityNameRef = useRef()
     const countryNameRef = useRef()
@@ -16,9 +17,9 @@ export default function EditForm() {
     const introRef = useRef()
     const populationRef = useRef()
     const foundationRef = useRef()
+    const select = useRef()
 
     const array = [
-        { item: "Id", type: "string", value: idPhotoRef, id: 'form8' },
         { item: "photo", type: "url", value: cityPhotoRef, id: 'form1' },
         { item: "city", type: "text", value: cityNameRef, id: 'form2' },
         { item: "country", type: "text", value: countryNameRef, id: 'form3' },
@@ -29,46 +30,79 @@ export default function EditForm() {
 
     ]
 
+    useEffect(() => {
+        axios.get('http://localhost:4000/cities/')
+            .then((response) => {
+                setEditCity(response.data)
+            }).catch(error => console.log(error))
+    }, [])
 
-    function submitInfo(text) {
-        text.preventDefault();
+    useEffect(() => {
+        axios.get('http://localhost:4000/cities')
+            .then(response => setCities(response.data.response))
+            .catch(error => console.log(error))
+    }, [])
 
-        const id = idPhotoRef.current.value
-        
 
-        const dataCity = {
+
+    function updateCity() {
+        axios.patch('http://localhost:4000/cities/' + `${id}`, {
             photo: cityPhotoRef.current.value,
             city: cityNameRef.current.value,
             country: countryNameRef.current.value,
+            population: populationRef.current.value,
             details: detailsRef.current.value,
             intro: introRef.current.value,
-            population: populationRef.current.value,
-            foundation: foundationRef.current.value
-        }
-        EditCity(dataCity, id).then((response) => console.log(response)).catch(err => console.log(err))
-        console.log(EditCity)
+            foundation: foundationRef.current.value,
+
+
+        }) //here it goesthe objectof the variable
+            .then((response) => {
+                setEditCity(response.data)
+            })
     }
+    const option = (city) => (
+        <option value={city._id} key={city._id}>{city.city}</option>
+    )
 
     
+    function update(){
+        setId(select.current.value) 
+    }
 
+console.log(id)
     return (
-        <form className='FORM' onSubmit={submitInfo}>
-            {
-                array.map((e) => {
-                    return (
-                        <div className='Form-city'>
-                            <label htmlFor={e.item}> {e.item}</label>
-                            <input type={e.type} ref={e.value} />
-                        </div>
-                    )
-                })
-            }
-            <div className='Form-city'>
-                <button> Submit</button>
 
+        <>
+
+            <div>
+                
+                <select ref={select} onChange={update} >  
+                <option disabled selected>Select City</option>
+                    {
+                        cities.map(option)
+                    }
+                </select>
             </div>
+            <form className='FORM'>
+                {
+                    array.map((e) => {
+                        return (
+                            <div className='Form-city'>
+                                <label htmlFor={e.item}> {e.item}</label>
+                                <input type={e.type} ref={e.value} />
+                            </div>
+                        )
+                    })
+                }
+                <div className='Form-city'>
+                    <button> Submit</button>
 
-        </form>
+                </div>
+
+            </form>
+
+        </>
 
     )
 }
