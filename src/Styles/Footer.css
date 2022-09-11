@@ -23,7 +23,7 @@
 
 .footernav {
     display: flex;
-    margin: 0 2rem 0 2rem;
+    margin: 0 1rem 0 1rem;
 }
 
 .footernav a{
@@ -152,7 +152,7 @@ button{
 
 }
 
-@media screen and (max-width:379px){
+@media screen and (max-width:480px){
     .Where{
         display: flex;
         justify-content: center;
@@ -169,7 +169,11 @@ button{
         display: flex;
         flex-direction: column;
     }
-
+    .Contacts{
+        display: flex;
+        justify-content: center;
+        margin: 1rem;
+    }
     .footernav{
         width: 20%;
         display: flex;
@@ -181,11 +185,26 @@ button{
 }
 
 @media screen and (max-width:375px) {
+    .Footer1{
+        display: flex;
+        justify-content: center;
+        align-items: center;
+    }
     .footernav {
         flex-direction: column;
         justify-content: center;
         align-items: center;
         margin-left: 2rem;
+    }
+    
+    .fLiks{
+        display: flex;
+        justify-content: center;
+    }
+    .flags{
+        display: flex;
+        justify-content: center;
+        flex-wrap: wrap;
     }
 }
 
@@ -200,8 +219,6 @@ button{
         flex-wrap: wrap;
     }
     .Footer1{
-        padding: 0%;
-        margin: 0%;
         width: 100%;
     }
     .Contacts{
@@ -211,8 +228,33 @@ button{
         margin-right: 0.5rem;
         margin-left: 1.5rem;
     }
+    .fLinks{
+        display: flex;
+        width: 100%;
+        justify-content: center;
+        align-items: center;
+    }
 }
-@media screen and (max-width:579px){
+@media screen and (max-width:538px){
+    .Footer-Box{
+        display: flex;
+    }
+    .Footer1 {
+        width: 100%;
+        justify-content: center;
+        align-items: center;
+    }
+    .footernav{
+        flex-wrap: wrap;
+        justify-content: center;
+        align-items: center;
+        padding: 0.5rem;
+
+    }
+    .fLinks{
+        width: 100%;
+        display: flex;
+    }
     .address{
         display: flex;
         justify-content: center;
@@ -224,7 +266,11 @@ button{
     .Footer-Icons{
         margin: 1rem;
     }
-    .Footer1{
-        padding: 1rem;
-    }
+}
+
+@media screen and (max-width:932px){
+.Team img{
+    margin: 1rem;
+}
+
 }

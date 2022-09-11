@@ -5,7 +5,9 @@ import '../Styles/Header.css';
 const hPages = [
   { url: '/icons/homewhitel.png', name: 'Home', to: '/', id: 'nav1' },
   { url: '/icons/planewl.png', name: 'Cities', to: '/cities', id: 'nav2' },
-  { url: '/icons/passport.png', name: 'New City', to: '/newcity', id: 'nav3' }
+  { url: '/icons/passport.png', name: 'New City', to: '/newcity', id: 'nav4' },
+  { url: '/swhitef.png', name: 'Edit City', to: '/editcity', id: 'nav3' },
+  { url: '/ticket.png', name: 'My Tineraries', to: '/mytineraries', id: 'nav5' }
 ]
 
 const link = (page) => <LinkRouter className='hRouter' key={page.id} to={page.to}>{page.name} <img className='hImg' width={45} src={page.url} alt={page.id} /></LinkRouter>
@@ -21,7 +23,7 @@ export default function Header() {
   }
   return (
     <div className='Header-Box'>
-      <div>
+      <div className='nav-header'>
         {hPages.map(link)}
         
       </div>

@@ -1,0 +1,10 @@
+.activity img{
+    width: 40rem;
+}
+
+@media screen and (max-width:522px) {
+    .activity img{
+        width: 15rem;
+    }
+
+}

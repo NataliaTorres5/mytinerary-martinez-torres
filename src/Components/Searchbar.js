@@ -1,18 +1,21 @@
-import React from 'react'
-
-function Searchbar() {
-
+import React, { useState,useEffect } from 'react'
+import axios from 'axios'
 
 
+
+
+function SearchBar(props) {
 
 
   return (
-    <form onSubmit={submitInfo}>
-        {
-            <div>
-                <label></label>
-            </div>
-        }
-    </form>
+    <div className='iteration'>
+      <div className='filter'>
+        <form>
+          <label>Search</label>
+          <input type="text" name="" ref={props.ref} onChange={props.handleSearch}  />
+        </form>
+      </div>
+    </div>
   )
 }
+export default SearchBar

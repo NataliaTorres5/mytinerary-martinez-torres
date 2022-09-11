@@ -1,5 +1,4 @@
 import React from 'react'
-import { Link, useLocation } from 'react-router-dom'
 import { Link as LinkRouter } from 'react-router-dom';
 import '../Styles/Footer.css';
 
@@ -7,7 +6,9 @@ import '../Styles/Footer.css';
 const fPages = [
   { url: '/icons/homel.png', name: 'Home', to: '/', id: 'nav1' },
   { url: '/icons/planel.png', name: 'Cities', to: '/cities', id: 'nav2' },
-  { url: '/icons/passportd.png', name: 'New City', to: '/newcity', id: 'nav3' }
+  { url: '/icons/passportd.png', name: 'New City', to: '/newcity', id: 'nav3' },
+  { url: '/icons/passportd.png', name: 'Edit City', to: '/editcity', id: 'nav4' },
+  { url: '/icons/planel.png', name: 'My Tineraries', to: '/mytineraries', id: 'nav5' },
 ]
 
 const link = (page) =>

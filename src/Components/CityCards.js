@@ -1,26 +1,28 @@
-import React from 'react'
-import axios from 'axios';
+import React, {useRef, useState }  from 'react'
 import '../Styles/CityCards.css';
 import { Link as LinkRouter } from 'react-router-dom';
-import { useEffect, useState } from 'react';
+import { useGetAllCitiesQuery } from '../features/citiesAPI';
+import SearchBar from './Searchbar';
 
 
 
 
 
 export default function Cities() {
+
+    const [search, setSearch] = useState('')
+
     
-    const [cities, setCities] = useState([]) 
-    
-    useEffect(() => {
-        axios.get('http://localhost:4000/cities/')
-            .then(response =>{
-                setCities(response.data.response)
-                console.log(response.data) 
-            } 
-            )  
-            
-    }, [])                                                                                                       
+
+    const input = useRef()
+
+    function handleSearch(e) {
+        setSearch(e.target.value)
+      }
+  
+    const {
+        data: cities,
+    } = useGetAllCitiesQuery(search) //value que ingresa usuario input
 
     const cityPic = (item) => (
         <LinkRouter className='cityRouter' key={item._id} to={`/details/${item._id}`}>
@@ -28,18 +30,24 @@ export default function Cities() {
                 <img className='imgCard' src={item.photo} alt='img' />
                 <h3>{item.city}</h3>
                 <p>{item.intro}</p>
-    
             </div>
         </LinkRouter>
+
     )
 
-    
-    
+    console.log(cities)
 
     return (
-        <div className='iteration'>
-            {cities.map(cityPic)}
-            {FilterInput}
+        <>
+        <div>
+            <div>
+                <SearchBar ref={input} handleSearch={handleSearch} />
+            </div>
+
         </div>
+        <div className='iteration'>
+            {cities?.response.map(cityPic)}
+        </div>
+        </>
     )
 }
