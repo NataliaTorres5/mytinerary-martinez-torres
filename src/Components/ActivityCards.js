@@ -16,7 +16,18 @@ export default function ActivityCards(props){
             <div className="cityCard activity">
                 <h3>{item.name}</h3>
                 <img className='imgCard' src={item.photo} alt='img' />
-                <p>{item.itinerary?.user}</p> 
+                {/* <p>{item.itinerary?.user}</p>  */}
             </div>
 
-    ) }
+        
+
+    ) 
+
+        return (
+            <>
+            <div>
+            {activities?.response?.map(activityPic)}
+            </div>
+            </>
+        )
+}
