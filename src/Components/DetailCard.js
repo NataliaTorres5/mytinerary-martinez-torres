@@ -8,6 +8,7 @@ import axios from 'axios'
 
 
 
+
 export default function DetailCard() {
 
     const { id } = useParams()
