@@ -11,6 +11,7 @@ export default function Itineraries() {
         data: itineraries,
 
     } = useGetAllItinerariesQuery(id)
+    console.log (itineraries)
 
     const itineraryPic = (item) => (
 
