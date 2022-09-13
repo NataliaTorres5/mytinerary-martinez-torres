@@ -1,9 +1,10 @@
 import React, { useEffect, useRef } from 'react'
+import { useSignUpUserMutation } from '../features/userAPI';
 import * as jose from 'jose'
 
 export default function SignUpGoogle() {
 
-    //let [newUser,response] = useSignUpUserMutation();
+    let [newUser,response] = useSignUpUserMutation();
 
     const buttonDiv = useRef(null)
 
@@ -23,7 +24,7 @@ export default function SignUpGoogle() {
             role: 'user', 
             from: 'google',
         }
-        //newUser (info)
+        newUser (info)
         
          // se utiliza jose, decodificador de respuesta
     }
