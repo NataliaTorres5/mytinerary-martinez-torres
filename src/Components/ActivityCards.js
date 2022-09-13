@@ -9,7 +9,9 @@ export default function ActivityCards(props){
 
     } = useGetAllActivitiesQuery(props.id)
 
-    console.log(activities)
+    console.log(props.id)
+
+ console.log(activities)
 
     const activityPic = (item) => (
 
