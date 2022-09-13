@@ -1,9 +1,10 @@
 import React, { useEffect, useRef } from 'react'
+import { useSignInUserMutation } from '../features/userAPI';
 import * as jose from 'jose'
 
 export default function SignInGoogle() {
 
-    //let [user,response] = useSignInUserMutation();
+    let [user,response] = useSignInUserMutation();
 
     const buttonDiv = useRef(null)
 
@@ -20,7 +21,7 @@ export default function SignInGoogle() {
             password: responsePayload.sub, 
             from: 'google',
         }
-        // user (info)
+         user (info)
         
          // se utiliza jose, decodificador de respuesta
     }
