@@ -4,6 +4,7 @@ import itineraryReducer from './itinerarySlice'
 import {cityAPI} from './citiesAPI'
 import {itineraryAPI} from './itineraryAPI'
 import {activityAPI} from './activityAPI'
+import { userAPI } from './userAPI'
 
 
 
@@ -18,6 +19,8 @@ export const  store = configureStore ({
         [itineraryAPI.reducerPath] : itineraryAPI.reducer,
 
         [activityAPI.reducerPath] : activityAPI.reducer,
+
+        [userAPI.reducerPath] : userAPI.reducer,
 
 
     },
