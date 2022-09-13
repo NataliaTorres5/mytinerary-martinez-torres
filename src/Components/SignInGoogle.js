@@ -1,9 +1,9 @@
 import React, { useEffect, useRef } from 'react'
 import * as jose from 'jose'
 
-export default function SignUpGoogle() {
+export default function SignInGoogle() {
 
-    //let [newUser,response] = useSignUpUserMutation();
+    //let [user,response] = useSignInUserMutation();
 
     const buttonDiv = useRef(null)
 
@@ -15,15 +15,12 @@ export default function SignUpGoogle() {
         
          
         let info = {
-            name: responsePayload.given_name,
-            lastName: responsePayload.family_name,
-            photo: responsePayload.picture,
+          
             email: responsePayload.email,
-            password: responsePayload.sub,
-            role: 'user', 
+            password: responsePayload.sub, 
             from: 'google',
         }
-        //newUser (info)
+        // user (info)
         
          // se utiliza jose, decodificador de respuesta
     }
@@ -33,12 +30,12 @@ export default function SignUpGoogle() {
         google.accounts.id.initialize({
             client_id: '794215205311-p24lfeluq0d3hpk16v4gngg6ab0sgcbv.apps.googleusercontent.com',
             callback: async (res)=> await  handleCredentialResponse(res),
-            context: 'signup'
+            context: 'signin'
           });
 
           google.accounts.id.renderButton(
             buttonDiv.current,
-            { theme: "outline", size: "medium", text: 'signup_with' }  // customization attributes
+            { theme: "outline", size: "medium", text: 'signin_with' }  // customization attributes
           );
     }, [])
 
