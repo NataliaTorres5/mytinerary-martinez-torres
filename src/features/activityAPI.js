@@ -12,7 +12,7 @@ export const activityAPI = createApi({
     endpoints: (builder) => ({
         getAllActivities: builder.query({
             query: (id) =>({
-                url: `/activities?itineraries=${id}`
+                url: `/activities/?itineraries=${id}`
             }) 
             
         }),
