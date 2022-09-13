@@ -11,6 +11,8 @@ import EditCity from './Pages/EditCity';
 import MyTineraries from './Pages/MyTineraries.js';
 import {BrowserRouter, Routes, Route} from 'react-router-dom'
 import ScrollToTop from './Components/ScrollToTop';
+import SignUp from './Pages/SignUp';
+
 
 
 
@@ -22,6 +24,7 @@ function App() {
       <WebsiteLayout>
         <Routes>
           <Route path='/' element={<Home />} />
+          <Route path='/auth/signup' element={<SignUp />} />
           <Route path='/cities' element={<Cities />} />
           <Route path='/newcity' element={<NewCity />} />
           <Route path='/*' element={<UnderConstruction />} />
