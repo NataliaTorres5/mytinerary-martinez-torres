@@ -1,12 +1,12 @@
 import React from 'react'
-import SignInForm from '../Components/SignInForm'
+import SignUpForm from '../Components/SignUpForm'
 import SignUpGoogle from '../Components/SignUpGoogle'
 
 export default function SignUp() {
   return (
     <div>
         <SignUpGoogle />
-        <SignInForm />
+        <SignUpForm />
     </div>
   )
 }
