@@ -5,7 +5,7 @@ export const userAPI = createApi( {
     reducerPath: "userAPI",
 
     baseQuery: fetchBaseQuery({
-        baseUrl: "http://localhost:4000/"
+        baseUrl: "http://localhost:4000/" , 
     }),
 
     endpoints: (builder) => ({
@@ -24,9 +24,18 @@ export const userAPI = createApi( {
                 body: info
             })
         }), 
+
+        signOutUser: builder.mutation({
+            query: (mail) => ({
+                url: '/user/signout',
+                method: 'POST',
+                body: mail,
+            })
+        }),
+        
         
     })
 
 }) 
 
-export const {useSignInUserMutation, useSignUpUserMutation}=userAPI
+export const {useSignInUserMutation, useSignUpUserMutation, useSignOutUserMutation}=userAPI
