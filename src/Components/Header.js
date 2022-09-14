@@ -65,7 +65,7 @@ export default function Header() {
 
       {open && (
                 <div className='Header-user'>
-                    <LinkRouter className='Header-option' to='login'>Log In</LinkRouter>
+                    <LinkRouter className='Header-option' to='auth/signin'>Log In</LinkRouter>
                     <LinkRouter className='Header-option' to='auth/signup'>Sign Up</LinkRouter>
                 </div>
             )}

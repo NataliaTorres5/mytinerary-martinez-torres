@@ -14,7 +14,7 @@ export default function SignInGoogle() {
         console.log(responsePayload)
 
         
-         
+  
         let info = {
           
             email: responsePayload.email,
@@ -22,6 +22,13 @@ export default function SignInGoogle() {
             from: 'google',
         }
          user (info)
+         .then(response => console.log(response))
+         .catch(error => console.log(error))
+
+
+
+         //divpatch que va a user slice
+         //use selector se extrae el estado de
         
          // se utiliza jose, decodificador de respuesta
     }
@@ -30,7 +37,7 @@ export default function SignInGoogle() {
         /* global google */
         google.accounts.id.initialize({
             client_id: '794215205311-p24lfeluq0d3hpk16v4gngg6ab0sgcbv.apps.googleusercontent.com',
-            callback: async (res)=> await  handleCredentialResponse(res),
+            callback: handleCredentialResponse,
             context: 'signin'
           });
 
