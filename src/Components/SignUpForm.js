@@ -15,7 +15,7 @@ export default function SignUpForm() {
 
     const array = [
         {item: "name", type:"text", value: userNameRef, id:"userin1"},
-        {item: "lastname", type:"text", value: userLastNameRef, id:"userin2"},
+        {item: "lastName", type:"text", value: userLastNameRef, id:"userin2"},
         {item: "photo", type:"url", value: userPhotoRef, id:"userin3"},
         {item: "email", type:"email", value: userEmailRef, id:"userin4"},
         {item: "password", type:"text", value: userPasswordRef, id:"userin5"},
@@ -26,10 +26,9 @@ export default function SignUpForm() {
         text.preventDefault();
 
       
-
         const userInfo = {
             name: userNameRef.current.value,
-            lastname: userLastNameRef.current.value,
+            lastName: userLastNameRef.current.value,
             photo: userPhotoRef.current.value,
             email: userEmailRef.current.value,
             password: userPasswordRef.current.value,
@@ -37,6 +36,8 @@ export default function SignUpForm() {
             from: "form"
         }
       
+        console.log(userInfo)
+
         newUser(userInfo).unwrap().then(() => {}).then(err => console.log(err))
         
     } 
