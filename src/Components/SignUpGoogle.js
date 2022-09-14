@@ -11,7 +11,7 @@ export default function SignUpGoogle() {
     async function handleCredentialResponse(response) { //alojaremos la respuesta
 
         let responsePayload = jose.decodeJwt(response.credential)
-        console.log(responsePayload)
+        console.log(responsePayload) // se utiliza jose, decodificador de respuesta
 
         
          
@@ -26,7 +26,7 @@ export default function SignUpGoogle() {
         }
         newUser (info)
         
-         // se utiliza jose, decodificador de respuesta
+         
     }
 
     useEffect(() => {
@@ -49,3 +49,4 @@ export default function SignUpGoogle() {
     </div>
   )
 }
+
