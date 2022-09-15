@@ -1,193 +1,73 @@
+
 import React, { useRef } from 'react'
-import { useSignInUserMutation, useSignOutUserMutation } from '../features/userAPI';
+import { useSignInUserMutation } from '../features/userAPI';
+import { entry } from '../features/userLoggedSlice';
+import { useDispatch } from 'react-redux';
 
 
-function SignInForm() {
+export default function SignInForm() {
 
-    const passwordUserRef = useRef()
-    const emailUserRef = useRef()
-    const [signInUser] = useSignInUserMutation();
-     const [signOutUser] = useSignOutUserMutation();
-    
-    const handleSubmit = (e) => {
-        e.preventDefault();
+  const dispatch = useDispatch() //cambia estado con entry que es la accion
 
-        let userFrom = 'google'
+  const [user] = useSignInUserMutation()
 
-        let newUser = {
-            pass: passwordUserRef.current.value,
-            email: emailUserRef.current.value,
-            from: userFrom
-        };
+  const userEmailRef = useRef()
+  const userPasswordRef = useRef()
 
-        signInUser(newUser)
-          .then((res) => {
+  const array = [
 
-            console.log(res)
-            
-          localStorage.setItem('testUser', JSON.stringify(res.data.response.user));
+    { item: "email", type: "email", value: userEmailRef, id: "userin4" },
+    { item: "password", type: "text", value: userPasswordRef, id: "userin5" },
 
+  ]
+
+  function submitInfo(text) {
+    text.preventDefault();
+
+
+
+    const userInfo = {
+
+      email: userEmailRef.current.value,
+      password: userPasswordRef.current.value,
+      role: 'user',
+      from: "form"
+    }
+
+    user(userInfo)
+      .then(response => {
+        console.log(response)
+        dispatch(entry())
+        
+
+      })
+      .catch(error => console.log(error))
+
+
+  }
+
+
+  return (
+
+    <form className='FORM' onSubmit={submitInfo}>
+      {
+        array.map((e) => {
+          return (
+            <div className='Form-city'>
+              <label htmlFor={e.item}> {e.item}</label>
+              <input type={e.type} ref={e.value} />
+            </div>
+          )
         })
-          .catch((error) => {
-            console.log(error);
-          });
+      }
+      <div className='Form-city'>
+        <button> Submit</button>
 
-        let signupForm = document.querySelector("#form-new-users");
-        signupForm.reset();
-    }
-    let variableTest
-
-    if(localStorage.length === 0) {
-        console.log("local esta vacio")
-    } else {
-        variableTest =  JSON.parse(localStorage.getItem('testUser'))
-    }
-
-    console.log(variableTest)
-
-     const handleSignOut = (e) =>{
-        e.preventDefault();
-
-        let userMail = {
-            email:variableTest.email
-        }
-
-        console.log(userMail)
-
-        // signOutUser(userMail)
-        // .then((res) =>console.log(res))
-        // .catch((error) => {
-        //   console.log(error);
-        // });
-
-        localStorage.clear()
-     }
-
-    
-
-    const arrayForm = [
-
-        {
-            id: "_email",
-            name: "Email",
-            type: "email",
-            value: emailUserRef,
-        },
-        {
-            id: "_password",
-            name: "Password",
-            type: "text",
-            value: passwordUserRef,
-        }
-    ];
-
-    const formView = (e) => {
-        return (
-            <label key={e.id}>
-                Enter the {e.name}: <br />
-                <input
-                    className="input-text"
-                    type={e.type}
-                    name={e.name}
-                    ref={e.value}
-                />
-            </label>
-        );
-    };
-    return (
-      <form id="form-new-users" onSubmit={handleSubmit}>
-        <fieldset>
-          <h2>Here you can Sign In your account!</h2>
-          <p>Simply fill in the blanks</p>
-
-          {arrayForm.map(formView)}
-
-          <input className="input-submit" type="submit" value="Submit" />
-        </fieldset>
-        <fieldset>
-
-          <br />
-          {localStorage.length !== 0 ? (
-                      <div key={variableTest.id}>
-                      <button onClick={handleSignOut}>sign Out</button>
-                      <p> {variableTest.id} </p>
-                      <p> {variableTest.name} </p>
-                      <p> {variableTest.email} </p>
-                      <img src={variableTest.photo} alt={variableTest.name} />
-                    </div>
-          ) : (
-            <button>No está logueado</button>
-          )}
-
-        </fieldset>
-      </form>
-    );
-}
-
-export default SignInForm
-
-
-
-// import React, {useRef} from 'react'
-// import { useSignInUserMutation } from '../features/userAPI';
-
-
-// export default function SignInForm() {
-
-//     const [user] = useSignInUserMutation()
-
-//     const userEmailRef = useRef()
-//     const userPasswordRef = useRef()
-
-//     const array = [
-    
-//         {item: "email", type:"email", value: userEmailRef, id:"userin4"},
-//         {item: "password", type:"text", value: userPasswordRef, id:"userin5"},
-        
-//     ]
-
-//     function submitInfo(text) {
-//         text.preventDefault();
-
-      
-
-//         const userInfo = {
-           
-//             email: userEmailRef.current.value,
-//             password: userPasswordRef.current.value,
-//             role: 'user',
-//             from: "form"
-//         }
-      
-//         user(userInfo)
-//         .then(response => console.log(response))
-//         .catch(error => console.log(error))
-
-        
-//     } 
-
-
-//     return (
-
-//         <form className='FORM' onSubmit={submitInfo}>
-//             {
-//                 array.map((e) => {
-//                     return (
-//                         <div className='Form-city'>
-//                             <label htmlFor={e.item}> {e.item}</label>
-//                             <input type={e.type} ref={e.value} />
-//                         </div>
-//                     )
-//                 })
-//             }
-//             <div className='Form-city'>
-//                 <button> Submit</button>
-
-//             </div>
+      </div>
 
 //         </form>
 
 //     )
 // }
 
-
+  ) }
