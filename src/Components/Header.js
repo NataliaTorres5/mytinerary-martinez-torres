@@ -56,34 +56,26 @@ export default function Header() {
     }
   }, [])*/
 
-  useEffect(() => {
-    JSON.parse(localStorage.getItem('user')) 
-  }, [])
+  /*useEffect(() => {
+    if (localStorage.getItem('testUser')!== null) {
+      
+    }
+    JSON.parse(localStorage.getItem('testUser')) 
+  }, [])*/
 
   async function SignOut() {
-    let email = JSON.parse(localStorage.getItem('user')).email
+    let email = JSON.parse(localStorage.getItem('testUser')).email
 
     signOutUser(email).then(response => {
       console.log(response)
-      dispatch(entry())
-      localStorage.removeItem('user')
+      dispatch(entry(null))
+      localStorage.removeItem('testUser')
       navigate("/",{replace:true})
        }).catch(error => {
       console.log(error)
     })
-
-    /*try {
-       let response = await axios.post(apiURL+'auth/signout',{email})
-         console.log(user)
-         setLogged(false) 
-         localStorage.removeItem('user') 
-         navigate("/",{replace:true}) 
-     } catch(error) {
-         console.log(error)
-     }*/
-
-
   }
+  console.log(logged)
 
   return   (logged ?(
 
