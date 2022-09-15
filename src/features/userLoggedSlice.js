@@ -4,11 +4,13 @@ import React from 'react'
 export const userLoggedSlice = createSlice({
     name:"logged",
     initialState: {
-        loggedState:false,},
+        loggedState:null,},
 
     reducers: {
-        entry:(state) => {
-            state.loggedState = !state.loggedState;
+        entry:(state, action) => {
+            state.loggedState = action.payload;
+            localStorage.setItem('testUser', JSON.stringify(state.loggedState))
+            
         },
     },
 });
