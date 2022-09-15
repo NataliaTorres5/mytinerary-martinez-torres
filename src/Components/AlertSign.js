@@ -3,23 +3,15 @@ import React, { useState } from 'react'
 function AlertSign({ setOpenModal, setMessageError, setMessageTittle, setIconSVG }) {
 
     return (
-        <div className="modalBackground">
-            <div className="modalContainer">
-                <div className="titleCloseBtn"></div>
+        <div className="alertBackground">
+            <div className="alertContainer">
                 <div className="title">
 
-                    <h2>{setMessageTittle} {setIconSVG}</h2>
+                    <h2>{setMessageTittle}</h2>
                 </div>
                 <div className="titleCloseBtn">
-                    {/* <button
-            onClick={() => {
-              setOpenModal(false);
-            }}
-          >
-            X
-          </button> */}
                 </div>
-                <div className="body">
+                <div className="alertBody">
                     <p> {setMessageError} !</p>
                 </div>
                 <div className="footer">
@@ -27,7 +19,7 @@ function AlertSign({ setOpenModal, setMessageError, setMessageTittle, setIconSVG
                         onClick={() => {
                             setOpenModal(false);
                         }}
-                        id="cancelBtn"
+                        id="button"
                     >
                         OK
                     </button>
