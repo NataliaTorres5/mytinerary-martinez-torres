@@ -1,5 +1,11 @@
-import { useRef, useState, useEffect } from 'react'
-import { Link as LinkRouter } from 'react-router-dom';
+import axios from 'axios';
+import apiURL from '../api'
+import { useRef, useState, useEffect,} from 'react'
+import { useSelector, useDispatch } from 'react-redux';
+import { Link as LinkRouter, useNavigate } from 'react-router-dom';
+import { useSignOutUserMutation } from '../features/userAPI';
+import { entry } from '../features/userLoggedSlice'
+
 import '../Styles/Header.css';
 
 const hPages = [
@@ -13,68 +19,125 @@ const hPages = [
 
 
 export default function Header() {
-  
-  
+
+  const dispatch = useDispatch()
+
+  const logged = useSelector((state) => state.logged.loggedState) 
+
+  console.log(logged)
+
   const [open, setOpen] = useState(false)
-  const menuIcon = useRef(null)
-  
+  const [email, setEmail] = useState(false)
+  const navigate = useNavigate()
+  const menuIcon = useRef()
+
+
+  const [signOutUser] = useSignOutUserMutation(email)
+
   const link = (page) => <LinkRouter className='hRouter' key={page.id} to={page.to}>{page.name} <img className='hImg' width={45} src={page.url} alt={page.id} /></LinkRouter>
-  
 
 
 
-  const  handleOpenMenu = (element) => {
 
-    const clickInside = menuIcon.current.contains(element.target)
-
-    if (menuIcon.current !== element.target && !clickInside) {
+  const  handleOpenMenu = () => {
+    if (open) {
       setOpen(false)
     } else {
       setOpen(true)
     }
   }
 
-  const handleToggleMenu = () => {
-      setOpen(!open)
+
+
+  /*useEffect(() => {
+    document.addEventListener('click', handleOpenMenu)
+    return () => {
+      document.removeEventListener('click', handleOpenMenu)
+    }
+  }, [])*/
+
+  useEffect(() => {
+    JSON.parse(localStorage.getItem('user')) 
+  }, [])
+
+  async function SignOut() {
+    let email = JSON.parse(localStorage.getItem('user')).email
+
+    signOutUser(email).then(response => {
+      console.log(response)
+      dispatch(entry())
+      localStorage.removeItem('user')
+      navigate("/",{replace:true})
+       }).catch(error => {
+      console.log(error)
+    })
+
+    /*try {
+       let response = await axios.post(apiURL+'auth/signout',{email})
+         console.log(user)
+         setLogged(false) 
+         localStorage.removeItem('user') 
+         navigate("/",{replace:true}) 
+     } catch(error) {
+         console.log(error)
+     }*/
+
+
   }
 
-    useEffect (() => {
+  return   (logged ?(
 
-      document.addEventListener('click', handleOpenMenu)
-
-      return () => {
-
-        document.removeEventListener('click', handleOpenMenu)
-      }
-    },[])
-
-  return (
     <div className='Header-Box'>
 
       <div className='nav-header'>
         {hPages.map(link)}
       </div>
 
-
       <div className='Header-Logo'>
         <img src="../icons/Icon.png" alt="Logo" />
       </div>
 
-      <div className='User-box'>
       <div>
-
-      {open && (
-                <div className='Header-user'>
-                    <LinkRouter className='Header-option' to='auth/signin'>Log In</LinkRouter>
-                    <LinkRouter className='Header-option' to='auth/signup'>Sign Up</LinkRouter>
-                </div>
-            )}
-           <button className='H-Button' onClick={handleOpenMenu}><img ref={menuIcon} src='../icons/user2.png' className="H-Button" onClick={handleToggleMenu} alt='icon' /> </button>
-           
+        {open && (<div className='User-box'>
+        <div>
+          <div className='Header-user'>
+            <LinkRouter className='Header-option' to='auth/sigout' onClick={handleOpenMenu} >Log Out</LinkRouter>
+          </div>
+        </div>
       </div>
-      </div> 
+      )}
+        <div>
+        <button className='H-Button' onClick={handleOpenMenu}><img src="../icons/user2.png" alt="Logo" /></button>
+        </div>
+      </div>
     </div>
-  )
+  ) : ( <div className='Header-Box'>
+
+  <div className='nav-header'>
+    {hPages.map(link).slice(0,2)}
+  </div>
+
+  <div className='Header-Logo'>
+    <img src="../icons/Icon.png" alt="Logo" />
+  </div>
+
+
+  {open && (
+    <div lassName='User-box'>
+      <div className='Header-user'>
+        <LinkRouter className='Header-option' to='auth/signin' onClick={handleOpenMenu}>Log In</LinkRouter>
+        <LinkRouter className='Header-option' to='auth/signup' onClick={handleOpenMenu} >Sign Up</LinkRouter>
+      </div>
+    </div>
+  )}
+  <div>
+        <button className='H-Button' onClick={handleOpenMenu}><img src="../icons/user2.png" alt="Logo" /></button>
+        </div>
+  </div>))
 
 }
+
+
+
+  
 
