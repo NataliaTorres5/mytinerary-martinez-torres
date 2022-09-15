@@ -11,7 +11,7 @@ export default function SignInGoogle() {
   const dispatch = useDispatch()
   
     const buttonDiv = useRef(null)
-    let [user,response] = useSignInUserMutation();
+    let [user, change] = useSignInUserMutation();
     const [modalOpen, setModalOpen] = useState(false); //alert function
     const [messageError, setMessageError] = useState("") //alert function
     const [messageTittle, setMessageTittle] = useState("") //alert function
@@ -31,7 +31,10 @@ export default function SignInGoogle() {
          user (info)
          .then(response => {
 
-          dispatch(entry())
+          console.log(response)
+
+          dispatch(entry(response.data.response.user))
+      
 
           if (response.error){
             let dataError = response.error
