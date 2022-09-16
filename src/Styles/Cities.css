@@ -15,3 +15,8 @@
     box-shadow: 5px 2px 2px #6867acb6;
 
 }
+@media screen and (max-width:320px){
+    .Cardcity{
+        width: 100%;
+    }
+}
