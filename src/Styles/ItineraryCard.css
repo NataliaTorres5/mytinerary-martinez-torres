@@ -8,3 +8,14 @@
     
     width: 5rem;
 }
+@media screen and (max-width:320px){
+.User-Container img{
+    width: 3rem;
+}
+@media screen and (max-width:320px){
+    .cityCard{
+        width: 100%;
+    }
+}
+
+}
