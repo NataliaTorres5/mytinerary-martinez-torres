@@ -15,7 +15,7 @@ export default function ActivityCards(props){
 
     const activityPic = (item) => (
 
-            <div className="cityCard activity">
+            <div className="cityCard-activity">
                 <h3>{item.name}</h3>
                 <img className='imgCard' src={item.photo} alt='img' />
                 {/* <p>{item.itinerary?.user}</p>  */}
