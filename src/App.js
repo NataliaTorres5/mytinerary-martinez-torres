@@ -11,6 +11,7 @@ import EditCity from './Pages/EditCity';
 import MyTineraries from './Pages/MyTineraries.js';
 import {BrowserRouter, Routes, Route} from 'react-router-dom'
 import ScrollToTop from './Components/ScrollToTop';
+import NewItineraryUser from './Pages/NewItinerary'
 import SignUp from './Pages/SignUp';
 import SignIn from './Pages/SignIn';
 
@@ -32,7 +33,8 @@ function App() {
           <Route path='/*' element={<UnderConstruction />} />
           <Route path='/details/:id' element={<Details />} />
           <Route path='/editcity' element={<EditCity />} />
-          <Route path='/mytineraries' element={<MyTineraries />} />
+          <Route path='/mytineraries' element={<MyTineraries />}/>
+          <Route path='/newitinerary' element={<NewItineraryUser />} />
         </Routes>
       </WebsiteLayout> 
       </BrowserRouter>
