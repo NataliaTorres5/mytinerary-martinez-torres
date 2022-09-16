@@ -1,28 +1,36 @@
 import axios from 'axios';
 import apiURL from '../api'
-import { useRef, useState, useEffect,} from 'react'
+import { useRef, useState } from 'react'
 import { useSelector, useDispatch } from 'react-redux';
 import { Link as LinkRouter, useNavigate } from 'react-router-dom';
 import { useSignOutUserMutation } from '../features/userAPI';
 import { entry } from '../features/userLoggedSlice'
-
+import AlertSign from './AlertSign';
 import '../Styles/Header.css';
 
 const hPages = [
   { url: '/icons/homewhitel.png', name: 'Home', to: '/', id: 'nav1' },
   { url: '/icons/planewl.png', name: 'Cities', to: '/cities', id: 'nav2' },
   { url: '/icons/passport.png', name: 'New City', to: '/newcity', id: 'nav4' },
-  { url: '/swhitef.png', name: 'Edit City', to: '/editcity', id: 'nav3' },
-  { url: '/ticket.png', name: 'My Tineraries', to: '/mytineraries', id: 'nav5' }
+  { url: '/icons/swhitef.png', name: 'Edit City', to: '/editcity', id: 'nav3' },
+  { url: '/icons/ticket.png', name: 'My Tineraries', to: '/mytineraries', id: 'nav5' },
+  { url: '/icons/swhitef.png', name: 'New Itinerary', to: '/newitinerary', id: 'nav6' },
+
 ]
+
 
 
 
 export default function Header() {
 
+  const [modalOpen, setModalOpen] = useState(false); //alert function
+  const [messageError, setMessageError] = useState("") //alert function
+  const [messageTittle, setMessageTittle] = useState("") //alert function
+  //const [iconSVG, setIconSVG] = useState("") //to include SVG alert
+
   const dispatch = useDispatch()
 
-  const logged = useSelector((state) => state.logged.loggedState) 
+  const logged = useSelector((state) => state.logged.loggedState)
 
   console.log(logged)
 
@@ -39,7 +47,7 @@ export default function Header() {
 
 
 
-  const  handleOpenMenu = () => {
+  const handleOpenMenu = () => {
     if (open) {
       setOpen(false)
     } else {
@@ -49,20 +57,6 @@ export default function Header() {
 
 
 
-  /*useEffect(() => {
-    document.addEventListener('click', handleOpenMenu)
-    return () => {
-      document.removeEventListener('click', handleOpenMenu)
-    }
-  }, [])*/
-
-  /*useEffect(() => {
-    if (localStorage.getItem('testUser')!== null) {
-      
-    }
-    JSON.parse(localStorage.getItem('testUser')) 
-  }, [])*/
-
   async function SignOut() {
     let email = JSON.parse(localStorage.getItem('testUser')).email
 
@@ -70,18 +64,39 @@ export default function Header() {
       console.log(response)
       dispatch(entry(null))
       localStorage.removeItem('testUser')
-      navigate("/",{replace:true})
-       }).catch(error => {
+      navigate("/", { replace: true })
+
+      if (response.error) {
+        let dataError = response.error
+        let resMessage = dataError.data
+        setModalOpen(true)
+        setMessageError(resMessage.message)
+        setMessageTittle('Error')
+      } else {
+        let dataResponse = response.data
+        let dataSuccess = dataResponse.message
+        setModalOpen(true)
+        setMessageError(dataSuccess)
+        setMessageTittle("Success")
+
+        localStorage.setItem(
+          "testUser",
+          JSON.stringify(response.data.response.user)
+        )
+      }
+
+
+    }).catch(error => {
       console.log(error)
     })
   }
   console.log(logged)
 
-  return   (logged ?(
+  return (logged ? (
 
     <div className='Header-Box'>
-
-      <div className='nav-header'>
+      
+      <div id='nav-nav' className='nav-header'>
         {hPages.map(link)}
       </div>
 
@@ -91,45 +106,56 @@ export default function Header() {
 
       <div>
         {open && (<div className='User-box'>
-        <div>
-          <div className='Header-user'>
-            <LinkRouter className='Header-option' to='auth/sigout' onClick={handleOpenMenu} >Log Out</LinkRouter>
+          <div>
+            <div className='Header-user'>
+              <LinkRouter className='Header-option' to='/' onClick={handleOpenMenu} >Log Out</LinkRouter>
+            </div>
+
+
+            <div className='div-modal-signinGoogle'>
+
+
+              {modalOpen === true ?
+                <AlertSign
+                  setOpenModal={setModalOpen}
+                  setMessageError={messageError}
+                  setMessageTittle={messageTittle} /> : null}
+            </div>
           </div>
         </div>
-      </div>
-      )}
+        )}
         <div>
-        <button className='H-Button' onClick={handleOpenMenu}><img src="../icons/user2.png" alt="Logo" /></button>
+          <button className='H-Button' onClick={handleOpenMenu}><img src="../icons/user2.png" alt="Logo" /></button>
         </div>
       </div>
     </div>
-  ) : ( <div className='Header-Box'>
+  ) : (<div className='Header-Box'>
 
-  <div className='nav-header'>
-    {hPages.map(link).slice(0,2)}
-  </div>
-
-  <div className='Header-Logo'>
-    <img src="../icons/Icon.png" alt="Logo" />
-  </div>
-
-
-  {open && (
-    <div lassName='User-box'>
-      <div className='Header-user'>
-        <LinkRouter className='Header-option' to='auth/signin' onClick={handleOpenMenu}>Log In</LinkRouter>
-        <LinkRouter className='Header-option' to='auth/signup' onClick={handleOpenMenu} >Sign Up</LinkRouter>
-      </div>
+    <div className='nav-header'>
+      {hPages.map(link).slice(0, 2)}
     </div>
-  )}
-  <div>
-        <button className='H-Button' onClick={handleOpenMenu}><img src="../icons/user2.png" alt="Logo" /></button>
+
+    <div className='Header-Logo'>
+      <img src="../icons/Icon.png" alt="Logo" />
+    </div>
+
+
+    {open && (
+      <div lassName='User-box'>
+        <div className='Header-user'>
+          <LinkRouter className='Header-option' to='auth/signin' onClick={handleOpenMenu}>Log In</LinkRouter>
+          <LinkRouter className='Header-option' to='auth/signup' onClick={handleOpenMenu} >Sign Up</LinkRouter>
         </div>
+      </div>
+    )}
+    <div>
+      <button className='H-Button' onClick={handleOpenMenu}><img src="../icons/user2.png" alt="Logo" /></button>
+    </div>
   </div>))
 
 }
 
 
 
-  
+
 
