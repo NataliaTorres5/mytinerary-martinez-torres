@@ -98,8 +98,15 @@ button {
         display: flex;
         margin-left: 0.rem;
     }
+    .hRouter a{
+        width: 5rem;
+    }
+}
 
-    .hRouter {
+ 
+     
+
+    /*.hRouter {
         display: flex;
         justify-content: center;
         font-size: 0.9rem;
@@ -114,12 +121,17 @@ button {
         justify-content: center;
         align-items: center;
     }
+    .nav-header{
+        display: flex;
+        flex-wrap: wrap;
+    }
 
     .hRouter img {
         display: none;
+        width: 2rem;
     }
 
-}
+}*/
 
 @media screen and (max-width:478px) {
     .Header-Box a {
