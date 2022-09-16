@@ -1,10 +1,14 @@
-import React, { useEffect, useRef } from 'react'
+import React, { useEffect, useRef, useState } from 'react'
+import AlertSign from './AlertSign';
 import { useSignUpUserMutation } from '../features/userAPI';
 import * as jose from 'jose'
 
 export default function SignUpGoogle() {
 
     let [newUser,response] = useSignUpUserMutation();
+    const [modalOpen, setModalOpen] = useState(false); //alert function
+    const [messageError, setMessageError] = useState("") //alert function
+    const [messageTittle, setMessageTittle] = useState("") //alert function
 
     const buttonDiv = useRef(null)
 
@@ -24,7 +28,22 @@ export default function SignUpGoogle() {
             role: 'user', 
             from: 'google',
         }
-        newUser (info)
+        newUser (info).then((response => {
+          if(response.error){
+            let dataError = response.error
+            let resMessage = dataError.data
+            setModalOpen(true)
+            setMessageError(resMessage.message)
+            setMessageTittle('Error')
+          }else {
+
+            let dataResponse = response.data
+            let dataSuccess = dataResponse.message
+            setModalOpen(true)
+            setMessageError(dataSuccess)
+            setMessageTittle("Success")
+          }
+        }))
         
          
     }
@@ -45,6 +64,15 @@ export default function SignUpGoogle() {
 
   return (
     <div>
+      <div className='div-modal-signinGoogle'>
+        
+    
+        {modalOpen === true ?
+            <AlertSign
+                setOpenModal={setModalOpen}
+                setMessageError={messageError}
+                setMessageTittle={messageTittle}/> :null}
+        </div>
         <div ref={buttonDiv}></div>
     </div>
   )
