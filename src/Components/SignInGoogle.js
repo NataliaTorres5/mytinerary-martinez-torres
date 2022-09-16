@@ -33,7 +33,7 @@ export default function SignInGoogle() {
 
           console.log(response)
 
-          dispatch(entry(response.data.response.user))
+          dispatch(entry())
       
 
           if (response.error){
