@@ -6,18 +6,71 @@
     display: flex;
     justify-content: center;
 }
+.Details-Container{
+    display: flex;
+    width: 100%;
+    flex-direction: column;
+    justify-content: center;
+    text-align: center;
+}
+.Details-Container h2{
+    padding: 1rem;
+    font-size: 1.8rem;
+}
+.Details-Container h3{
+    padding: 0.5rem;
+    font-size: 1.6rem;
+}
+.Details-Container p{
+    margin: 1rem;
+    font-size: 1.5rem;
+}
+.Details-Container img{
+    display: flex;
+    width: 60%;
+    justify-content: center;
+    margin-left: 18rem;
+}
+.Details-Container p{
+    margin: 1rem;
+}
+.Action-Button{
+    background-color: #6867AC;
+    border-radius: 5px 5px 5px 5px;
+    color: white;
+    padding: 1rem;
+    margin-top: 1rem;
+}
 
 @media screen and (max-width:320px) {
-    .cityCard img {
+    .Details-Container{
+        display: flex;
         width: 100%;
+        flex-direction: column;
+        justify-content: center;
+        text-align: center;
     }
-
-    .cityCard {
-        width: 100%;
+    .Details-Container h2{
+        padding: 1rem;
     }
-
-    .imgCard {
+    .Details-Container h3{
+        padding: 0.5rem;
+    }
+    .Details-Container p{
+        margin: 1rem;
+    }
+    .Details-Container img{
+        display: flex;
         width: 100%;
+        justify-content: center;
+        margin-left: 2rem;
+    }
+    .Action-Button{
+        background-color: #6867AC;
+        border-radius: 5px 5px 5px 5px;
+        color: white;
+        padding: 1rem;
+        margin-top: 1rem;
     }
 
 }
@@ -46,4 +99,127 @@
     .item img {
         width: 100%;
     }
+    .Details-Container{
+        display: flex;
+        width: 100%;
+        flex-direction: column;
+        justify-content: center;
+        text-align: center;
+    }
+    .Details-Container h2{
+        padding: 1rem;
+    }
+    .Details-Container h3{
+        padding: 0.5rem;
+    }
+    .Details-Container p{
+        margin: 1rem;
+    }
+    .Details-Container img{
+        display: flex;
+        width: 95%;
+        justify-content: center;
+        margin-left: 0.5rem;
+ }
+ .Action-Button{
+    background-color: #6867AC;
+    border-radius: 5px 5px 5px 5px;
+    color: white;
+    padding: 1rem;
+    margin-top: 1rem;
+}
+}
+@media screen and (max-width:700px) {
+    .item img {
+        width: 100%;
+    }
+    .Details-Container{
+        display: flex;
+        width: 100%;
+        flex-direction: column;
+        justify-content: center;
+        text-align: center;
+    }
+    .Details-Container h2{
+        padding: 1rem;
+    }
+    .Details-Container h3{
+        padding: 0.5rem;
+    }
+    .Details-Container p{
+        margin: 1rem;
+    }
+    .Details-Container img{
+        display: flex;
+        width: 95%;
+        justify-content: center;
+ }
+ .Action-Button{
+    background-color: #6867AC;
+    border-radius: 5px 5px 5px 5px;
+    color: white;
+    padding: 1rem;
+    margin-top: 1rem;
+}
+}
+@media screen and (max-width:900px) {
+    .item img {
+        width: 100%;
+    }
+    .Details-Container{
+        display: flex;
+        width: 100%;
+        flex-direction: column;
+        justify-content: center;
+        text-align: center;
+    }
+    .Details-Container h2{
+        padding: 1rem;
+    }
+    .Details-Container h3{
+        padding: 0.5rem;
+    }
+    .Details-Container p{
+        margin: 1rem;
+    }
+    .Details-Container img{
+        display: flex;
+        width: 95%;
+        justify-content: center;
+        margin-left: 2rem;
+ }
+}
+@media screen and (max-width:1030px) {
+    .item img {
+        width: 100%;
+    }
+    .Details-Container{
+        display: flex;
+        width: 100%;
+        flex-direction: column;
+        justify-content: center;
+        text-align: center;
+    }
+    .Details-Container h2{
+        padding: 1rem;
+    }
+    .Details-Container h3{
+        padding: 0.5rem;
+    }
+    .Details-Container p{
+        margin: 1rem;
+    }
+    .Details-Container img{
+        display: flex;
+        width: 95%;
+        justify-content: center;
+        margin-left: 2rem;
+ }
+ .Action-Button{
+    background-color: #6867AC;
+    border-radius: 5px 5px 5px 5px;
+    color: white;
+    padding: 1rem;
+    margin-top: 1rem;
+}
 }

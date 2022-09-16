@@ -135,11 +135,23 @@ button{
     margin: 0.5rem;
 }
 @media screen and (max-width:320px){
+    .Footer-Box{
+        display: flex;
+        justify-content: center;
+        align-items: center;
+    }
     .Where{
         display: flex;
         justify-content: center;
         flex-wrap: wrap;
         width: 100%;
+    }
+    .fLinks{
+        width: 100%;
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
     }
     .Footer1{
         display: flex;
@@ -148,7 +160,11 @@ button{
     .footernav{
         display: flex;
         flex-direction: column;
+        justify-content: center;
+        align-items: center;
+        flex-wrap: nowrap;
     }
+    
 
 }
 
@@ -165,9 +181,11 @@ button{
         flex-direction: column;
     }
     .fLinks{
-        width: 20%;
+        width: 100%;
         display: flex;
         flex-direction: column;
+        justify-content: center;
+        align-items: center;
     }
     .Contacts{
         display: flex;
@@ -178,8 +196,6 @@ button{
         width: 20%;
         display: flex;
         flex-direction: column;
-        justify-content: center;
-        align-items: center;
     }
 
 }
