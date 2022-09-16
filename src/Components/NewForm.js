@@ -1,14 +1,20 @@
 import React from 'react'
 import '../Styles/CityForm.css';
 import { useNewCityAddMutation } from '../features/citiesAPI';
-import { useRef } from 'react';
+import { useRef, useState } from 'react';
+import AlertSign from './AlertSign';
 // import { useEffect, useState, } from 'react'
 // import { useParams } from 'react-router-dom'
 // import axios from 'axios'
 
 export default function Input() {
 
-const [NewCity] = useNewCityAddMutation()
+    const [NewCity] = useNewCityAddMutation()
+
+    const [modalOpen, setModalOpen] = useState(false); //alert function
+    const [messageError, setMessageError] = useState("") //alert function
+    const [messageTittle, setMessageTittle] = useState("") //alert function
+    //const [iconSVG, setIconSVG] = useState("") //to include SVG alert
 
 
 
@@ -46,7 +52,23 @@ const [NewCity] = useNewCityAddMutation()
             population: populationRef.current.value,
             foundation: foundationRef.current.value
         }
-        NewCity(dataCity).unwrap().then(() =>{}).then(err =>console.log(err))
+        NewCity(dataCity).unwrap().then((response) => {
+
+            if (response.error) {
+                let dataError = response.error
+                let resMessage = dataError.data
+                setModalOpen(true)
+                setMessageError(resMessage.message)
+                setMessageTittle('Error')
+            } else {
+                let dataResponse = response.data
+                let dataSuccess = dataResponse.message
+                setModalOpen(true)
+                setMessageError(dataSuccess)
+                setMessageTittle("Success")
+            }
+
+        }).then(err => console.log(err))
 
         /*cityInformation.push(dataCity)
         console.log(cityInformation)
@@ -82,7 +104,13 @@ const [NewCity] = useNewCityAddMutation()
             }
             <div className='Form-city'>
                 <button> Submit</button>
-
+            </div>
+            <div className='div-modal-signinGoogle'>
+                {modalOpen === true ?
+                    <AlertSign
+                        setOpenModal={setModalOpen}
+                        setMessageError={messageError}
+                        setMessageTittle={messageTittle} /> : null}
             </div>
 
         </form>
