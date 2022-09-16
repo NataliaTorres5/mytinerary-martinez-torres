@@ -7,9 +7,9 @@ export const userLoggedSlice = createSlice({
         loggedState:null,},
 
     reducers: {
-        entry:(state, action) => {
-            state.loggedState = action.payload;
-            localStorage.setItem('testUser', JSON.stringify(state.loggedState))
+        entry:(state) => {
+            state.loggedState = !state.loggedState;
+            
             
         },
     },
