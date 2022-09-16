@@ -1,24 +1,25 @@
-*{
+* {
     margin: 0;
     padding: 0;
     box-sizing: border-box;
 }
-.Header-Box{
+
+.Header-Box {
     min-height: 10vh;
     padding: 0rem 3rem 0rem 3rem;
     width: 100%;
     display: flex;
-    flex-wrap: wrap ;
+    flex-wrap: wrap;
     justify-content: space-between;
     align-content: center;
-    background: rgb(104,103,172);
-    background: linear-gradient(0deg, rgba(104,103,172,1) 0%, rgba(125,125,184,1) 17%, rgba(220,220,235,1) 57%, rgba(228,228,240,1) 63%, rgba(255,255,255,1) 88%);
+    background: rgb(104, 103, 172);
+    background: linear-gradient(0deg, rgba(104, 103, 172, 1) 0%, rgba(125, 125, 184, 1) 17%, rgba(220, 220, 235, 1) 57%, rgba(228, 228, 240, 1) 63%, rgba(255, 255, 255, 1) 88%);
 }
 
 .hRouter {
     height: 2.6rem;
     width: 6rem;
-    background-color: #6867AC; 
+    background-color: #6867AC;
     color: white;
     border: 1px solid #6867AC;
     border-radius: 10pt;
@@ -32,36 +33,42 @@
 
 .hRouter {
     display: flex;
-    
+
 }
 
-.Header-Logo{
+.Header-Logo {
     display: flex;
     width: 10rem;
 }
+
 .Header-Box div {
     display: flex;
+    
 }
-.User{
+
+.User {
     display: flex;
 }
-.User p{
-        height: 2.5rem;
-        width: 5rem;
-        background-color: #6867AC; 
-        color: white;
-        border: 1px solid #6867AC;
-        border-radius: 10pt;
-        margin: 1rem;
-        text-decoration: none;
-        display: flex;
-        justify-content: center;
-        align-items: center;
+
+.User p {
+    height: 2.5rem;
+    width: 5rem;
+    background-color: #6867AC;
+    color: white;
+    border: 1px solid #6867AC;
+    border-radius: 10pt;
+    margin: 1rem;
+    text-decoration: none;
+    display: flex;
+    justify-content: center;
+    align-items: center;
 }
-.User-box{
+
+.User-box {
     display: flex;
 }
-.User-box img{
+
+.User-box img {
     height: 4rem;
     margin-top: 1rem;
     padding-left: 2rem;
@@ -69,28 +76,36 @@
     justify-content: center;
     align-items: center;
 }
-button{
+
+button {
     background: none;
     border: none;
     margin-bottom: 4rem;
 }
-.H-Button{
+
+.H-Button {
     background: none;
     border: none;
 }
 
+.nav-header{
+    display: flex;
+    flex: wrap;
+}
+
 @media screen and (max-width:320px) {
-    .Header-Box{
+    .Header-Box {
         display: flex;
         margin-left: 0.rem;
     }
-    .hRouter{
+
+    .hRouter {
         display: flex;
         justify-content: center;
         font-size: 0.9rem;
     }
-    
-    .Header-Box a{
+
+    .Header-Box a {
         padding: 0%;
         margin: 1.5%;
         width: 100%;
@@ -99,13 +114,15 @@ button{
         justify-content: center;
         align-items: center;
     }
-    .hRouter img{
+
+    .hRouter img {
         display: none;
     }
-   
+
 }
+
 @media screen and (max-width:478px) {
-    .Header-Box a{
+    .Header-Box a {
         padding: 0%;
         margin: 1.5%;
         width: 100%;
@@ -114,14 +131,17 @@ button{
         justify-content: center;
         align-items: center;
     }
-    .Header-Box p{
+
+    .Header-Box p {
         width: 100%;
     }
-    .hRouter img{
+
+    .hRouter img {
         display: none;
     }
 }
-@media screen and (max-width:481px){
+
+@media screen and (max-width:481px) {
     .Header-Box {
         display: flex;
         width: 100%;
@@ -130,37 +150,52 @@ button{
         justify-content: center;
         align-items: center;
     }
-    .Header-Box a{
+
+    .Header-Box a {
         width: 100%;
         display: flex;
         flex-wrap: wrap;
     }
-    .Header-Logo{
+
+    .Header-Logo {
         height: 6rem;
     }
-   .H-Button{
+
+    .H-Button {
         background: none;
         border: none;
         margin-bottom: 3rem;
     }
-    @media screen and (max-width:600px){
-        .Header-Box{
+
+    @media screen and (max-width:600px) {
+        .Header-Box {
             display: flex;
             width: 100%;
 
         }
-        .nav-header{
+
+        .nav-header {
             width: 100%;
             justify-content: center;
         }
-        .hRouter{
+
+        .hRouter {
             margin: none;
         }
-        .Header-Box div{
+
+        .Header-Box div {
             display: flex;
             width: 100%;
             justify-content: center;
         }
-        
+
+    }
+
+    @media screen and (max-width:819px) {
+        .nav-header {
+           display: flex;
+           flex-wrap:wrap
+
+        }
     }
 }
