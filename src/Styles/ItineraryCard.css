@@ -1,3 +1,9 @@
+
+.ItineraryCards{
+    margin: 0;
+
+}
+
 .User-Container {
     display: flex;
     justify-content: flex-start;
