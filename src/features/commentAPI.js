@@ -1,7 +1,7 @@
 import { createApi, fetchBaseQuery } from '@reduxjs/toolkit/query/react'
 
-export const activityAPI = createApi({
-    reducerPath: "activityAPI",
+export const commentAPI = createApi({
+    reducerPath: "commentAPI",
 
     baseQuery: fetchBaseQuery({
         baseUrl: "http://localhost:4000"
@@ -10,9 +10,9 @@ export const activityAPI = createApi({
   
 
     endpoints: (builder) => ({
-        getAllActivities: builder.query({
+        getAllComments: builder.query({
             query: (id) =>({
-                url: `/activities/?itineraries=${id}`
+                url: `/comments/?itineraries=${id}`
             }) 
             
         }),
@@ -21,4 +21,4 @@ export const activityAPI = createApi({
 })
 
 export default activityAPI
-export const { useGetAllActivitiesQuery, } = activityAPI
+export const { useGetAllCommentsQuery, } = activityAPI

@@ -11,14 +11,16 @@ export default function Itineraries() {
         data: itineraries,
 
     } = useGetAllItinerariesQuery(id)
+    console.log (itineraries)
 
     const itineraryPic = (item) => (
-
+        
 
         <div className='Details-Container'>
             <div className='User-Container'>
                 <img className='user-Img' src='/icons/user1.png' alt="user" />
-                <h3>{item.user.name}</h3>
+                 <h3>{item.user.name}</h3> 
+                
             </div>
             <div className="cityCard ItineraryCards">
                 <ActivityCards id={item._id} />

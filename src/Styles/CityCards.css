@@ -11,6 +11,13 @@ a {
 
 .cardCity {
     display: flex;
+    justify-content: center;
+    align-items: center;
+}
+.imgCard {
+    display: flex;
+    height: 30rem;
+    object-fit: cover;
 }
 
 .filter{
@@ -53,16 +60,28 @@ a {
 }
 
 @media screen and (max-width:320px) {
-    .cityCard img {
+    .cityRouter{
+        display: flex;
         width: 100%;
+        margin: 0%;
     }
-
     .cityCard {
         width: 100%;
+        margin: 0rem;
+        border: 2px solid #6867AC;
+        border-radius: 5px 5px 5px 5px;
+        box-shadow: 6px 6px #a8a8cf;
+        
+    }
+    .cityCard img {
+        width: 80%;
+    }
+    .cityRouter p{
+        width: 80%;
     }
 
     .imgCard {
-        width: 100%;
+        width: 100%;    
     }
 
     .iteration2 {
@@ -72,16 +91,35 @@ a {
 }
 
 @media screen and (max-width:379px) {
+    .iteration{
+        display: flex;
+        width: 80%;
+        margin: 0rem;
+        justify-content: center;
+        align-items: center;
+    }
+    .cityRouter{
+        display: flex;
+        width: 75%;
+        margin-left: 5rem;
+        justify-content: center;
+        align-items: center;
+    }
     .item {
-        width: 100%;
+        width: 90%;
     }
 
     .cityCard {
         width: 100%;
+        margin: 0rem;
+        border: 2px solid #6867AC;
+        border-radius: 5px 5px 5px 5px;
+        box-shadow: 6px 6px #a8a8cf;
+        
     }
-
     .imgCard {
-        width: 100%;
+        width: 70%;
+
     }
 
 }
@@ -89,5 +127,116 @@ a {
 @media screen and (max-width:480px) {
     .item img {
         width: 100%;
+    }
+    .iteration{
+        display: flex;
+        width: 95%;
+        margin: 0rem;
+        justify-content: center;
+        align-items: center;
+    }
+    .cityRouter{
+        display: flex;
+        width: 95%;
+        justify-content: center;
+        align-items: center;
+    }
+    .item {
+        width: 95%;
+     }
+    .cityCard {
+        width: 100%;
+        margin: 0rem;
+        border: 2px solid #6867AC;
+        border-radius: 5px 5px 5px 5px;
+        box-shadow: 6px 6px #a8a8cf;
+        
+    }
+}
+@media screen and (max-width:700px) {
+    .item img {
+        width: 100%;
+    }
+    .iteration{
+        display: flex;
+        width: 100%;
+        margin: 0rem;
+        justify-content: center;
+        align-items: center;
+    }
+    .cityRouter{
+        display: flex;
+        width: 100%;
+        justify-content: center;
+        align-items: center;
+    }
+    .item {
+        width: 100%;
+     }
+    .cityCard {
+        width: 100%;
+        margin: 0rem;
+        border: 2px solid #6867AC;
+        border-radius: 5px 5px 5px 5px;
+        box-shadow: 6px 6px #a8a8cf;
+        
+    }
+}
+@media screen and (max-width:900px) {
+    .item img {
+        width: 100%;
+    }
+    .iteration{
+        display: flex;
+        width: 100%;
+        margin: 0rem;
+        justify-content: center;
+        align-items: center;
+    }
+    .cityRouter{
+        display: flex;
+        width: 100%;
+        justify-content: center;
+        align-items: center;
+    }
+    .item {
+        width: 100%;
+     }
+    .cityCard {
+        width: 100%;
+        margin: 0rem;
+        border: 2px solid #6867AC;
+        border-radius: 5px 5px 5px 5px;
+        box-shadow: 6px 6px #a8a8cf;
+        
+    }
+}
+@media screen and (max-width:1030px) {
+    .item img {
+        width: 100%;
+    }
+    .iteration{
+        display: flex;
+        width: 100%;
+        margin: 0rem;
+        justify-content: center;
+        align-items: center;
+    }
+    .cityRouter{
+        display: flex;
+        width: 100%;
+        justify-content: center;
+        align-items: center;
+    }
+    .item {
+        width: 100%;
+     }
+    .cityCard {
+        width: 100%;
+        margin: 0rem;
+        border: 2px solid #6867AC;
+        border-radius: 5px 5px 5px 5px;
+        box-shadow: 6px 6px #a8a8cf;
+        
     }
 }
