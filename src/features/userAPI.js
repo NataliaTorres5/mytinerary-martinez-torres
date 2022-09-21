@@ -13,19 +13,29 @@ export const userAPI = createApi( {
             query: (info) => ({
                 url: '/auth/signup',
                 method: 'POST',
-                body: info
-            })
+                body: info,
         }), 
+
+        singInToken: builder.mutation ({
+            query: (token) => ({
+                url: '/auth/token',
+                method: 'POST',
+                body: token,
+                headers: {Authorization: 'Bearer' + localStorage.getItem('token')}
+            })
+
+            })
+        }),
 
         signInUser: builder.mutation({
             query: (info) => ({
                 url: '/auth/signin',
                 method: 'POST',
-                body: info
+                body: info,
             })
+            
         }), 
 
-      
 
         signOutUser: builder.mutation({
             query: (mail) => ({
@@ -40,4 +50,4 @@ export const userAPI = createApi( {
 
 }) 
 
-export const {useSignInUserMutation, useSignUpUserMutation, useSignOutUserMutation}=userAPI
+export const {useSignInUserMutation, useSignUpUserMutation, useSignOutUserMutation, useSingInTokenMutation}=userAPI
