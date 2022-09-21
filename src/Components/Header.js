@@ -18,6 +18,13 @@ const hPages = [
 
 ]
 
+const userPage = [ 
+  { url: '/icons/homewhitel.png', name: 'Home', to: '/', id: 'user1' },
+  { url: '/icons/planewl.png', name: 'Cities', to: '/cities', id: 'user2' },
+  { url: '/icons/ticket.png', name: 'My Tineraries', to: '/mytineraries', id: 'user5' },
+  { url: '/icons/swhitef.png', name: 'New Itinerary', to: '/newitinerary', id: 'user6' },
+]
+
 
 
 
@@ -32,12 +39,16 @@ export default function Header() {
 
   const logged = useSelector((state) => state.logged.loggedState)
 
+  const userState = useSelector((state) => state.logged.userState)
+
+  console.log(userState)
+
   console.log(logged)
 
   const [open, setOpen] = useState(false)
   const [email, setEmail] = useState(false)
   const navigate = useNavigate()
-  const menuIcon = useRef()
+ 
 
 
   const [signOutUser] = useSignOutUserMutation(email)
@@ -92,89 +103,133 @@ export default function Header() {
   }
   console.log(logged)
 
-  return (logged ? (
+  
 
-    <div className='Header-Box'>
-      
+  return (logged ? (
+    (userState === "user") ? (<div className='Header-Box'>
+
       <nav class="navbar">
-      <div class="navbar-container container">
+        <div class="navbar-container container">
           <input type="checkbox" name="" id=""></input>
           <div class="hamburger-lines">
-              <span class="line line1"></span>
-              <span class="line line2"></span>
-              <span class="line line3"></span>
+            <span class="line line1"></span>
+            <span class="line line2"></span>
+            <span class="line line3"></span>
           </div>
           <ul class="menu-items">
-              <li>{hPages.map(link)}</li>
+            <li>{userPage.map(link)}</li>
           </ul>
-      </div>
-  </nav>
+        </div>
+      </nav>
 
-  <div className='Logo-User'>
-  <div className='Header-Logo'>
-        <img src="../icons/Icon.png" alt="Logo" />
-      </div>
+      <div className='Logo-User'>
+        <div className='Header-Logo'>
+          <img src="../icons/Icon.png" alt="Logo" />
+        </div>
 
-      <div>
-        {open && (<div className='User-box'>
-          <div>
-            <div className='Header-user'>
-              <LinkRouter className='Header-option' to='/' onClick={handleOpenMenu} >Log Out</LinkRouter>
-            </div>
-            
-            <div className='div-modal-signinGoogle'>
+        <div>
+          {open && (<div className='User-box'>
+            <div>
+              <div className='Header-user'>
+                <LinkRouter className='Header-option' to='/' onClick={handleOpenMenu} >Log Out</LinkRouter>
+              </div>
+
+              <div className='div-modal-signinGoogle'>
 
 
-              {modalOpen === true ?
-                <AlertSign
-                  setOpenModal={setModalOpen}
-                  setMessageError={messageError}
-                  setMessageTittle={messageTittle} /> : null}
+                {modalOpen === true ?
+                  <AlertSign
+                    setOpenModal={setModalOpen}
+                    setMessageError={messageError}
+                    setMessageTittle={messageTittle} /> : null}
+              </div>
             </div>
           </div>
+          )}
+          <div>
+            <button className='H-Button' onClick={handleOpenMenu}><img src="../icons/user2.png" alt="Logo" /></button>
+          </div>
         </div>
-        )}
+      </div>
+    </div>
+
+    ) : (<div className='Header-Box'>
+
+      <nav class="navbar">
+        <div class="navbar-container container">
+          <input type="checkbox" name="" id=""></input>
+          <div class="hamburger-lines">
+            <span class="line line1"></span>
+            <span class="line line2"></span>
+            <span class="line line3"></span>
+          </div>
+          <ul class="menu-items">
+            <li>{hPages.map(link)}</li>
+          </ul>
+        </div>
+      </nav>
+
+      <div className='Logo-User'>
+        <div className='Header-Logo'>
+          <img src="../icons/Icon.png" alt="Logo" />
+        </div>
         <div>
+          {open && (<div className='User-box'>
+            <div>
+              <div className='Header-user'>
+                <LinkRouter className='Header-option' to='/' onClick={handleOpenMenu} >Log Out</LinkRouter>
+              </div>
+              <div className='div-modal-signinGoogle'>
+                {modalOpen === true ?
+                  <AlertSign
+                    setOpenModal={setModalOpen}
+                    setMessageError={messageError}
+                    setMessageTittle={messageTittle} /> : null}
+              </div>
+            </div>
+          </div>
+          )}
+          <div>
+            <button className='H-Button' onClick={handleOpenMenu}><img src="../icons/user2.png" alt="Logo" /></button>
+          </div>
+        </div>
+      </div>
+    </div>
+    )) : (<div className='Header-Box'>
+
+      <nav class="navbar">
+        <div class="navbar-container container">
+          <input type="checkbox" name="" id=""></input>
+          <div class="hamburger-lines">
+            <span class="line line1"></span>
+            <span class="line line2"></span>
+            <span class="line line3"></span>
+          </div>
+          <ul class="menu-items">
+            <li>{hPages.map(link).slice(0, 2)}</li>
+          </ul>
+        </div>
+      </nav>
+
+      <div className='Logo-User'>
+        <div className='Header-Logo'>
+          <img src="../icons/Icon.png" alt="Logo" />
+        </div>
+
+        {open && (
+          <div className='User-box'>
+            <div className='Header-user'>
+              <LinkRouter className='Header-option' to='auth/signin' onClick={handleOpenMenu}>Log In</LinkRouter>
+              <LinkRouter className='Header-option' to='auth/signup' onClick={handleOpenMenu} >Sign Up</LinkRouter>
+            </div>
+          </div>
+        )}
+        <div className='User-Buttton'>
           <button className='H-Button' onClick={handleOpenMenu}><img src="../icons/user2.png" alt="Logo" /></button>
         </div>
       </div>
     </div>
-    </div>
-  ) : (<div className='Header-Box'>
 
-<nav class="navbar">
-      <div class="navbar-container container">
-          <input type="checkbox" name="" id=""></input>
-          <div class="hamburger-lines">
-              <span class="line line1"></span>
-              <span class="line line2"></span>
-              <span class="line line3"></span>
-          </div>
-          <ul class="menu-items">
-              <li>{hPages.map(link).slice(0, 2)}</li>
-          </ul>
-      </div>
-  </nav>
-
-  <div className='Logo-User'>
-  <div className='Header-Logo'>
-      <img src="../icons/Icon.png" alt="Logo" />
-    </div>
-
-    {open && (
-      <div className='User-box'>
-        <div className='Header-user'>
-          <LinkRouter className='Header-option' to='auth/signin' onClick={handleOpenMenu}>Log In</LinkRouter>
-          <LinkRouter className='Header-option' to='auth/signup' onClick={handleOpenMenu} >Sign Up</LinkRouter>
-        </div>
-      </div>
-    )}
-    <div className='User-Buttton'>
-      <button className='H-Button' onClick={handleOpenMenu}><img src="../icons/user2.png" alt="Logo" /></button>
-    </div>
-    </div>
-  </div>
-    
   ))
 
 }
