@@ -110,7 +110,7 @@ button{
     width: 10rem;
     height: 8rem;
     border-radius: 25%;
-
+    margin-bottom: 1rem;
 }
 .Team{
     display: flex;
@@ -118,6 +118,8 @@ button{
     align-items: center;
     justify-content: center;
     flex-wrap: wrap;
+    margin-top: 1rem;
+    padding: 0.5rem;
 }
 .Team img{
     width: 5rem;
