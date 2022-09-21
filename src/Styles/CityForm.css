@@ -1,12 +1,19 @@
-.cityForm {
+.FORM-NEWCITY{
+    display: flex;
+    flex-direction: column;
+    flex-wrap: wrap;
+}.cityForm {
     display: flex;
     justify-content: center;
     align-items: center;
     margin: 1rem;
+    background-color: purple;
 }
 .Form-city{
     display: flex;
     padding: 1rem;
+    background-color: red;
+    justify-content: center;
 }
 .Form-city label{
     background-color: #6867AC;

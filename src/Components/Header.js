@@ -96,11 +96,22 @@ export default function Header() {
 
     <div className='Header-Box'>
       
-      <div id='nav-nav' className='nav-header'>
-        {hPages.map(link)}
+      <nav class="navbar">
+      <div class="navbar-container container">
+          <input type="checkbox" name="" id=""></input>
+          <div class="hamburger-lines">
+              <span class="line line1"></span>
+              <span class="line line2"></span>
+              <span class="line line3"></span>
+          </div>
+          <ul class="menu-items">
+              <li>{hPages.map(link)}</li>
+          </ul>
       </div>
+  </nav>
 
-      <div className='Header-Logo'>
+  <div className='Logo-User'>
+  <div className='Header-Logo'>
         <img src="../icons/Icon.png" alt="Logo" />
       </div>
 
@@ -110,8 +121,7 @@ export default function Header() {
             <div className='Header-user'>
               <LinkRouter className='Header-option' to='/' onClick={handleOpenMenu} >Log Out</LinkRouter>
             </div>
-
-
+            
             <div className='div-modal-signinGoogle'>
 
 
@@ -129,32 +139,45 @@ export default function Header() {
         </div>
       </div>
     </div>
+    </div>
   ) : (<div className='Header-Box'>
 
-    <div className='nav-header'>
-      {hPages.map(link).slice(0, 2)}
-    </div>
+<nav class="navbar">
+      <div class="navbar-container container">
+          <input type="checkbox" name="" id=""></input>
+          <div class="hamburger-lines">
+              <span class="line line1"></span>
+              <span class="line line2"></span>
+              <span class="line line3"></span>
+          </div>
+          <ul class="menu-items">
+              <li>{hPages.map(link).slice(0, 2)}</li>
+          </ul>
+      </div>
+  </nav>
 
-    <div className='Header-Logo'>
+  <div className='Logo-User'>
+  <div className='Header-Logo'>
       <img src="../icons/Icon.png" alt="Logo" />
     </div>
 
-
     {open && (
-      <div lassName='User-box'>
+      <div className='User-box'>
         <div className='Header-user'>
           <LinkRouter className='Header-option' to='auth/signin' onClick={handleOpenMenu}>Log In</LinkRouter>
           <LinkRouter className='Header-option' to='auth/signup' onClick={handleOpenMenu} >Sign Up</LinkRouter>
         </div>
       </div>
     )}
-    <div>
+    <div className='User-Buttton'>
       <button className='H-Button' onClick={handleOpenMenu}><img src="../icons/user2.png" alt="Logo" /></button>
     </div>
-  </div>))
+    </div>
+  </div>
+    
+  ))
 
 }
-
 
 
 
