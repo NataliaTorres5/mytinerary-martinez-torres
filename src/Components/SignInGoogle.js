@@ -1,6 +1,6 @@
 import React, { useEffect, useRef, useState } from 'react'
 import { useSignInUserMutation } from '../features/userAPI';
-import { entry } from '../features/userLoggedSlice';
+import { entry, controlReducer  } from '../features/userLoggedSlice';
 import { useDispatch } from 'react-redux';
 import AlertSign from '../Components/AlertSign'
 import * as jose from 'jose'
@@ -32,7 +32,8 @@ export default function SignInGoogle() {
 
           console.log(response)
 
-          dispatch(entry())
+          dispatch(entry(true))
+        dispatch(controlReducer(response.data.response.user.role))
       
 
           if (response.error){
