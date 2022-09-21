@@ -1,7 +1,7 @@
 
 import React, { useRef, useState } from 'react'
 import { useSignInUserMutation } from '../features/userAPI';
-import { entry } from '../features/userLoggedSlice';
+import { entry, controlReducer } from '../features/userLoggedSlice';
 import { useDispatch } from 'react-redux';
 import AlertSign from './AlertSign';
 
@@ -43,7 +43,9 @@ export default function SignInForm() {
     user(userInfo)
       .then(response => {
         console.log(response)
-        dispatch(entry())
+        //entry(response.data.response.user.role)
+        dispatch(entry(true))
+        dispatch(controlReducer(response.data.response.user.role))
         if (response.error) {
           let dataError = response.error
           let resMessage = dataError.data
