@@ -91,7 +91,7 @@ export default function Input() {
 
     return (
 
-        <form className='FORM-NEWCITY' onSubmit={submitInfo}>
+        <form className='FORM' onSubmit={submitInfo}>
             {
                 array.map((e) => {
                     return (

@@ -34,7 +34,7 @@ export const itineraryAPI = createApi({
                 body: body,
             })
         }),
-        itineraryExterminte: builder.mutation({
+        itineraryExterminate: builder.mutation({
             query: (id) =>({
                url: `/itineraries/${id}`,
                method: 'DELETE'
@@ -54,4 +54,4 @@ export const itineraryAPI = createApi({
 })
 
 export default itineraryAPI
-export const { useGetAllItinerariesQuery, useGetAllItinerariesUserQuery, useCreateItineraryMutation, useItineraryEditMutation, useItineraryExterminteMutation, useItineraryLikesMutation } = itineraryAPI
+export const { useGetAllItinerariesQuery, useGetAllItinerariesUserQuery, useCreateItineraryMutation, useItineraryEditMutation, useItineraryExterminateMutation, useItineraryLikesMutation } = itineraryAPI

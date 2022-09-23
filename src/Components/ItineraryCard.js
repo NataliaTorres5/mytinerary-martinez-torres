@@ -1,6 +1,7 @@
 import React from 'react'
 import { useParams } from 'react-router-dom';
 import '../Styles/ItineraryCard.css';
+import { Link as LinkRouter } from 'react-router-dom';
 import { useGetAllItinerariesQuery } from '../features/itineraryAPI';
 import ActivityCards from './ActivityCards';
 
@@ -14,6 +15,7 @@ export default function Itineraries() {
     console.log (itineraries)
 
     const itineraryPic = (item) => (
+        
         
 
         <div className='Details-Container'>
@@ -30,7 +32,6 @@ export default function Itineraries() {
                 <p>{item.likes}</p>
                 <p>{item.tags}</p>
                 <p>Duration: {item.duration}</p>
-
             </div>
         </div>
 
@@ -41,8 +42,7 @@ export default function Itineraries() {
     return (
         <div className='iteration'>
             {itineraries?.response?.map(itineraryPic)}
-
-
+            <LinkRouter className='Header-option' to='/newitinerary'>Create New Itinerary!!</LinkRouter>
         </div>
     )
 }

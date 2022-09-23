@@ -14,6 +14,7 @@ import ScrollToTop from './Components/ScrollToTop';
 import NewItineraryUser from './Pages/NewItinerary'
 import SignUp from './Pages/SignUp';
 import SignIn from './Pages/SignIn';
+import PatchItinerary from './Pages/PatchItinerary';
 
 
 
@@ -25,6 +26,7 @@ function App() {
       <ScrollToTop />
       <WebsiteLayout>
         <Routes>
+        <Route path='/patchitinerary' element={<PatchItinerary />} />
           <Route path='/' element={<Home />} />
           <Route path='/auth/signup' element={<SignUp />} />
           <Route path='/auth/signin' element={<SignIn />} />
