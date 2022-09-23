@@ -29,7 +29,7 @@ export const itineraryAPI = createApi({
         }),
         itineraryEdit: builder.mutation({
             query: (body) =>({
-                url: `/itinerary/=${body.id}`,
+                url: `/itineraries/=${body.id}`,
                 method: 'PATCH',
                 body: body,
             })
@@ -42,13 +42,15 @@ export const itineraryAPI = createApi({
         }),
         itineraryLikes: builder.mutation({
             query: (id) =>({
-                url: `/itinerary/likes/${id}`,
+                url: '/itineraries/like/' + id ,
                 method: 'POST',
-                headers: {Authorization: 'Bearer' + localStorage.getItem('token')},       
-            })
+                headers: {Authorization: 'Bearer ' + localStorage.getItem('token')},       
+            }),
+
+            invalidatesTags: ['Post'],
         }),
 
-        invalidatesTags: ['Post'],
+        
         
     })
 })
