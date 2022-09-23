@@ -7,18 +7,48 @@ export const commentAPI = createApi({
         baseUrl: "http://localhost:4000"
     }),
 
-  
+    tagTypes: ['Post'],
 
     endpoints: (builder) => ({
-        getAllComments: builder.query({
+
+
+        getAllComments: builder.mutation({
             query: (id) =>({
-                url: `/comments/?itineraries=${id}`
+                url: `/comments?itinerary=${id}`,
+                method:'GET'
             }) 
             
+        }),
+
+        createComment : builder.mutation ({
+            query: (body) => ({
+                url: '/comments',
+                method: 'POST',
+                body: body,
+                headers: {Authorization: `Bearer ${localStorage.getItem('token')}`}
+            }),
+            invalidatesTags: ['Post'],
+        }),
+
+        editComment: builder.mutation ({
+            query: (body) =>({
+                url:  `/comments/${body.id}`,
+                method: 'PATCH',
+                body: body,
+                headers: {Authorization: `Bearer ${localStorage.getItem('token')}`}
+            })
+        }),
+
+        deleteComment: builder.mutation ({
+            query: (id) => ({
+                url:  `/comments/${id}`,
+                method: 'DELETE',
+                headers: {Authorization: `Bearer ${localStorage.getItem('token')}`}
+            })
         }),
         
     })
 })
 
-export default activityAPI
-export const { useGetAllCommentsQuery, } = activityAPI
+export default commentAPI
+export const { useGetAllCommentsMutation, useCreateCommentMutation, useEditCommentMutation, useDeleteCommentMutation  } = commentAPI

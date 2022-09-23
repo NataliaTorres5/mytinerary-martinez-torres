@@ -4,7 +4,7 @@ import { useRef, useState } from 'react'
 import { useSelector, useDispatch } from 'react-redux';
 import { Link as LinkRouter, useNavigate } from 'react-router-dom';
 import { useSignOutUserMutation } from '../features/userAPI';
-import { entry } from '../features/userLoggedSlice'
+import { exit } from '../features/userLoggedSlice'
 import AlertSign from './AlertSign';
 import '../Styles/Header.css';
 
@@ -41,9 +41,9 @@ export default function Header() {
 
   const userState = useSelector((state) => state.logged.userState)
 
-  console.log(userState)
+  // console.log(userState)
 
-  console.log(logged)
+  // console.log(logged)
 
   const [open, setOpen] = useState(false)
   const [email, setEmail] = useState(false)
@@ -69,12 +69,12 @@ export default function Header() {
 
 
   async function SignOut() {
-    let email = JSON.parse(localStorage.getItem('testUser')).email
+    dispatch(exit())
+console.log("mueroo");
+    localStorage.removeItem('token')
 
     signOutUser(email).then(response => {
       console.log(response)
-      dispatch(entry(null))
-      localStorage.removeItem('testUser')
       navigate("/", { replace: true })
 
       if (response.error) {
@@ -91,7 +91,7 @@ export default function Header() {
         setMessageTittle("Success")
 
         localStorage.setItem(
-          "testUser",
+          "token",
           JSON.stringify(response.data.response.user)
         )
       }
@@ -131,7 +131,7 @@ export default function Header() {
           {open && (<div className='User-box'>
             <div>
               <div className='Header-user'>
-                <LinkRouter className='Header-option' to='/' onClick={handleOpenMenu} >Log Out</LinkRouter>
+                <LinkRouter className='Header-option' to='/' onClick={SignOut} >Log Out</LinkRouter>
               </div>
 
               <div className='div-modal-signinGoogle'>
@@ -177,7 +177,7 @@ export default function Header() {
           {open && (<div className='User-box'>
             <div>
               <div className='Header-user'>
-                <LinkRouter className='Header-option' to='/' onClick={handleOpenMenu} >Log Out</LinkRouter>
+                <LinkRouter className='Header-option' to='/' onClick={SignOut} >Log Out</LinkRouter>
               </div>
               <div className='div-modal-signinGoogle'>
                 {modalOpen === true ?
