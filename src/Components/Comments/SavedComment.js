@@ -47,6 +47,7 @@ useEffect(() => {
 
     <div className="comment-box">
       <h3>  {item.user.name} </h3>
+      <img src='../../icons/user1.png' alt=""/>
       <p>{item.comment}  </p>
 
        {(user && user.id === item.user._id ) && <DeleteComment comment={item._id} />}
@@ -54,7 +55,7 @@ useEffect(() => {
        {((user && user.role === "admin") || (user && user?.id === item.user._id)) && <EditComment comment={item} />}
 
       
- 
+    
 
     </div>
 
