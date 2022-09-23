@@ -2,6 +2,7 @@ import React, { useState } from 'react'
 import { useDispatch, useSelector } from 'react-redux'
 import { useParams, useLocation } from 'react-router-dom';
 import '../Styles/ItineraryCard.css';
+import { Link as LinkRouter } from 'react-router-dom';
 import { useGetAllItinerariesQuery } from '../features/itineraryAPI';
 import ActivityCards from './ActivityCards';
 import LikesDislikes from './LikesDislikes';
@@ -25,6 +26,8 @@ export default function Itineraries(props) {
 
 
     const itineraryPic = (item) => (
+        
+        
 
         <div className='Details-Container'>
             <div className='User-Container'>

@@ -11,6 +11,7 @@ import { userAPI } from '../features/userAPI';
 
 export default function Cities() {
 
+    const link = (page) => <LinkRouter className='hRouter' key={page.id} to={page.to}>{page.name} <img className='hImg' width={45} src={page.url} alt={page.id} /></LinkRouter>
 
     const {
         data: itineraries,
@@ -43,6 +44,7 @@ export default function Cities() {
             <div className='iteration'>
                 {itineraries?.response?.map(cityPic)}
             </div>
+            <LinkRouter className='Header-option' to='/patchitinerary'>Edit Itinerary Press here</LinkRouter>
         </>
     )
 }

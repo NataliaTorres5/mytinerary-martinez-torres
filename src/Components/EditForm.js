@@ -1,5 +1,6 @@
 import React, { useState, useEffect, useRef } from "react";
 import axios from "axios";
+import '../Styles/EditCity.css';
 
 
 
@@ -75,7 +76,7 @@ console.log(id)
 
         <>
 
-            <div>
+            <div className="Select-city">
                 
                 <select ref={select} onChange={update} >  
                 <option disabled selected>Select City</option>
@@ -84,18 +85,18 @@ console.log(id)
                     }
                 </select>
             </div>
-            <form className='FORM'>
+            <form className='FORM-EDIT'>
                 {
                     array.map((e) => {
                         return (
-                            <div className='Form-city'>
+                            <div className='EditForm-city'>
                                 <label htmlFor={e.item}> {e.item}</label>
                                 <input type={e.type} ref={e.value} />
                             </div>
                         )
                     })
                 }
-                <div className='Form-city'>
+                <div className='EditForm-city'>
                     <button> Submit</button>
 
                 </div>
