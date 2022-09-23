@@ -44,8 +44,10 @@ export default function SignInForm() {
       .then(response => {
         console.log(response)
         //entry(response.data.response.user.role)
-        dispatch(entry(true))
-        dispatch(controlReducer(response.data.response.user.role))
+  
+        dispatch(controlReducer(response.data.response.user))
+        localStorage.setItem('token', response.data.response.token)
+        
         if (response.error) {
           let dataError = response.error
           let resMessage = dataError.data
