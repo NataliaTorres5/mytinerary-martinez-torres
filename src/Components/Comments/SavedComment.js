@@ -2,14 +2,15 @@
 import React from 'react'
 import { useGetAllCommentsMutation } from '../../features/commentAPI.js'
 import EditComment from './EditComment.js'
-import CreateComment from './CreateComment.js'
 import DeleteComment from './DeleteComment.js'
 import { useEffect, useState } from 'react'
 import { useDispatch, useSelector } from 'react-redux'
 import { recharge } from '../../features/rechargeSlice'
 
+
 export default function SavedComment(props) {
   const recharge = useSelector((state) => state.recharge.rechargeState) 
+  const user = useSelector((state) => state.logged.userState) 
   //console.log(props.itinerary)
   const dispatch = useDispatch()
 
@@ -22,7 +23,7 @@ export default function SavedComment(props) {
     try {
         let res = await getAllComments(props.itinerary._id)
         if (res.data?.success) {
-         // console.log(res.data);
+         console.log(res.data);
             setComments(res.data.response)
         } else {
             console.log(res.error)
@@ -43,10 +44,9 @@ useEffect(() => {
   const commentPic = (item) => (
 
     <div className="comment-box">
-      <h3>{item.user.name}</h3>
-      <p>{item?.comment}</p>
+      <h3>  {/*item.user.name*/} </h3>
+      <p>{item?.comment}  </p>
 
-      <CreateComment  id={props.itinerary._id} />
       <DeleteComment comment={item._id} />
 
       
@@ -64,7 +64,7 @@ useEffect(() => {
   return (
     <>
       <div>
-        {comments.map(commentPic)}
+        {comments?.map(commentPic)}
       </div>
     </>
   )
