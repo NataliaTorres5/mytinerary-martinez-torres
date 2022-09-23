@@ -1,4 +1,5 @@
 import React, { useState } from 'react'
+import { useDispatch, useSelector } from 'react-redux'
 import { useParams, useLocation } from 'react-router-dom';
 import '../Styles/ItineraryCard.css';
 import { Link as LinkRouter } from 'react-router-dom';
@@ -10,6 +11,8 @@ import CreateComment from './Comments/CreateComment.js'
 
 
 export default function Itineraries(props) {
+
+    const user = useSelector((state) => state.logged.userState) 
 
 
 
@@ -45,7 +48,11 @@ export default function Itineraries(props) {
 
                 <SavedComment itinerary={item} />
 
-                <CreateComment id={item._id} />
+                
+
+                {
+                    user && <CreateComment id={item._id} />
+                }
 
 
 

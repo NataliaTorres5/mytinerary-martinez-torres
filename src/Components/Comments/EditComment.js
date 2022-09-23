@@ -1,4 +1,4 @@
-import React, { useState } from 'react'
+import React, { useState, useRef } from 'react'
 
 import { useSelector, useDispatch } from 'react-redux'
 
@@ -8,6 +8,9 @@ import { recharge } from '../../features/rechargeSlice'
 
 export default function EditComment(props) {
 
+    const input = useRef()
+
+    const [unRoll, setUnRoll] = useState(false)
     const [editComment] = useEditCommentMutation() // trael el metodo de editar comentario del api
 
     const user = useSelector((state) => state.logged.userState)  // tiene en cuenta el estado en el que se encuentra el usuario
@@ -18,12 +21,15 @@ export default function EditComment(props) {
 
     const [commentValue, setCommentValue] = useState(comment.comment)
 
-console.log(user)
+    console.log(user)
+
     const dispatch = useDispatch()
 
-    async function editclickComment() {
+
+    async function editclickComment(e) {
+        e.preventDefault()
         try {
-            let res = await editComment({ id: comment._id, comment: commentValue })
+            let res = await editComment({ id: comment._id, comment: input.current.value })
             if (res.data?.success) {
                 dispatch(recharge())
             } else {
@@ -33,21 +39,48 @@ console.log(user)
             console.log(error)
         }
 
-        function input(params) {
-          
+    }
+
+
+    function rollComment() {
+        if (unRoll) {
+            setUnRoll(false);
+        } else {
+            setUnRoll(true)
         }
 
     }
     return (
+
+
+        <>
         <div>
+            <button onClick={rollComment}>
+                Edit a Comment
+            </button>
+            {unRoll ? (
+                <>
+                    <form >
+                        <img src="" alt='Avatar' />
+                        <label htmlfor="commentInput">
 
-        
-          {/* // ((user && user.role === "admin") || (user && user?.id === comment.user._id)) && */}
-          <div className='Comment-buttons-container'>
-            <button className='edit-btn' onClick={editclickComment} type="button">Edit Comment</button> 
-          </div>
-        
+                        <input id="commentInput" type="text" placeholder='Add a comment' ref={input}/>
 
-      </div>
+                        </label>
+
+
+                        <input  onClick={editclickComment}  type="submit" value="Submit" />
+                    </form>
+
+                </>
+
+            ) : null}
+        </div>
+
+
+
+    </>
+        
     )
 }
+
