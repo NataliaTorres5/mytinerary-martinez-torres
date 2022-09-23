@@ -22,7 +22,7 @@ export default function CreateComment(props) {
     let userID = user.id
     let itineraryID = props.id
 
-    console.log(props)
+    console.log(itineraryID )
 
     // used to create the action of writing a comment 
 
@@ -46,6 +46,7 @@ export default function CreateComment(props) {
                 let dataMessage = dataError.data
                 //alert when we install it error message
             } else {
+                dispatch(recharge())
                 let dataResponse = response.data;
                 let dataMessage = dataResponse.dataMessage
                 //alertwhen we weinstalle it success message
