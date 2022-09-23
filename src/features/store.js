@@ -6,6 +6,7 @@ import {itineraryAPI} from './itineraryAPI'
 import {activityAPI} from './activityAPI'
 import { userAPI } from './userAPI'
 import userLoggedSlice from './userLoggedSlice'
+import rechargeSlice from './rechargeSlice'
 
 
 
@@ -21,9 +22,10 @@ export const  store = configureStore ({
 
         [activityAPI.reducerPath] : activityAPI.reducer,
 
-
         logged:userLoggedSlice,
         [userAPI.reducerPath] : userAPI.reducer,
+
+        recharge:rechargeSlice,
 
 
     },
