@@ -10,7 +10,7 @@ import CreateComment from './Comments/CreateComment.js'
 
 export default function Itineraries(props) {
 
-   
+
 
     const { id } = useParams()
     const {
@@ -20,13 +20,13 @@ export default function Itineraries(props) {
 
 
 
-    
+
     const itineraryPic = (item) => (
 
         <div className='Details-Container'>
             <div className='User-Container'>
                 <img className='user-Img' src='/icons/user1.png' alt="user" />
-                <h3>{item.user}</h3>
+                <h3>{/*item.user*/}</h3>
 
             </div>
             <div className="cityCard ItineraryCards">
@@ -40,12 +40,12 @@ export default function Itineraries(props) {
 
                 <LikesDislikes itinerary={item} />
 
-                <SavedComment  itinerary={item}  />
+                <SavedComment itinerary={item} />
 
-                <CreateComment  id={item._id}  />
+                <CreateComment id={item._id} />
 
 
-                
+
 
             </div>
         </div>
