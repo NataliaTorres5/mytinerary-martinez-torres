@@ -6,6 +6,7 @@ import { recharge } from '../../features/rechargeSlice'
 export default function DeleteComment(props) {
 
     const [deleteComment] = useDeleteCommentMutation() // trae el metodo deeliminar 
+    //const recharge = useSelector((state) => state.recharge.rechargeState) 
     const dispatch = useDispatch() // para hacer uso del slice de recargar pagina
 
    console.log(props.comment)
@@ -19,6 +20,7 @@ export default function DeleteComment(props) {
                 dispatch(recharge())
             }else{
                 console.log(response.error)
+                dispatch(recharge())
             }
         } catch (error) {
             console.log(error)
