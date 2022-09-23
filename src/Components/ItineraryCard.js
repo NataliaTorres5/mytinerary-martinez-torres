@@ -1,18 +1,26 @@
-import React from 'react'
-import { useParams } from 'react-router-dom';
+import React, { useState } from 'react'
+import { useParams, useLocation } from 'react-router-dom';
 import '../Styles/ItineraryCard.css';
 import { Link as LinkRouter } from 'react-router-dom';
 import { useGetAllItinerariesQuery } from '../features/itineraryAPI';
 import ActivityCards from './ActivityCards';
+import LikesDislikes from './LikesDislikes';
+import SavedComment from './Comments/SavedComment';
+import CreateComment from './Comments/CreateComment.js'
 
 
-export default function Itineraries() {
+export default function Itineraries(props) {
+
+
+
     const { id } = useParams()
     const {
         data: itineraries,
 
     } = useGetAllItinerariesQuery(id)
-    console.log (itineraries)
+
+
+
 
     const itineraryPic = (item) => (
         
@@ -21,8 +29,8 @@ export default function Itineraries() {
         <div className='Details-Container'>
             <div className='User-Container'>
                 <img className='user-Img' src='/icons/user1.png' alt="user" />
-                 <h3>{item.user.name}</h3> 
-                
+                <h3>{/*item.user*/}</h3>
+
             </div>
             <div className="cityCard ItineraryCards">
                 <ActivityCards id={item._id} />
@@ -32,6 +40,16 @@ export default function Itineraries() {
                 <p>{item.likes}</p>
                 <p>{item.tags}</p>
                 <p>Duration: {item.duration}</p>
+
+                <LikesDislikes itinerary={item} />
+
+                <SavedComment itinerary={item} />
+
+                <CreateComment id={item._id} />
+
+
+
+
             </div>
         </div>
 
@@ -41,8 +59,7 @@ export default function Itineraries() {
 
     return (
         <div className='iteration'>
-            {itineraries?.response?.map(itineraryPic)}
-            <LinkRouter className='Header-option' to='/newitinerary'>Create New Itinerary!!</LinkRouter>
+            {itineraries?.response.map(itineraryPic)}
         </div>
     )
 }

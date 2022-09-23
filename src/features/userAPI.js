@@ -8,24 +8,24 @@ export const userAPI = createApi( {
         baseUrl: "http://localhost:4000/" , 
     }),
 
-    endpoints: (builder) => ({
+    endpoints: (builder) => ({ //reductor 
         signUpUser: builder.mutation({
             query: (info) => ({
                 url: '/auth/signup',
                 method: 'POST',
                 body: info,
         }), 
+    }),
 
-        singInToken: builder.mutation ({
+        token: builder.mutation ({
             query: (token) => ({
                 url: '/auth/token',
-                method: 'POST',
-                body: token,
-                headers: {Authorization: 'Bearer' + localStorage.getItem('token')}
+                method: 'GET',
+                headers: {Authorization: 'Bearer ' + token}
             })
 
-            })
-        }),
+            }),
+        
 
         signInUser: builder.mutation({
             query: (info) => ({
@@ -50,4 +50,4 @@ export const userAPI = createApi( {
 
 }) 
 
-export const {useSignInUserMutation, useSignUpUserMutation, useSignOutUserMutation, useSingInTokenMutation}=userAPI
+export const {useSignInUserMutation, useSignUpUserMutation, useSignOutUserMutation, useTokenMutation}=userAPI

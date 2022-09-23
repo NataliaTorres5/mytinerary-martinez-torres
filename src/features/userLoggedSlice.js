@@ -9,19 +9,23 @@ export const userLoggedSlice = createSlice({
         
 
     reducers: {
-        entry:(state, action) => {
-            state.loggedState =  action.payload                           //!state.loggedState;
-            
-            
-        },
-
+        
         controlReducer : (state, action)=>{
-            state.userState = action.payload
-
+            state.userState = action.payload // trae  estado de rol del usuario
+            state.loggedState = action.payload.logged   //trae el estado logged del usuario
+            
         },
+        
+        exit:(state, action) => {
+            state.loggedState =  false   
+            state.userState = null              // indica que el estado es null cuando el usuario no esta logueado. 
+            
+            
+        },
+        
     },
 });
 
-export const { entry, controlReducer } = userLoggedSlice.actions
+export const { exit, controlReducer   } = userLoggedSlice.actions
 
 export default  userLoggedSlice.reducer
