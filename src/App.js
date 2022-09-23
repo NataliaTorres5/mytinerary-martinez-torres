@@ -25,6 +25,7 @@ import NewItineraryUser from './Pages/NewItinerary'
 import SignUp from './Pages/SignUp';
 import SignIn from './Pages/SignIn';
 import PatchItinerary from './Pages/PatchItinerary';
+import Profile from './Pages/Profile';
 
 // reducers
 import { controlReducer } from './features/userLoggedSlice';
@@ -83,6 +84,7 @@ useSelector((state)=> console.log(state))
           <Route path='/editcity' element={<EditCity />} />
           <Route path='/mytineraries' element={<MyTineraries />}/>
           <Route path='/newitinerary' element={<NewItineraryUser />} />
+          <Route path='/profile' element={<Profile />} />
         </Routes>
       </WebsiteLayout> 
       </BrowserRouter>

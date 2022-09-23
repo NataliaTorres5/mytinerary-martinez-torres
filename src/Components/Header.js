@@ -15,6 +15,7 @@ const hPages = [
   { url: '/icons/swhitef.png', name: 'Edit City', to: '/editcity', id: 'nav3' },
   { url: '/icons/ticket.png', name: 'My Tineraries', to: '/mytineraries', id: 'nav5' },
   { url: '/icons/swhitef.png', name: 'New Itinerary', to: '/newitinerary', id: 'nav6' },
+  { url: '/icons/cat.png', name: 'Profile', to: '/profile', id: 'nav7' },
 
 ]
 
@@ -23,6 +24,7 @@ const userPage = [
   { url: '/icons/planewl.png', name: 'Cities', to: '/cities', id: 'user2' },
   { url: '/icons/ticket.png', name: 'My Tineraries', to: '/mytineraries', id: 'user5' },
   { url: '/icons/swhitef.png', name: 'New Itinerary', to: '/newitinerary', id: 'user6' },
+  { url: '/icons/cat.png', name: 'Profile', to: '/profile', id: 'user7' },
 ]
 
 
