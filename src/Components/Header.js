@@ -106,7 +106,7 @@ console.log("mueroo");
   
 
   return (logged ? (
-    (userState === "user") ? (<div className='Header-Box'>
+    (userState.role === "user") ? (<div className='Header-Box'>
 
       <nav class="navbar">
         <div class="navbar-container container">

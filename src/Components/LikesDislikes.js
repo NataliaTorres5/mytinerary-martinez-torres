@@ -5,6 +5,9 @@ import { recharge } from '../features/rechargeSlice'
 
 export default function LikesDislikes(props) {
 
+    const logged = useSelector((state) => state.logged.loggedState)
+    const userState = useSelector((state) => state.logged.userState)
+
     const [itineraryLikes] = useItineraryLikesMutation() //brings the likes from the API and stores it
     const itinerary = props.itinerary // brings the itinerary by props
    // console.log (itinerary)
@@ -34,15 +37,19 @@ export default function LikesDislikes(props) {
     }
 
     
-        return (
+        return (logged ? (
             <div>
-
-                { /*<button className={((user && itinerary.likes.includes(user.id)) || !user) ? 'Itinerary-like-btn' : 'Itinerary-dislike-btn'} onClick={likeDislikes}> <img src="../icons/swhitef.png" alt=""/> </button> */}
-
                 <button  onClick={likeDislikes}> Like </button>
-
                 <p>{itinerary.likes.length}</p> 
             </div>
+
+        ): (
+            <div>
+                <p>{itinerary.likes.length}</p> 
+            </div>
+        )
+
+            
         )
     
 }

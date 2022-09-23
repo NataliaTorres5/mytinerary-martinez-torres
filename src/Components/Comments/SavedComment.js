@@ -11,6 +11,8 @@ import { recharge } from '../../features/rechargeSlice'
 export default function SavedComment(props) {
   const recharge = useSelector((state) => state.recharge.rechargeState) 
   const user = useSelector((state) => state.logged.userState) 
+
+
   //console.log(props.itinerary)
   const dispatch = useDispatch()
 
@@ -44,18 +46,15 @@ useEffect(() => {
   const commentPic = (item) => (
 
     <div className="comment-box">
-      <h3>  {/*item.user.name*/} </h3>
-      <p>{item?.comment}  </p>
+      <h3>  {item.user.name} </h3>
+      <p>{item.comment}  </p>
 
-      <DeleteComment comment={item._id} />
+       {(user && user.id === item.user._id ) && <DeleteComment comment={item._id} />}
+
+       {((user && user.role === "admin") || (user && user?.id === item.user._id)) && <EditComment comment={item} />}
 
       
-      {/* 
-
-      <EditComment comment={item} />
-
-        */}
-
+ 
 
     </div>
 
