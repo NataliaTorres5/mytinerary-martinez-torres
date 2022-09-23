@@ -15,7 +15,7 @@ export default function Cities() {
 
     const {
         data: itineraries,
-    } = useGetAllItinerariesUserQuery('63223132ad593d16eec7b4a2') //value que ingresa usuario input
+    } = useGetAllItinerariesUserQuery('63223132ad593d16eec7b4a2')  //value que ingresa usuario input
     const cityPic = (item) => (
         
             <div className="cityCard ">

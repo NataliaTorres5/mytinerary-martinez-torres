@@ -2,6 +2,7 @@
  import { useSelector, useDispatch } from 'react-redux'
 import {useGetAllItinerariesQuery, useItineraryEditMutation} from '../features/itineraryAPI'
 import axios from "axios";
+import '../Styles/ItineraryEdit.css';
 
         
 export default function ItineraryEdit() {
@@ -78,7 +79,7 @@ console.log(id)
                     }
                 </select>
             </div>
-            <form className='FORM-EDIT'>
+            <form className='FORM-ITINERARY'>
                 {
                     array.map((e) => {
                         return (

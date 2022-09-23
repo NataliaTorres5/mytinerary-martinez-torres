@@ -1,5 +1,5 @@
 import React from 'react'
-import '../Styles/CityForm.css';
+import '../Styles/NewItinerary.css';
 import { useCreateItineraryMutation } from '../features/itineraryAPI';
 import { useRef, useState } from 'react';
 import AlertSign from './AlertSign';
@@ -36,9 +36,9 @@ export default function NewItineraryUser() {
         const dataCity = {
           name: itineraryNameRef.current.value,
           city: cityNameRef.current.value,
-          price: priceRef.current.value,
+          price: parseInt(priceRef.current.value),
           tags: tagsRef.current.value,
-          duration: durationRef.current.value,
+          duration: parseInt(durationRef.current.value),
       } 
       createItinerary(dataCity).unwrap().then((response) => {
 
@@ -62,18 +62,19 @@ export default function NewItineraryUser() {
 
     return (
 
-        <form className='FORM' onSubmit={submitInfo}>
+        <div className='Itinerary'>
+            <form className='FORM-NEW-ITINERARY' onSubmit={submitInfo}>
             {
                 array.map((e) => {
                     return (
-                        <div className='Form-city'>
+                        <div className='Form-New'>
                             <label htmlFor={e.item}> {e.item}</label>
                             <input type={e.type} ref={e.value} />
                         </div>
                     )
                 })
             }
-            <div className='Form-city'>
+            <div className='Form-New'>
                 <button> Submit</button>
             </div>
             <div>
@@ -85,6 +86,7 @@ export default function NewItineraryUser() {
             </div>
 
         </form>
+        </div>
 
     )
 }
