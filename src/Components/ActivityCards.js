@@ -11,7 +11,7 @@ export default function ActivityCards(props){
 
     console.log(props.id)
 
- console.log(activities)
+ //console.log(activities)
 
     const activityPic = (item) => (
 

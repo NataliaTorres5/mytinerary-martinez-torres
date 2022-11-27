@@ -3,6 +3,8 @@ import Edit from '../Components/EditForm';
 
 export default function EditCity() {
   return (
-    <Edit/>
+    <div className='EditCity-form'>
+      <Edit/>
+    </div>
   )
 }

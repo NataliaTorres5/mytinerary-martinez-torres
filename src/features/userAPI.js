@@ -8,24 +8,34 @@ export const userAPI = createApi( {
         baseUrl: "http://localhost:4000/" , 
     }),
 
-    endpoints: (builder) => ({
+    endpoints: (builder) => ({ //reductor 
         signUpUser: builder.mutation({
             query: (info) => ({
                 url: '/auth/signup',
                 method: 'POST',
-                body: info
-            })
+                body: info,
         }), 
+    }),
+
+        token: builder.mutation ({
+            query: (token) => ({
+                url: '/auth/token',
+                method: 'GET',
+                headers: {Authorization: 'Bearer ' + token}
+            })
+
+            }),
+        
 
         signInUser: builder.mutation({
             query: (info) => ({
                 url: '/auth/signin',
                 method: 'POST',
-                body: info
+                body: info,
             })
+            
         }), 
 
-      
 
         signOutUser: builder.mutation({
             query: (mail) => ({
@@ -35,9 +45,17 @@ export const userAPI = createApi( {
             })
         }),
         
+        editProfile: builder.mutation({
+            query: (body) => ({
+                url: '/auth/editProfile',
+                method: 'PATCH',
+                body: body,
+                headers: {Authorization: `Bearer ${localStorage.getItem('token')}`}
+            }),
+        }),
         
     })
 
 }) 
 
-export const {useSignInUserMutation, useSignUpUserMutation, useSignOutUserMutation}=userAPI
+export const {useSignInUserMutation, useSignUpUserMutation, useSignOutUserMutation, useEditProfileMutation, useTokenMutation}=userAPI

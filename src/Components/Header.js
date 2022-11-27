@@ -4,7 +4,7 @@ import { useRef, useState } from 'react'
 import { useSelector, useDispatch } from 'react-redux';
 import { Link as LinkRouter, useNavigate } from 'react-router-dom';
 import { useSignOutUserMutation } from '../features/userAPI';
-import { entry } from '../features/userLoggedSlice'
+import { exit } from '../features/userLoggedSlice'
 import AlertSign from './AlertSign';
 import '../Styles/Header.css';
 
@@ -15,7 +15,16 @@ const hPages = [
   { url: '/icons/swhitef.png', name: 'Edit City', to: '/editcity', id: 'nav3' },
   { url: '/icons/ticket.png', name: 'My Tineraries', to: '/mytineraries', id: 'nav5' },
   { url: '/icons/swhitef.png', name: 'New Itinerary', to: '/newitinerary', id: 'nav6' },
+  { url: '/icons/cat.png', name: 'Profile', to: '/profile', id: 'nav7' },
 
+]
+
+const userPage = [ 
+  { url: '/icons/homewhitel.png', name: 'Home', to: '/', id: 'user1' },
+  { url: '/icons/planewl.png', name: 'Cities', to: '/cities', id: 'user2' },
+  { url: '/icons/ticket.png', name: 'My Tineraries', to: '/mytineraries', id: 'user5' },
+  { url: '/icons/swhitef.png', name: 'New Itinerary', to: '/newitinerary', id: 'user6' },
+  { url: '/icons/cat.png', name: 'Profile', to: '/profile', id: 'user7' },
 ]
 
 
@@ -32,12 +41,16 @@ export default function Header() {
 
   const logged = useSelector((state) => state.logged.loggedState)
 
-  console.log(logged)
+  const userState = useSelector((state) => state.logged.userState)
+
+  // console.log(userState)
+
+  // console.log(logged)
 
   const [open, setOpen] = useState(false)
   const [email, setEmail] = useState(false)
   const navigate = useNavigate()
-  const menuIcon = useRef()
+ 
 
 
   const [signOutUser] = useSignOutUserMutation(email)
@@ -58,12 +71,12 @@ export default function Header() {
 
 
   async function SignOut() {
-    let email = JSON.parse(localStorage.getItem('testUser')).email
+    dispatch(exit())
+console.log("mueroo");
+    localStorage.removeItem('token')
 
     signOutUser(email).then(response => {
       console.log(response)
-      dispatch(entry(null))
-      localStorage.removeItem('testUser')
       navigate("/", { replace: true })
 
       if (response.error) {
@@ -80,7 +93,7 @@ export default function Header() {
         setMessageTittle("Success")
 
         localStorage.setItem(
-          "testUser",
+          "token",
           JSON.stringify(response.data.response.user)
         )
       }
@@ -92,69 +105,136 @@ export default function Header() {
   }
   console.log(logged)
 
+  
+
   return (logged ? (
+    (userState.role === "user") ? (<div className='Header-Box'>
 
-    <div className='Header-Box'>
-      
-      <div id='nav-nav' className='nav-header'>
-        {hPages.map(link)}
-      </div>
+      <nav class="navbar">
+        <div class="navbar-container container">
+          <input type="checkbox" name="" id=""></input>
+          <div class="hamburger-lines">
+            <span class="line line1"></span>
+            <span class="line line2"></span>
+            <span class="line line3"></span>
+          </div>
+          <ul class="menu-items">
+            <li>{userPage.map(link)}</li>
+          </ul>
+        </div>
+      </nav>
 
-      <div className='Header-Logo'>
-        <img src="../icons/Icon.png" alt="Logo" />
-      </div>
+      <div className='Logo-User'>
+        <div className='Header-Logo'>
+          <img src="../icons/Icon.png" alt="Logo" />
+        </div>
 
-      <div>
-        {open && (<div className='User-box'>
-          <div>
-            <div className='Header-user'>
-              <LinkRouter className='Header-option' to='/' onClick={handleOpenMenu} >Log Out</LinkRouter>
-            </div>
+        <div>
+          {open && (<div className='User-box'>
+            <div>
+              <div className='Header-user'>
+                <LinkRouter className='Header-option' to='/' onClick={SignOut} >Log Out</LinkRouter>
+              </div>
+
+              <div className='div-modal-signinGoogle'>
 
 
-            <div className='div-modal-signinGoogle'>
-
-
-              {modalOpen === true ?
-                <AlertSign
-                  setOpenModal={setModalOpen}
-                  setMessageError={messageError}
-                  setMessageTittle={messageTittle} /> : null}
+                {modalOpen === true ?
+                  <AlertSign
+                    setOpenModal={setModalOpen}
+                    setMessageError={messageError}
+                    setMessageTittle={messageTittle} /> : null}
+              </div>
             </div>
           </div>
+          )}
+          <div>
+            <button className='H-Button' onClick={handleOpenMenu}><img src="../icons/user2.png" alt="Logo" /></button>
+          </div>
         </div>
-        )}
+      </div>
+    </div>
+
+    ) : (<div className='Header-Box'>
+
+      <nav class="navbar">
+        <div class="navbar-container container">
+          <input type="checkbox" name="" id=""></input>
+          <div class="hamburger-lines">
+            <span class="line line1"></span>
+            <span class="line line2"></span>
+            <span class="line line3"></span>
+          </div>
+          <ul class="menu-items">
+            <li>{hPages.map(link)}</li>
+          </ul>
+        </div>
+      </nav>
+
+      <div className='Logo-User'>
+        <div className='Header-Logo'>
+          <img src="../icons/Icon.png" alt="Logo" />
+        </div>
         <div>
+          {open && (<div className='User-box'>
+            <div>
+              <div className='Header-user'>
+                <LinkRouter className='Header-option' to='/' onClick={SignOut} >Log Out</LinkRouter>
+              </div>
+              <div className='div-modal-signinGoogle'>
+                {modalOpen === true ?
+                  <AlertSign
+                    setOpenModal={setModalOpen}
+                    setMessageError={messageError}
+                    setMessageTittle={messageTittle} /> : null}
+              </div>
+            </div>
+          </div>
+          )}
+          <div>
+            <button className='H-Button' onClick={handleOpenMenu}><img src="../icons/user2.png" alt="Logo" /></button>
+          </div>
+        </div>
+      </div>
+    </div>
+    )) : (<div className='Header-Box'>
+
+      <nav class="navbar">
+        <div class="navbar-container container">
+          <input type="checkbox" name="" id=""></input>
+          <div class="hamburger-lines">
+            <span class="line line1"></span>
+            <span class="line line2"></span>
+            <span class="line line3"></span>
+          </div>
+          <ul class="menu-items">
+            <li>{hPages.map(link).slice(0, 2)}</li>
+          </ul>
+        </div>
+      </nav>
+
+      <div className='Logo-User'>
+        <div className='Header-Logo'>
+          <img src="../icons/Icon.png" alt="Logo" />
+        </div>
+
+        {open && (
+          <div className='User-box'>
+            <div className='Header-user'>
+              <LinkRouter className='Header-option' to='auth/signin' onClick={handleOpenMenu}>Log In</LinkRouter>
+              <LinkRouter className='Header-option' to='auth/signup' onClick={handleOpenMenu} >Sign Up</LinkRouter>
+            </div>
+          </div>
+        )}
+        <div className='User-Buttton'>
           <button className='H-Button' onClick={handleOpenMenu}><img src="../icons/user2.png" alt="Logo" /></button>
         </div>
       </div>
     </div>
-  ) : (<div className='Header-Box'>
 
-    <div className='nav-header'>
-      {hPages.map(link).slice(0, 2)}
-    </div>
-
-    <div className='Header-Logo'>
-      <img src="../icons/Icon.png" alt="Logo" />
-    </div>
-
-
-    {open && (
-      <div lassName='User-box'>
-        <div className='Header-user'>
-          <LinkRouter className='Header-option' to='auth/signin' onClick={handleOpenMenu}>Log In</LinkRouter>
-          <LinkRouter className='Header-option' to='auth/signup' onClick={handleOpenMenu} >Sign Up</LinkRouter>
-        </div>
-      </div>
-    )}
-    <div>
-      <button className='H-Button' onClick={handleOpenMenu}><img src="../icons/user2.png" alt="Logo" /></button>
-    </div>
-  </div>))
+  ))
 
 }
-
 
 
 
