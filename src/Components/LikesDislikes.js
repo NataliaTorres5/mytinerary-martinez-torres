@@ -37,9 +37,27 @@ export default function LikesDislikes(props) {
     }
 
     
-        return (logged ? (
+        return (
+            
+            <>
+                <>
+                    {role=== "user" && "admin" ?  <button  onClick={likeDislikes} > Like </button> &&
+                    <p>{itinerary.likes.length}</p> : (  <p>{itinerary.likes.length}</p>)  }
+                </>
+
+                <>
+                {itinerary.likes.user ?  <button  onClick={likeDislikes} > Like </button>  : (<p>{itinerary.likes.length}</p>)} 
+                </>
+            </>
+
+            
+            
+           
+            
+            
+           /* logged ? (
             <div>
-                <button  onClick={likeDislikes}> Like </button>
+                <button  onClick={likeDislikes} > Like </button>
                 <p>{itinerary.likes.length}</p> 
             </div>
 
@@ -47,7 +65,7 @@ export default function LikesDislikes(props) {
             <div>
                 <p>{itinerary.likes.length}</p> 
             </div>
-        )
+        )*/
 
             
         )
