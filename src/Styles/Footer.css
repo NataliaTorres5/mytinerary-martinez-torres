@@ -110,7 +110,7 @@ button{
     width: 10rem;
     height: 8rem;
     border-radius: 25%;
-
+    margin-bottom: 1rem;
 }
 .Team{
     display: flex;
@@ -118,6 +118,8 @@ button{
     align-items: center;
     justify-content: center;
     flex-wrap: wrap;
+    margin-top: 1rem;
+    padding: 0.5rem;
 }
 .Team img{
     width: 5rem;
@@ -137,156 +139,577 @@ button{
 @media screen and (max-width:320px){
     .Footer-Box{
         display: flex;
+        width: 100%;
+        flex-direction: column;
         justify-content: center;
         align-items: center;
+        background-color: #6867AC;
     }
-    .Where{
+    .Footer1{
         display: flex;
+        flex-direction: column;
         justify-content: center;
+        text-align: center;
+    }
+    .Team{
         flex-wrap: wrap;
-        width: 100%;
+    }
+    .Team img{
+        width: 5rem;
+        margin-top: 1rem;
+    }
+    .Team h2{
+        color: white;
+        font-size: 1.2rem;
+        text-shadow: 2px 2px gray;
     }
     .fLinks{
-        width: 100%;
-        display: flex;
-        flex-direction: column;
-        justify-content: center;
-        align-items: center;
-    }
-    .Footer1{
-        display: flex;
-        width: 100%;
-    }
-    .footernav{
-        display: flex;
-        flex-direction: column;
-        justify-content: center;
-        align-items: center;
-        flex-wrap: nowrap;
-    }
-    
-
-}
-
-@media screen and (max-width:480px){
-    .Where{
-        display: flex;
-        justify-content: center;
         flex-wrap: wrap;
         width: 100%;
-    }
-    .Footer1{
-        display: flex;
-        width: 100%;
-        flex-direction: column;
-    }
-    .fLinks{
-        width: 100%;
-        display: flex;
-        flex-direction: column;
         justify-content: center;
-        align-items: center;
-    }
-    .Contacts{
-        display: flex;
-        justify-content: center;
-        margin: 1rem;
-    }
-    .footernav{
-        width: 20%;
-        display: flex;
-        flex-direction: column;
-    }
-
-}
-
-@media screen and (max-width:375px) {
-    .Footer1{
-        display: flex;
-        justify-content: center;
-        align-items: center;
     }
     .footernav {
-        flex-direction: column;
+        display: flex;
+        flex-wrap: wrap;
         justify-content: center;
-        align-items: center;
-        margin-left: 2rem;
+        width: 100%;
+        margin: 0 0.5rem 0 0.5rem;
     }
     
-    .fLiks{
-        display: flex;
+    .footernav a{
+        height: 2.8rem;
+        width: 8rem;
         justify-content: center;
+        align-items: center;
+        font-weight: 800;
+        background-color: #ffff; 
+        color: #6867AC;
+        border-radius: 10pt;
+        margin: 1rem;
+        text-decoration: none;
+        text-align: center;
+        display: flex;
+        box-shadow: 3px 3px lightgrey;
     }
-    .flags{
-        display: flex;
-        justify-content: center;
+    .Footer-Button{
+        width: 4.5rem;
+        height: 2.5rem;
+        font-size: 1.1rem;
+        margin: 1rem;
+        border-radius: 5px;
+        font-weight: 600;
+        color: #6867AC;
+        background-color: white;
+        box-shadow: 3px 3px lightgrey;
+    }
+    .Footer-Icons{
         flex-wrap: wrap;
     }
-}
-
-@media screen and (max-width:480px){
-    .address{
+    .Footer-Icons img{
+        width: 2.5rem;
+        margin: 1rem;
+    }
+    .Contacts{
         display: flex;
+        flex-direction: column;
         justify-content: center;
-        margin-right: 0.5rem;
-        margin-left: 1.5rem;
+        text-align: center;
     }
     .Where{
         flex-wrap: wrap;
-    }
-    .Footer1{
-        width: 100%;
-    }
-    .Contacts{
-        width: 100%;
-    }
-    h3{
-        margin-right: 0.5rem;
-        margin-left: 1.5rem;
-    }
-    .fLinks{
-        display: flex;
-        width: 100%;
         justify-content: center;
-        align-items: center;
+        color: white;
+        margin: 1rem;
     }
-}
-@media screen and (max-width:538px){
-    .Footer-Box{
-        display: flex;
-    }
-    .Footer1 {
-        width: 100%;
-        justify-content: center;
-        align-items: center;
-    }
-    .footernav{
+    .flags{
         flex-wrap: wrap;
-        justify-content: center;
-        align-items: center;
-        padding: 0.5rem;
-
+        margin: 1rem;
     }
-    .fLinks{
-        width: 100%;
-        display: flex;
+    .flags img{
+        width: 4.2rem;
+    }
+    .date{
+        flex-wrap: wrap;
     }
     .address{
         display: flex;
+        flex-direction: column;
         justify-content: center;
-        margin-right: 1rem;
-    }
-    .map{
+        text-align: center;
         margin: 1rem;
+    }
+    .addressp{
+        flex-wrap: wrap;
+        color: white;
+        margin: 0.5rem;
+        text-shadow: 2px 2px gray;
+    }
+
+    .map img{
+        width: 14rem;
+        height: 10rem;
+    }
+}
+@media screen and (max-width:375px){
+    .Footer-Box{
+        display: flex;
+        width: 100%;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+        background-color: #6867AC;
+    }
+    .Footer1{
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        text-align: center;
+    }
+    .Team{
+        flex-wrap: wrap;
+    }
+    .Team img{
+        width: 5rem;
+        margin-top: 1rem;
+    }
+    .Team h2{
+        color: white;
+        font-size: 1.2rem;
+        text-shadow: 2px 2px gray;
+    }
+    .fLinks{
+        flex-wrap: wrap;
+        width: 100%;
+    }
+    .footernav {
+        display: flex;
+        flex-wrap: wrap;
+        justify-content: center;
+        width: 100%;
+        margin: 0 0.5rem 0 0.5rem;
+    }
+    
+    .footernav a{
+        height: 2.8rem;
+        width: 8rem;
+        font-weight: 800;
+        background-color: #ffff; 
+        color: #6867AC;
+        border: 1px solid #ffff;
+        border-radius: 10pt;
+        margin: 1rem;
+        text-decoration: none;
+        text-align: center;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        box-shadow: 3px 3px lightgrey;
+    }
+    .Footer-Button{
+        width: 4.5rem;
+        height: 2.5rem;
+        font-size: 1.1rem;
+        margin: 1rem;
+        border-radius: 5px;
+        font-weight: 600;
+        color: #6867AC;
+        background-color: white;
+        box-shadow: 3px 3px lightgrey;
     }
     .Footer-Icons{
+        flex-wrap: wrap;
+    }
+    .Footer-Icons img{
+        width: 2.5rem;
         margin: 1rem;
+    }
+    .Contacts{
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        text-align: center;
+    }
+    .Where{
+        flex-wrap: wrap;
+        justify-content: center;
+        color: white;
+        margin: 1rem;
+    }
+    .flags{
+        flex-wrap: wrap;
+        margin: 1rem;
+    }
+    .flags img{
+        width: 4.2rem;
+    }
+    .date{
+        flex-wrap: wrap;
+    }
+    .address{
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        text-align: center;
+        margin: 1rem;
+    }
+    .addressp{
+        flex-wrap: wrap;
+        color: white;
+        margin: 0.5rem;
+        font-size: 1.1rem;
+        text-shadow: 2px 2px gray;
+    }
+
+    .map img{
+        width: 16rem;
+        height: 12rem;
+    }
+}
+    
+
+@media screen and (max-width:425px){
+    .Footer-Box{
+        display: flex;
+        width: 100%;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+        background-color: #6867AC;
+    }
+    .Footer1{
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        text-align: center;
+    }
+    .Team{
+        flex-wrap: wrap;
+    }
+    .Team img{
+        width: 5rem;
+        margin-top: 1rem;
+    }
+    .Team h2{
+        color: white;
+        font-size: 1.2rem;
+        text-shadow: 2px 2px gray;
+    }
+    .fLinks{
+        flex-wrap: wrap;
+        width: 100%;
+        justify-content: center;
+    }
+    .footernav {
+        display: flex;
+        flex-wrap: wrap;
+        justify-content: center;
+        width: 100%;
+        margin: 0 0.5rem 0 0.5rem;
+    }
+    
+    .footernav a{
+        height: 2.8rem;
+        width: 8rem;
+        justify-content: center;
+        align-items: center;
+        font-weight: 800;
+        background-color: #ffff; 
+        color: #6867AC;
+        border-radius: 10pt;
+        margin: 1rem;
+        text-decoration: none;
+        text-align: center;
+        display: flex;
+        box-shadow: 3px 3px lightgrey;
+    }
+    .Footer-Button{
+        width: 4.5rem;
+        height: 2.5rem;
+        font-size: 1.1rem;
+        margin: 1rem;
+        border-radius: 5px;
+        font-weight: 600;
+        color: #6867AC;
+        background-color: white;
+        box-shadow: 3px 3px lightgrey;
+    }
+    .Footer-Icons{
+        flex-wrap: wrap;
+    }
+    .Footer-Icons img{
+        width: 2.5rem;
+        margin: 1rem;
+    }
+    .Contacts{
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        text-align: center;
+    }
+    .Where{
+        flex-wrap: wrap;
+        justify-content: center;
+        color: white;
+        margin: 1rem;
+    }
+    .flags{
+        flex-wrap: wrap;
+        margin: 1rem;
+    }
+    .flags img{
+        width: 5.2rem;
+    }
+    .date{
+        flex-wrap: wrap;
+    }
+    .address{
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        text-align: center;
+        margin: 1rem;
+    }
+    .addressp{
+        flex-wrap: wrap;
+        color: white;
+        margin: 0.5rem;
+        text-shadow: 2px 2px gray;
+    }
+
+    .map img{
+        width: 14rem;
+        height: 10rem;
     }
 }
 
-@media screen and (max-width:932px){
-.Team img{
-    margin: 1rem;
+
+
+@media screen and (max-width:768px){
+    .Footer-Box{
+        display: flex;
+        width: 100%;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+        background-color: #6867AC;
+    }
+    .Footer1{
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        text-align: center;
+    }
+    .Team{
+        flex-wrap: wrap;
+    }
+    .Team img{
+        width: 5rem;
+        margin-top: 1rem;
+    }
+    .Team h2{
+        color: white;
+        font-size: 1.2rem;
+        text-shadow: 2px 2px gray;
+    }
+    .fLinks{
+        flex-wrap: wrap;
+        width: 100%;
+        justify-content: center;
+    }
+    .footernav {
+        display: flex;
+        flex-wrap: wrap;
+        justify-content: center;
+        width: 100%;
+        margin: 0 0.5rem 0 0.5rem;
+    }
+    
+    .footernav a{
+        height: 2.8rem;
+        width: 8rem;
+        justify-content: center;
+        align-items: center;
+        font-weight: 800;
+        background-color: #ffff; 
+        color: #6867AC;
+        border-radius: 10pt;
+        margin: 1rem;
+        text-decoration: none;
+        text-align: center;
+        display: flex;
+        box-shadow: 3px 3px lightgrey;
+    }
+    .Footer-Button{
+        width: 4.5rem;
+        height: 2.5rem;
+        font-size: 1.1rem;
+        margin: 1rem;
+        border-radius: 5px;
+        font-weight: 600;
+        color: #6867AC;
+        background-color: white;
+        box-shadow: 3px 3px lightgrey;
+    }
+    .Footer-Icons{
+        flex-wrap: wrap;
+    }
+    .Footer-Icons img{
+        width: 2.5rem;
+        margin: 1rem;
+    }
+    .Contacts{
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        text-align: center;
+    }
+    .Where{
+        flex-wrap: wrap;
+        justify-content: center;
+        color: white;
+        margin: 1rem;
+    }
+    .flags{
+        flex-wrap: wrap;
+        margin: 1rem;
+    }
+    .flags img{
+        width: 5.2rem;
+    }
+    .date{
+        flex-wrap: wrap;
+    }
+    .address{
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        text-align: center;
+        margin: 1rem;
+    }
+    .addressp{
+        flex-wrap: wrap;
+        color: white;
+        margin: 0.5rem;
+        text-shadow: 2px 2px gray;
+    }
+
+    .map img{
+        width: 14rem;
+        height: 10rem;
+    }
 }
 
+@media screen and (max-width:1024px){
+    .Footer-Box{
+        display: flex;
+        width: 100%;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+        background-color: #6867AC;
+    }
+    .Footer1{
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        text-align: center;
+    }
+    .Team{
+        flex-wrap: wrap;
+    }
+    .Team img{
+        width: 5rem;
+        margin-top: 1rem;
+    }
+    .Team h2{
+        color: white;
+        font-size: 1.2rem;
+        text-shadow: 2px 2px gray;
+    }
+    .fLinks{
+        flex-wrap: wrap;
+        width: 100%;
+        justify-content: center;
+    }
+    .footernav {
+        display: flex;
+        flex-wrap: wrap;
+        justify-content: center;
+        width: 100%;
+        margin: 0 0.5rem 0 0.5rem;
+    }
+    
+    .footernav a{
+        height: 2.8rem;
+        width: 8rem;
+        justify-content: center;
+        align-items: center;
+        font-weight: 800;
+        background-color: #ffff; 
+        color: #6867AC;
+        border-radius: 10pt;
+        margin: 1rem;
+        text-decoration: none;
+        text-align: center;
+        display: flex;
+        box-shadow: 3px 3px lightgrey;
+    }
+    .Footer-Button{
+        width: 4.5rem;
+        height: 2.5rem;
+        font-size: 1.1rem;
+        margin: 1rem;
+        border-radius: 5px;
+        font-weight: 600;
+        color: #6867AC;
+        background-color: white;
+        box-shadow: 3px 3px lightgrey;
+    }
+    .Footer-Icons{
+        flex-wrap: wrap;
+    }
+    .Footer-Icons img{
+        width: 2.5rem;
+        margin: 1rem;
+    }
+    .Contacts{
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        text-align: center;
+    }
+    .Where{
+        flex-wrap: wrap;
+        justify-content: center;
+        color: white;
+        margin: 1rem;
+    }
+    .flags{
+        flex-wrap: wrap;
+        margin: 1rem;
+    }
+    .flags img{
+        width: 5.2rem;
+    }
+    .date{
+        flex-wrap: wrap;
+    }
+    .address{
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        text-align: center;
+        margin: 1rem;
+    }
+    .addressp{
+        flex-wrap: wrap;
+        color: white;
+        margin: 0.5rem;
+        text-shadow: 2px 2px gray;
+    }
+
+    .map img{
+        width: 14rem;
+        height: 10rem;
+    }
 }

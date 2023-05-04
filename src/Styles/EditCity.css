@@ -3,29 +3,46 @@
     padding: 0;
     box-sizing: border-box;
 }
-.cityForm{
+.EditCity-form{
     display: flex;
     justify-content: center;
+    flex-wrap: wrap;
 }
-.FORM{
+.FORM-EDIT{
     display: flex;
-    width: 40%; 
+    width: 40%;
     justify-content: center;
     align-items: center;
     margin: 1rem;
     border-radius: 1rem;
-    box-shadow: 2px 2px lightgray;
-    background: linear-gradient(180deg, #e8cbc0 16%, rgba(228,228,240,1) 35%, rgba(220,220,235,1) 57%, rgba(228,228,240,1) 76%, #636fa4 100%);
     flex-direction: column;
     flex-wrap: wrap;
+    background: linear-gradient(180deg, #e8cbc0 16%, rgba(228,228,240,1) 35%, rgba(220,220,235,1) 57%, rgba(228,228,240,1) 76%, #636fa4 100%);
 }
-
-.Form-city{
+.Select-city{
+    display: flex;
+    justify-content: center;
+}
+select{
+    background-color: #7e86ac;
+    color: white;
+    border: 2px solid lightgrey;
+    box-shadow: 2px 2px #636fa4;
+    border-radius: 5px 5px 5px 5px;
+    font-size: 1.1rem;
+    width: 8rem;
+    height: 2.5rem;
+}
+option{
+    background-color: #e8cbc0;
+    color: #636fa4;
+}
+.EditForm-city{
     display: flex;
     padding: 1rem;
     justify-content: center;
 }
-.Form-city label{
+.EditForm-city label{
     background-color: #6867AC;
     color: white;
     font-size: 1.2rem;
@@ -38,14 +55,14 @@
     width: 7rem;
     box-shadow: 3px 3px gray;
 }
-.Form-city input{
+.EditForm-city input{
     width: 20rem;
     height: 2.5rem;
     border: 1px solid lightgray;
     border-radius: 0 5px 5px 0;
     box-shadow: 3px 3px gray;
 }
-.Form-city button{
+.EditForm-city button{
     justify-content: center;
     align-items: center;
     height: 3rem;
@@ -55,12 +72,11 @@
     background-color: #6867AC;
     color: white;
 }
-
 @media screen and (max-width:320px) {
-    .FORM{
+    .FORM-EDIT{
         width: 100%;
     }
-    .Form-city label{
+    .EditForm-city label{
         background-color: #6867AC;
         color: white;
         font-size: 1rem;
@@ -72,14 +88,14 @@
         width: 5rem;
         box-shadow: 3px 3px gray;
     }
-    .Form-city input{
+    .EditForm-city input{
         width: 10rem;
         height: 1.5rem;
         border: 1px solid lightgray;
         border-radius: 0 5px 5px 0;
         box-shadow: 3px 3px gray;
     }
-    .Form-city button{
+    .EditForm-city button{
         justify-content: center;
         align-items: center;
         height: 2rem;
@@ -91,10 +107,10 @@
 }
  }
 @media screen and (max-width:425px) {
-    .FORM{
+    .FORM-EDIT{
         width: 100%;
     }
-    .Form-city label{
+    .EditForm-city label{
         background-color: #6867AC;
         color: white;
         font-size: 1rem;
@@ -106,14 +122,14 @@
         width: 5rem;
         box-shadow: 3px 3px gray;
     }
-    .Form-city input{
+    .EditForm-city input{
         width: 10rem;
         height: 1.5rem;
         border: 1px solid lightgray;
         border-radius: 0 5px 5px 0;
         box-shadow: 3px 3px gray;
     }
-    .Form-city button{
+    .EditForm-city button{
         justify-content: center;
         align-items: center;
         height: 2rem;
@@ -125,10 +141,10 @@
 }
  }
  @media screen and (max-width:1024px){
-    .FORM{
+    .FORM-EDIT{
         width: 100%;
     }
-    .Form-city label{
+    .EditForm-city label{
         background-color: #6867AC;
         color: white;
         font-size: 1rem;
@@ -140,14 +156,14 @@
         width: 5rem;
         box-shadow: 3px 3px gray;
     }
-    .Form-city input{
+    .EditForm-city input{
         width: 10rem;
         height: 1.5rem;
         border: 1px solid lightgray;
         border-radius: 0 5px 5px 0;
         box-shadow: 3px 3px gray;
     }
-    .Form-city button{
+    .EditForm-city button{
         justify-content: center;
         align-items: center;
         height: 2rem;

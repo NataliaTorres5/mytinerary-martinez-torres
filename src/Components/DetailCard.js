@@ -1,6 +1,7 @@
 import React from 'react'
 import '../Styles/Details.css';
 import { useEffect, useState, } from 'react'
+import { Link as LinkRouter } from 'react-router-dom';
 import CallToAction from './CallToAction';
 import { useParams } from 'react-router-dom'
 import apiurl from '../api';
@@ -37,7 +38,6 @@ export default function DetailCard() {
             <p>Population: {detailCards.population}</p>
             <p>Foundation: {foundationYear}</p>
             <CallToAction className='returnbtn' linkTo='/cities' buttonAction='Return' />
-            
         </div>
        
             

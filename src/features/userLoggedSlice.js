@@ -4,17 +4,28 @@ import React from 'react'
 export const userLoggedSlice = createSlice({
     name:"logged",
     initialState: {
-        loggedState:null,},
+        loggedState:null,
+        userState:null},
+        
 
     reducers: {
-        entry:(state) => {
-            state.loggedState = !state.loggedState;
+        
+        controlReducer : (state, action)=>{
+            state.userState = action.payload // trae  estado de rol del usuario
+            state.loggedState = action.payload.logged   //trae el estado logged del usuario
+            
+        },
+        
+        exit:(state, action) => {
+            state.loggedState =  false   
+            state.userState = null              // indica que el estado es null cuando el usuario no esta logueado. 
             
             
         },
+        
     },
 });
 
-export const { entry } = userLoggedSlice.actions
+export const { exit, controlReducer   } = userLoggedSlice.actions
 
 export default  userLoggedSlice.reducer
