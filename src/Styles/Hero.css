@@ -31,13 +31,13 @@ h1{
     text-align: center;
 }
 .Hero-Box a{
-    height: 2.6rem;
+    height: 3.9rem;
     width: 5rem;
     background-color: #6867AC; 
     color: white;
     border: 1px solid #6867AC;
     border-radius: 10pt;
-    margin: 1rem;
+    margin: 1.5rem;
     text-decoration: none;
     text-align: center;
     display: flex;
