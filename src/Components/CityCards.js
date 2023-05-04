@@ -10,14 +10,14 @@ import SearchBar from './Searchbar';
 
 export default function Cities() {
 
-    const [search, setSearch] = useState('')
+    const [search, setSearch] = useState('') //barra de busqueda
 
     
 
-    const input = useRef()
+    const input = useRef() //input de busqueda
 
     function handleSearch(e) {
-        setSearch(e.target.value)
+        setSearch(e.target.value)  //search bar por donde pasa el ref
       }
   
     const {

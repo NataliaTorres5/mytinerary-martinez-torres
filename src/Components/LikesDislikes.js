@@ -10,9 +10,9 @@ export default function LikesDislikes(props) {
 
     const [itineraryLikes] = useItineraryLikesMutation() //brings the likes from the API and stores it
     const itinerary = props.itinerary // brings the itinerary by props
-   // console.log (itinerary)
+   console.log (itinerary)
     const user = useSelector((state) => state.logged.userState) // verifica el estado del usuario si esta loggeado o non
-    //console.log(user)
+    console.log(user)
     const dispatch = useDispatch() //es lo que permiteel uso de slicer
 
     async function likeDislikes() {
@@ -37,9 +37,22 @@ export default function LikesDislikes(props) {
     }
 
     
-        return (logged ? (
+        return (
+            
+            <>
+       
+        {logged === "user" && "admin" ?  <button  onClick={likeDislikes} > Like </button> &&
+                    <p>{itinerary.likes.length}</p> : null  }
+            </>
+
+            
+            
+           
+            
+            
+           /* logged ? (
             <div>
-                <button  onClick={likeDislikes}> Like </button>
+                <button  onClick={likeDislikes} > Like </button>
                 <p>{itinerary.likes.length}</p> 
             </div>
 
@@ -48,6 +61,17 @@ export default function LikesDislikes(props) {
                 <p>{itinerary.likes.length}</p> 
             </div>
         )
+        
+        
+        
+         <>
+                    {role=== "user" && "admin" ?  <button  onClick={likeDislikes} > Like </button> &&
+                    <p>{itinerary.likes.length}</p> : null  }
+                </>
+
+                <>
+                {itinerary.likes.user ?  <button  onClick={likeDislikes} > Like </button>  : (<p>{itinerary.likes.length}</p>)} 
+                </>*/
 
             
         )
